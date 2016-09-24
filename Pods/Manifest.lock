@@ -10,7 +10,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   MotionKit:
-    :commit: df35820816ea6a7061fb530de12e39bcbe2b0c60
+    :commit: 477266ced5e98cfc7004abe32a177bb875c41fdd
     :git: git@github.com:njaditya/MotionKit.git
 
 SPEC CHECKSUMS:
