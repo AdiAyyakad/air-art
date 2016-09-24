@@ -13,6 +13,8 @@
 		4011AFAD1D96BA7300F7BE5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4011AFAC1D96BA7300F7BE5B /* Assets.xcassets */; };
 		4011AFB01D96BA7300F7BE5B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4011AFAE1D96BA7300F7BE5B /* LaunchScreen.storyboard */; };
 		4011AFBB1D96BA7300F7BE5B /* AirArtTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011AFBA1D96BA7300F7BE5B /* AirArtTests.swift */; };
+		401FD6A43245EA453E9366E8 /* Pods_AirArt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DADBE39C2F37EE0331F630EA /* Pods_AirArt.framework */; };
+		9338783ED47BD7E033F40DE4 /* Pods_AirArtTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28E68B9BF9446F9986E62C02 /* Pods_AirArtTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		28E68B9BF9446F9986E62C02 /* Pods_AirArtTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AirArtTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4011AFA21D96BA7300F7BE5B /* AirArt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirArt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4011AFA51D96BA7300F7BE5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4011AFA71D96BA7300F7BE5B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -36,6 +39,11 @@
 		4011AFB61D96BA7300F7BE5B /* AirArtTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AirArtTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4011AFBA1D96BA7300F7BE5B /* AirArtTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirArtTests.swift; sourceTree = "<group>"; };
 		4011AFBC1D96BA7300F7BE5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7523862284A63C4B325E3A9B /* Pods-AirArtTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirArtTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AirArtTests/Pods-AirArtTests.release.xcconfig"; sourceTree = "<group>"; };
+		94C4AC6EE70EC1C57BF3E24D /* Pods-AirArt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirArt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AirArt/Pods-AirArt.debug.xcconfig"; sourceTree = "<group>"; };
+		9EC00B5145923C324F296ADE /* Pods-AirArt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirArt.release.xcconfig"; path = "Pods/Target Support Files/Pods-AirArt/Pods-AirArt.release.xcconfig"; sourceTree = "<group>"; };
+		C3BB250EFCE53510E027BAB5 /* Pods-AirArtTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirArtTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AirArtTests/Pods-AirArtTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DADBE39C2F37EE0331F630EA /* Pods_AirArt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AirArt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				401FD6A43245EA453E9366E8 /* Pods_AirArt.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9338783ED47BD7E033F40DE4 /* Pods_AirArtTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +72,8 @@
 				4011AFA41D96BA7300F7BE5B /* AirArt */,
 				4011AFB91D96BA7300F7BE5B /* AirArtTests */,
 				4011AFA31D96BA7300F7BE5B /* Products */,
+				657F8692B971242622E7B636 /* Pods */,
+				E8F3007AAA1F7B2C49662DF6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,6 +108,26 @@
 			path = AirArtTests;
 			sourceTree = "<group>";
 		};
+		657F8692B971242622E7B636 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				94C4AC6EE70EC1C57BF3E24D /* Pods-AirArt.debug.xcconfig */,
+				9EC00B5145923C324F296ADE /* Pods-AirArt.release.xcconfig */,
+				C3BB250EFCE53510E027BAB5 /* Pods-AirArtTests.debug.xcconfig */,
+				7523862284A63C4B325E3A9B /* Pods-AirArtTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E8F3007AAA1F7B2C49662DF6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DADBE39C2F37EE0331F630EA /* Pods_AirArt.framework */,
+				28E68B9BF9446F9986E62C02 /* Pods_AirArtTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -103,9 +135,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4011AFBF1D96BA7300F7BE5B /* Build configuration list for PBXNativeTarget "AirArt" */;
 			buildPhases = (
+				6C1E66DDE61FFBEFFFB2E645 /* [CP] Check Pods Manifest.lock */,
 				4011AF9E1D96BA7300F7BE5B /* Sources */,
 				4011AF9F1D96BA7300F7BE5B /* Frameworks */,
 				4011AFA01D96BA7300F7BE5B /* Resources */,
+				EB0BF5CD4325FC5230CADA7E /* [CP] Embed Pods Frameworks */,
+				5A841BAFBC528E828F7D5D2C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -120,9 +155,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4011AFC21D96BA7300F7BE5B /* Build configuration list for PBXNativeTarget "AirArtTests" */;
 			buildPhases = (
+				3E98DC069CA7E58FC4272D88 /* [CP] Check Pods Manifest.lock */,
 				4011AFB21D96BA7300F7BE5B /* Sources */,
 				4011AFB31D96BA7300F7BE5B /* Frameworks */,
 				4011AFB41D96BA7300F7BE5B /* Resources */,
+				DE0C38B87446042045249C88 /* [CP] Embed Pods Frameworks */,
+				E194552314D59F002C4954A1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -146,10 +184,12 @@
 				TargetAttributes = {
 					4011AFA11D96BA7300F7BE5B = {
 						CreatedOnToolsVersion = 8.0;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 					4011AFB51D96BA7300F7BE5B = {
 						CreatedOnToolsVersion = 8.0;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 4011AFA11D96BA7300F7BE5B;
 					};
@@ -193,6 +233,99 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3E98DC069CA7E58FC4272D88 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5A841BAFBC528E828F7D5D2C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AirArt/Pods-AirArt-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6C1E66DDE61FFBEFFFB2E645 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DE0C38B87446042045249C88 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AirArtTests/Pods-AirArtTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E194552314D59F002C4954A1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AirArtTests/Pods-AirArtTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EB0BF5CD4325FC5230CADA7E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AirArt/Pods-AirArt-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4011AF9E1D96BA7300F7BE5B /* Sources */ = {
@@ -335,6 +468,7 @@
 		};
 		4011AFC01D96BA7300F7BE5B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94C4AC6EE70EC1C57BF3E24D /* Pods-AirArt.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = AirArt/Info.plist;
@@ -347,6 +481,7 @@
 		};
 		4011AFC11D96BA7300F7BE5B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9EC00B5145923C324F296ADE /* Pods-AirArt.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = AirArt/Info.plist;
@@ -359,6 +494,7 @@
 		};
 		4011AFC31D96BA7300F7BE5B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C3BB250EFCE53510E027BAB5 /* Pods-AirArtTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -373,6 +509,7 @@
 		};
 		4011AFC41D96BA7300F7BE5B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7523862284A63C4B325E3A9B /* Pods-AirArtTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -404,6 +541,7 @@
 				4011AFC11D96BA7300F7BE5B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4011AFC21D96BA7300F7BE5B /* Build configuration list for PBXNativeTarget "AirArtTests" */ = {
 			isa = XCConfigurationList;
@@ -412,6 +550,7 @@
 				4011AFC41D96BA7300F7BE5B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
