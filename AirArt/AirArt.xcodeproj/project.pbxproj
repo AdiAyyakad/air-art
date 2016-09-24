@@ -90,11 +90,10 @@
 			isa = PBXGroup;
 			children = (
 				4011AFA51D96BA7300F7BE5B /* AppDelegate.swift */,
-				4011AFA71D96BA7300F7BE5B /* ViewController.swift */,
-				4011AFA91D96BA7300F7BE5B /* Main.storyboard */,
-				4011AFAC1D96BA7300F7BE5B /* Assets.xcassets */,
-				4011AFAE1D96BA7300F7BE5B /* LaunchScreen.storyboard */,
-				4011AFB11D96BA7300F7BE5B /* Info.plist */,
+				4084AE001D96C53C00B812DE /* Storyboards */,
+				4084AE011D96C54200B812DE /* View Controllers */,
+				4084ADFF1D96C53100B812DE /* Resources */,
+				4084ADFE1D96C52600B812DE /* Supporting Files */,
 			);
 			path = AirArt;
 			sourceTree = "<group>";
@@ -106,6 +105,39 @@
 				4011AFBC1D96BA7300F7BE5B /* Info.plist */,
 			);
 			path = AirArtTests;
+			sourceTree = "<group>";
+		};
+		4084ADFE1D96C52600B812DE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4011AFB11D96BA7300F7BE5B /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4084ADFF1D96C53100B812DE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4011AFAC1D96BA7300F7BE5B /* Assets.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		4084AE001D96C53C00B812DE /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				4011AFA91D96BA7300F7BE5B /* Main.storyboard */,
+				4011AFAE1D96BA7300F7BE5B /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		4084AE011D96C54200B812DE /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4011AFA71D96BA7300F7BE5B /* ViewController.swift */,
+			);
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 		657F8692B971242622E7B636 /* Pods */ = {
