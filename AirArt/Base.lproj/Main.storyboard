@@ -24,12 +24,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DZW-Qq-hBf">
+                                <state key="normal" title="Calibrate"/>
+                                <connections>
+                                    <action selector="didPressCalibrate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kq5-SG-9og"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="p4J-GO-j2j" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4Ja-aJ-WIE"/>
                             <constraint firstItem="p4J-GO-j2j" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="LVq-ML-fPF"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="DZW-Qq-hBf" secondAttribute="bottom" constant="8" id="VRR-ue-czf"/>
                             <constraint firstAttribute="leadingMargin" secondItem="p4J-GO-j2j" secondAttribute="leading" id="j0g-Fp-7av"/>
+                            <constraint firstItem="DZW-Qq-hBf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xV5-7N-Fcp"/>
                         </constraints>
                     </view>
                     <connections>

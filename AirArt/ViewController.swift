@@ -14,21 +14,43 @@ class ViewController: UIViewController {
     @IBOutlet weak var dataLabel: UILabel!
 
     let motion = MotionKit()
+    var calibratedPoint = Point(x: 0.0, y: 0.0, z: 0.0)
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
+        calibrate()
+
         motion.getAccelerometerValues(1.0) { [unowned self] (x, y, z) in
 
-            self.dataLabel.text = "\(x), \(y), \(z)"
-            
+            let dataString = "(\(x-self.calibratedPoint.x), \(y-self.calibratedPoint.y), \(z-self.calibratedPoint.z))"
+
+            print(dataString)
+
+            DispatchQueue.main.async { [unowned self] in
+                self.dataLabel.text = dataString
+            }
+
         }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func didPressCalibrate(_ sender: AnyObject) {
+        calibrate()
+    }
+    
+    func calibrate() {
+        
+        motion.getAccelerationAtCurrentInstant { [unowned self] (x, y, z) in
+            self.calibratedPoint = Point(x: x, y: y, z: z)
+            
+            print("Calibrated to " + self.calibratedPoint.description)
+        }
+
     }
 
 }

@@ -13,6 +13,7 @@
 		4011AFAD1D96BA7300F7BE5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4011AFAC1D96BA7300F7BE5B /* Assets.xcassets */; };
 		4011AFB01D96BA7300F7BE5B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4011AFAE1D96BA7300F7BE5B /* LaunchScreen.storyboard */; };
 		4011AFBB1D96BA7300F7BE5B /* AirArtTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011AFBA1D96BA7300F7BE5B /* AirArtTests.swift */; };
+		40A0D3191D96F22D001024EF /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A0D3181D96F22D001024EF /* Point.swift */; };
 		49B3FAB23A750D495B8DD5EC /* Pods_AirArtTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAB8B0E166929DD147FB5AAE /* Pods_AirArtTests.framework */; };
 		DD0C702EC1E6678E960258DE /* Pods_AirArt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0063EF5DA0EF5BC30A71FF3B /* Pods_AirArt.framework */; };
 /* End PBXBuildFile section */
@@ -40,6 +41,7 @@
 		4011AFB61D96BA7300F7BE5B /* AirArtTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AirArtTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4011AFBA1D96BA7300F7BE5B /* AirArtTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirArtTests.swift; sourceTree = "<group>"; };
 		4011AFBC1D96BA7300F7BE5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		40A0D3181D96F22D001024EF /* Point.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
 		A0C2A9323AE08B765DE949E3 /* Pods-AirArtTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirArtTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AirArtTests/Pods-AirArtTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AAB8B0E166929DD147FB5AAE /* Pods_AirArtTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AirArtTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AADFFAB1470F3119E193A00B /* Pods-AirArt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirArt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AirArt/Pods-AirArt.debug.xcconfig"; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 			children = (
 				4011AFA51D96BA7300F7BE5B /* AppDelegate.swift */,
 				4084AE001D96C53C00B812DE /* Storyboards */,
+				40A0D3171D96F209001024EF /* Models */,
 				4084AE011D96C54200B812DE /* View Controllers */,
 				4084ADFF1D96C53100B812DE /* Resources */,
 				4084ADFE1D96C52600B812DE /* Supporting Files */,
@@ -149,6 +152,14 @@
 				4011AFA71D96BA7300F7BE5B /* ViewController.swift */,
 			);
 			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		40A0D3171D96F209001024EF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				40A0D3181D96F22D001024EF /* Point.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		6D291B52E5835601C6DD08BE /* Frameworks */ = {
@@ -216,7 +227,7 @@
 				TargetAttributes = {
 					4011AFA11D96BA7300F7BE5B = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 8Z7UYP6FP8;
+						DevelopmentTeam = 2829339WJT;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
@@ -367,6 +378,7 @@
 			files = (
 				4011AFA81D96BA7300F7BE5B /* ViewController.swift in Sources */,
 				4011AFA61D96BA7300F7BE5B /* AppDelegate.swift in Sources */,
+				40A0D3191D96F22D001024EF /* Point.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -508,7 +520,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 8Z7UYP6FP8;
+				DEVELOPMENT_TEAM = 2829339WJT;
 				INFOPLIST_FILE = AirArt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.aditya-school.AirArt";
@@ -524,7 +536,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 8Z7UYP6FP8;
+				DEVELOPMENT_TEAM = 2829339WJT;
 				INFOPLIST_FILE = AirArt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.aditya-school.AirArt";
