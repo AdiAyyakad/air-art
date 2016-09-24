@@ -19,7 +19,7 @@ struct Point {
     func horizontalChange(from point: Point) -> Double {
         return x - point.x
     }
-    
+
     func verticalChange(from point: Point) -> Double {
         return y - point.y
     }

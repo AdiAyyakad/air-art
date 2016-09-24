@@ -10,7 +10,7 @@ import UIKit
 import MotionKit
 
 class ViewController: UIViewController {
-    
+
     @IBOutlet weak var dataLabel: UILabel!
 
     let motion = MotionKit()
@@ -18,10 +18,10 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         calibrate()
 
-        motion.getAccelerometerValues(1.0) { [unowned self] (x, y, z) in
+        motion.getAccelerometerValues(0.1) { [unowned self] (x, y, z) in
 
             let dataString = "(\(x-self.calibratedPoint.x), \(y-self.calibratedPoint.y), \(z-self.calibratedPoint.z))"
 
@@ -38,16 +38,16 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
     @IBAction func didPressCalibrate(_ sender: AnyObject) {
         calibrate()
     }
-    
+
     func calibrate() {
-        
+
         motion.getAccelerationAtCurrentInstant { [unowned self] (x, y, z) in
             self.calibratedPoint = Point(x: x, y: y, z: z)
-            
+
             print("Calibrated to " + self.calibratedPoint.description)
         }
 

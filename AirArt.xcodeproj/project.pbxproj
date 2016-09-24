@@ -184,6 +184,7 @@
 				4011AFA01D96BA7300F7BE5B /* Resources */,
 				2280F521A4DAB6F7D7EB1110 /* [CP] Embed Pods Frameworks */,
 				D9376373D91F71079FFF7C56 /* [CP] Copy Pods Resources */,
+				40E6F3AC1D972FCE00E92C6F /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -308,6 +309,20 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AirArtTests/Pods-AirArtTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		40E6F3AC1D972FCE00E92C6F /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
 		416FC1752CD8FD9601EC3848 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
