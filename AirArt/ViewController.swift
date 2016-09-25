@@ -60,7 +60,7 @@ extension ViewController {
 
     func startGettingAccelerometerValues() {
 
-        motion.getAccelerometerValues(0.1) { [unowned self] (x, y, z) in
+        motion.getAccelerometerValues(interval: 0.1) { [unowned self] (x, y, z) in
 
             let dataString = "(\(x-self.calibratedPoint.x), \(y-self.calibratedPoint.y), \(z-self.calibratedPoint.z))"
 
