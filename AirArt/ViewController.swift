@@ -20,7 +20,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         calibrate()
-        startGettingAccelerometerValues()
+        startGettingPoints()
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,53 +42,36 @@ extension ViewController {
 
 // MARK: - MotionKitHelpers
 
-extension ViewController {
+extension ViewController: MotionKitDelegate {
 
     func calibrate() {
 
-        motion.stopAccelerometerUpdates()
+        motion.stopDeviceMotionUpdates()
 
-        motion.getAccelerationAtCurrentInstant { [unowned self] (x, y, z) in
-            self.calibratedPoint = Point(x: x, y: y, z: z)
-
-            print("Calibrated to " + self.calibratedPoint.description)
-        }
-
-        startGettingAccelerometerValues()
+        startGettingPoints()
 
     }
 
-    func startGettingAccelerometerValues() {
+    func startGettingPoints() {
 
-        motion.getAccelerometerValues(interval: 0.1) { [unowned self] (x, y, z) in
+        motion.getDeviceMotionObject { [unowned self] data in
 
-            let dataString = "(\(x-self.calibratedPoint.x), \(y-self.calibratedPoint.y), \(z-self.calibratedPoint.z))"
+            let acceleration = data.userAcceleration
+            let x = Int(100*acceleration.x)
+            let y = Int(100*acceleration.y)
+            let z = Int(100*acceleration.z)
 
-            print(dataString)
+            print("Acceleration x: \(x), y: \(y), z: \(z)")
+            print("------------------------------------------------------------------------------------------------------------")
 
-            let point = Point(x: x, y: y, z: z)
-            var horizontalDataString = ""
+            let constant = 5
 
-            if self.calibratedPoint.horizontalChange(from: point) > 0.1 {
-                horizontalDataString = "Right"
-            } else if self.calibratedPoint.horizontalChange(from: point) < -0.1 {
-                horizontalDataString = "Left"
-            } else {
-                horizontalDataString = "No horizontal change"
-            }
-
-            var verticalDataString = ""
-
-            if self.calibratedPoint.horizontalChange(from: point) > 0.1 {
-                verticalDataString = "Up"
-            } else if self.calibratedPoint.horizontalChange(from: point) < -0.1 {
-                verticalDataString = "Down"
-            } else {
-                verticalDataString = "No vertical change"
-            }
+            let dataTextX = x < -constant ? "Left" : x > constant ? "Right" : "NoneX"
+            let dataTextY = y < -constant ? "Down" : y > constant ? "Up" : "NoneY"
+            let dataTextZ = z < -constant ? "Back" : z > constant ? "Front" : "NoneZ"
 
             DispatchQueue.main.async { [unowned self] in
-                self.dataLabel.text = horizontalDataString + " " + verticalDataString
+                self.dataLabel.text = "\(dataTextX) \(dataTextY) \(dataTextZ)"
             }
 
         }

@@ -14,7 +14,7 @@ import CoreMotion
 
 //_______________________________________________________________________________________________________________
 // this helps retrieve values from the sensors.
-@objc protocol MotionKitDelegate {
+@objc public protocol MotionKitDelegate {
     @objc optional  func retrieveAccelerometerValues (_ x: Double, y: Double, z: Double, absoluteValue: Double)
     @objc optional  func retrieveGyroscopeValues     (_ x: Double, y: Double, z: Double, absoluteValue: Double)
     @objc optional  func retrieveDeviceMotionObject  (_ deviceMotion: CMDeviceMotion)
@@ -27,10 +27,10 @@ import CoreMotion
 }
 
 
-@objc(MotionKit) open class MotionKit: NSObject {
+@objc open class MotionKit: NSObject {
 
     let manager = CMMotionManager()
-    var delegate: MotionKitDelegate?
+    public var delegate: MotionKitDelegate?
 
     /*
     *  init:void:
