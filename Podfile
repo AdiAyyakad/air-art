@@ -6,7 +6,7 @@ target 'AirArt' do
   use_frameworks!
 
   # Pods for AirArt
-  pod 'MotionKit', git: 'git@github.com:njaditya/MotionKit.git'
+  pod 'MotionKit', git: 'http://www.github.com/njaditya/MotionKit.git'
 
   target 'AirArtTests' do
     inherit! :search_paths
