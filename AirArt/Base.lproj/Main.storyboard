@@ -1,52 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ITY-NX-Du4">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="KMu-H4-8Xq">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AirArt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ITY-NX-Du4" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="OxN-uf-FD6"/>
+                        <viewControllerLayoutGuide type="bottom" id="h66-GY-vPx"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="oir-gK-cXc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p4J-GO-j2j">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DZW-Qq-hBf">
-                                <state key="normal" title="Calibrate"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L1J-4t-J2g">
+                                <rect key="frame" x="161" y="318" width="52" height="30"/>
+                                <state key="normal" title="Tutorial"/>
                                 <connections>
-                                    <action selector="didPressCalibrate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kq5-SG-9og"/>
+                                    <segue destination="WGQ-eH-6a2" kind="presentation" id="MTz-Rv-th6"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="p4J-GO-j2j" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4Ja-aJ-WIE"/>
-                            <constraint firstItem="p4J-GO-j2j" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="LVq-ML-fPF"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="DZW-Qq-hBf" secondAttribute="bottom" constant="8" id="VRR-ue-czf"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="p4J-GO-j2j" secondAttribute="leading" id="j0g-Fp-7av"/>
-                            <constraint firstItem="DZW-Qq-hBf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xV5-7N-Fcp"/>
+                            <constraint firstItem="L1J-4t-J2g" firstAttribute="centerX" secondItem="oir-gK-cXc" secondAttribute="centerX" id="B4q-FI-LIN"/>
+                            <constraint firstItem="L1J-4t-J2g" firstAttribute="centerY" secondItem="oir-gK-cXc" secondAttribute="centerY" id="vJ6-xW-wsB"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="dataLabel" destination="p4J-GO-j2j" id="EHp-p5-vbO"/>
-                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mTS-P6-Udo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="137.18140929535232"/>
+            <point key="canvasLocation" x="-500" y="4.9475262368815596"/>
+        </scene>
+        <!--Tutorial-->
+        <scene sceneID="5eX-S6-fcV">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Tutorial" id="WGQ-eH-6a2" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="emn-ah-hN3"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B0Q-Pv-f1I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="49" y="5"/>
         </scene>
     </scenes>
 </document>

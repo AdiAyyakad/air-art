@@ -7,25 +7,19 @@
 //
 
 import UIKit
-import MotionKit
 
 class ViewController: UIViewController {
 
     @IBOutlet weak var dataLabel: UILabel!
 
-    let motion = MotionKit()
+//    let motion = MotionKit()
     var calibratedPoint = Point(x: 0.0, y: 0.0, z: 0.0)
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        calibrate()
-        startGettingPoints()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+//        calibrate()
+//        startGettingPoints()
     }
 
 }
@@ -35,11 +29,11 @@ class ViewController: UIViewController {
 extension ViewController {
 
     @IBAction func didPressCalibrate(_ sender: AnyObject) {
-        calibrate()
+        // calibrate()
     }
 
 }
-
+/*
 // MARK: - MotionKitHelpers
 
 extension ViewController: MotionKitDelegate {
@@ -79,3 +73,4 @@ extension ViewController: MotionKitDelegate {
     }
 
 }
+*/
