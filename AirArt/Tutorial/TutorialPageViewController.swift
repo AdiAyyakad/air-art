@@ -8,64 +8,34 @@
 
 import UIKit
 
-enum PageViewControllerID: String {
-    case Tutorial = "Tutorial"
-    case Calibration = "Calibration"
-}
-
 class TutorialPageViewController: UIPageViewController {
 
-    var currentIndex: Int = 0
-    var orderedViewControllers: [UIViewController]!
-    private(set) lazy var tutorialViewControllers: [TutorialViewController] = {
-        return [
-            self.newTutorialViewController(page: "First"),
-            self.newTutorialViewController(page: "Second"),
-            self.newTutorialViewController(page: "Third")
-        ]
-    }()
-
-    private(set) lazy var calibrationViewControllers: [CalibrationViewController] = {
-        return [
-            self.newCalibrationViewController(page: "First"),
-            self.newCalibrationViewController(page: "Second")
-        ]
-    }()
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        setup()
-    }
-
-}
-
-// MARK: - Setup
-
-extension TutorialPageViewController {
-
-    func setup() {
-
-        currentIndex = 0
-        // dataSource = self
-
-        if let id = restorationIdentifier {
-            switch id {
-            case PageViewControllerID.Tutorial.rawValue:
-                orderedViewControllers = tutorialViewControllers
-            case PageViewControllerID.Calibration.rawValue:
-                orderedViewControllers = calibrationViewControllers
-            default:
-                orderedViewControllers = nil
+    var isTutorial: Bool! {
+        didSet {
+            guard let bool = isTutorial else {
+                return
             }
+
+            orderedViewControllers = bool ? tutorialViewControllers : calibrationViewControllers
+            go(to: 0, direction: .forward)
         }
-
-        setViewControllers([orderedViewControllers[currentIndex]],
-                           direction: .forward,
-                           animated: true,
-                           completion: nil)
-
     }
+    var currentIndex: Int = 0
+    var orderedViewControllers: [UIViewController] = []
+    private(set) lazy var tutorialViewControllers: [UIViewController] = {
+        return [
+            self.newTutorialViewController(page: "First Tutorial"),
+            self.newTutorialViewController(page: "Second Tutorial"),
+            self.newTutorialViewController(page: "Third Tutorial")
+        ]
+    }()
+
+    private(set) lazy var calibrationViewControllers: [UIViewController] = {
+        return [
+            self.newCalibrationViewController(page: "First Calibration"),
+            self.newCalibrationViewController(page: "Second Calibration")
+        ]
+    }()
 
 }
 
@@ -73,28 +43,23 @@ extension TutorialPageViewController {
 
 private extension TutorialPageViewController {
 
-    func newTutorialViewController(page name: String) -> TutorialViewController {
+    func newTutorialViewController(page name: String) -> UIViewController {
 
-        guard let storyboard = self.storyboard,
-            let tvc = storyboard.instantiateViewController(withIdentifier: name) as? TutorialViewController else {
-            print("Failed to get TVC")
-            return TutorialViewController()
+        guard let storyboard = self.storyboard else {
+            return UIViewController()
         }
 
-        tvc.pageViewController = self
-        return tvc
+        return storyboard.instantiateViewController(withIdentifier: name)
 
     }
 
-    func newCalibrationViewController(page name: String) -> CalibrationViewController {
+    func newCalibrationViewController(page name: String) -> UIViewController {
 
-        guard let storyboard = self.storyboard,
-            let cvc = storyboard.instantiateViewController(withIdentifier: name) as? CalibrationViewController else {
-                return CalibrationViewController()
+        guard let storyboard = self.storyboard else {
+                return UIViewController()
         }
 
-        cvc.pageViewController = self
-        return cvc
+        return storyboard.instantiateViewController(withIdentifier: name)
 
     }
 
@@ -104,22 +69,15 @@ private extension TutorialPageViewController {
 
 extension TutorialPageViewController {
 
-    func next(from page: Int) {
-        setViewControllers([orderedViewControllers[page+1]],
-                                direction: .forward,
-                                animated: true,
-                                completion: nil)
-    }
-
-    func prev(from page: Int) {
-        setViewControllers([orderedViewControllers[page-1]],
-                                direction: .reverse,
-                                animated: true,
-                                completion: nil)
-    }
-
     func done() {
         dismiss(animated: true, completion: nil)
+    }
+
+    func go(to page: Int, direction dir: UIPageViewControllerNavigationDirection) {
+        setViewControllers([orderedViewControllers[page]],
+                           direction: dir,
+                           animated: true,
+                           completion: nil)
     }
 
 }

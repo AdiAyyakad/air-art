@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="KMu-H4-8Xq">
             <objects>
-                <viewController id="ITY-NX-Du4" sceneMemberID="viewController">
+                <viewController id="ITY-NX-Du4" customClass="MainViewController" customModule="AirArt" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OxN-uf-FD6"/>
                         <viewControllerLayoutGuide type="bottom" id="h66-GY-vPx"/>
@@ -25,14 +25,14 @@
                                 <rect key="frame" x="161" y="269" width="52" height="30"/>
                                 <state key="normal" title="Tutorial"/>
                                 <connections>
-                                    <segue destination="WGQ-eH-6a2" kind="presentation" id="MTz-Rv-th6"/>
+                                    <segue destination="WGQ-eH-6a2" kind="presentation" identifier="Tutorial Segue" id="MTz-Rv-th6"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GP4-eJ-rTN">
                                 <rect key="frame" x="157" y="369" width="62" height="30"/>
                                 <state key="normal" title="Calibrate"/>
                                 <connections>
-                                    <segue destination="a8D-Ze-8qE" kind="presentation" id="VPx-SR-n8c"/>
+                                    <segue destination="WGQ-eH-6a2" kind="presentation" identifier="Calibration Segue" id="07C-Ar-JBk"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -57,15 +57,10 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B0Q-Pv-f1I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="46" y="-101"/>
-        </scene>
-        <!--Calibration-->
-        <scene sceneID="Sau-Ty-Rhg">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Calibration" id="a8D-Ze-8qE" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x6L-nf-UXx" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="62" y="106"/>
+            <point key="canvasLocation" x="124" y="4"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="07C-Ar-JBk"/>
+    </inferredMetricsTieBreakers>
 </document>
