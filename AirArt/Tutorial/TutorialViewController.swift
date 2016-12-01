@@ -10,22 +10,17 @@ import UIKit
 
 class TutorialViewController: UIViewController {
 
-    var isTutorial: Bool!
     @IBOutlet weak var prevButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var pageControl: UIPageControl!
-    weak var pageViewController: TutorialPageViewController! {
-        didSet {
-            self.pageViewController.isTutorial = self.isTutorial
-            self.pageViewController.tutorialViewController = self
-            self.pageControl.numberOfPages = self.pageViewController.orderedViewControllers.count
-        }
-    }
+
+    var isTutorial: Bool!
+    weak var pageViewController: TutorialPageViewController!
 
     @IBAction func didPressPrev(_ sender: Any) {
         pageControl.currentPage -= 1
 
-        pageViewController.go(to: pageControl.currentPage, direction: .reverse)
+        pageViewController.go(to: pageControl.currentPage)
         reevaluateLayout()
     }
 
@@ -36,7 +31,7 @@ class TutorialViewController: UIViewController {
         } else {
             pageControl.currentPage += 1
 
-            pageViewController.go(to: pageControl.currentPage, direction: .forward)
+            pageViewController.go(to: pageControl.currentPage)
             reevaluateLayout()
         }
     }
@@ -65,6 +60,9 @@ extension TutorialViewController {
             }
 
             pageViewController = pvc
+            pageViewController.isTutorial = isTutorial
+            pageViewController.tutorialViewController = self
+            pageControl.numberOfPages = self.pageViewController.orderedImages.count
         } else {
             super.prepare(for: segue, sender: sender)
         }

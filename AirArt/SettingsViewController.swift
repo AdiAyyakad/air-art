@@ -67,7 +67,7 @@ extension SettingsViewController {
     }
 
     func updatePreview() {
-        
+        // TODO: - Preview the brush size and color
     }
 
 }
