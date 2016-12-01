@@ -58,7 +58,7 @@ private extension TutorialViewController {
 extension TutorialViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "Embed Page View Controller Segue" {
+        if segue.identifier == SegueIdentifier.Embed.rawValue {
             guard let pvc = segue.destination as? TutorialPageViewController else {
                 return
             }

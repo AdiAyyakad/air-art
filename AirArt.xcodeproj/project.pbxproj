@@ -23,6 +23,10 @@
 		406FCAB01DEFD7FA00FCCF8F /* Calibration1.png in Resources */ = {isa = PBXBuildFile; fileRef = 406FCAAE1DEFD7FA00FCCF8F /* Calibration1.png */; };
 		406FCAB11DEFD7FA00FCCF8F /* Calibration2.png in Resources */ = {isa = PBXBuildFile; fileRef = 406FCAAF1DEFD7FA00FCCF8F /* Calibration2.png */; };
 		40A0D3191D96F22D001024EF /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A0D3181D96F22D001024EF /* Point.swift */; };
+		40B0C9BB1DF06B3B004A31BA /* Sketch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40B0C9BA1DF06B3B004A31BA /* Sketch.storyboard */; };
+		40B0C9BD1DF06B56004A31BA /* SketchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B0C9BC1DF06B56004A31BA /* SketchViewController.swift */; };
+		40B0C9BF1DF06C77004A31BA /* Paint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B0C9BE1DF06C77004A31BA /* Paint.swift */; };
+		40B0C9C11DF07392004A31BA /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B0C9C01DF07392004A31BA /* SettingsViewController.swift */; };
 		40B5FC6D1DEFFC43002FB30B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B5FC6C1DEFFC43002FB30B /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +61,10 @@
 		406FCAAE1DEFD7FA00FCCF8F /* Calibration1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Calibration1.png; path = Images/Calibration1.png; sourceTree = "<group>"; };
 		406FCAAF1DEFD7FA00FCCF8F /* Calibration2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Calibration2.png; path = Images/Calibration2.png; sourceTree = "<group>"; };
 		40A0D3181D96F22D001024EF /* Point.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
+		40B0C9BA1DF06B3B004A31BA /* Sketch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Sketch.storyboard; path = Storyboards/Sketch.storyboard; sourceTree = "<group>"; };
+		40B0C9BC1DF06B56004A31BA /* SketchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SketchViewController.swift; sourceTree = "<group>"; };
+		40B0C9BE1DF06C77004A31BA /* Paint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Paint.swift; sourceTree = "<group>"; };
+		40B0C9C01DF07392004A31BA /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		40B5FC6C1DEFFC43002FB30B /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -171,6 +179,7 @@
 				4011AFAE1D96BA7300F7BE5B /* LaunchScreen.storyboard */,
 				4011AFA91D96BA7300F7BE5B /* Main.storyboard */,
 				4045ED551DEF4DEA00778376 /* Tutorial.storyboard */,
+				40B0C9BA1DF06B3B004A31BA /* Sketch.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -180,6 +189,8 @@
 			children = (
 				40B5FC6C1DEFFC43002FB30B /* MainViewController.swift */,
 				4045ED621DEF5BF200778376 /* Tutorial */,
+				40B0C9BC1DF06B56004A31BA /* SketchViewController.swift */,
+				40B0C9C01DF07392004A31BA /* SettingsViewController.swift */,
 				4011AFA71D96BA7300F7BE5B /* ViewController.swift */,
 			);
 			name = "View Controllers";
@@ -189,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				40A0D3181D96F22D001024EF /* Point.swift */,
+				40B0C9BE1DF06C77004A31BA /* Paint.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -283,6 +295,7 @@
 				406FCAB01DEFD7FA00FCCF8F /* Calibration1.png in Resources */,
 				4045ED5C1DEF4FF000778376 /* Walkthrough1.png in Resources */,
 				4045ED5D1DEF4FF000778376 /* Walkthrough2.png in Resources */,
+				40B0C9BB1DF06B3B004A31BA /* Sketch.storyboard in Resources */,
 				406FCAB11DEFD7FA00FCCF8F /* Calibration2.png in Resources */,
 				4011AFB01D96BA7300F7BE5B /* LaunchScreen.storyboard in Resources */,
 				4011AFAD1D96BA7300F7BE5B /* Assets.xcassets in Resources */,
@@ -326,10 +339,13 @@
 			files = (
 				4011AFA81D96BA7300F7BE5B /* ViewController.swift in Sources */,
 				4011AFA61D96BA7300F7BE5B /* AppDelegate.swift in Sources */,
+				40B0C9BF1DF06C77004A31BA /* Paint.swift in Sources */,
 				4045ED611DEF563600778376 /* TutorialPageViewController.swift in Sources */,
 				40B5FC6D1DEFFC43002FB30B /* MainViewController.swift in Sources */,
 				4045ED681DEF606500778376 /* TutorialViewController.swift in Sources */,
+				40B0C9BD1DF06B56004A31BA /* SketchViewController.swift in Sources */,
 				40A0D3191D96F22D001024EF /* Point.swift in Sources */,
+				40B0C9C11DF07392004A31BA /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

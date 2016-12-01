@@ -8,9 +8,10 @@
 
 import UIKit
 
-enum MainSegueIdentifier: String {
+enum SegueIdentifier: String {
     case Tutorial = "Tutorial Segue"
     case Calibration = "Calibration Segue"
+    case Embed = "Embed Page View Controller Segue"
 }
 
 class MainViewController: UIViewController {
@@ -22,9 +23,9 @@ class MainViewController: UIViewController {
         }
 
         switch id {
-        case MainSegueIdentifier.Tutorial.rawValue:
+        case SegueIdentifier.Tutorial.rawValue:
             tvc.isTutorial = true
-        case MainSegueIdentifier.Calibration.rawValue:
+        case SegueIdentifier.Calibration.rawValue:
             tvc.isTutorial = false
         default:
             tvc.isTutorial = nil
