@@ -66,6 +66,10 @@ extension SettingsViewController {
         Paint.currentPaint.brushSize = CGFloat(brushSizeSlider.value)
     }
 
+    func updatePreview() {
+        
+    }
+
 }
 
 // MARK: - Segue

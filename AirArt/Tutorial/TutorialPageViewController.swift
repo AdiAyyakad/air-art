@@ -10,6 +10,7 @@ import UIKit
 
 class TutorialPageViewController: UIPageViewController {
 
+    weak var tutorialViewController: TutorialViewController!
     var isTutorial: Bool! {
         didSet {
             guard let bool = isTutorial else {
@@ -20,7 +21,6 @@ class TutorialPageViewController: UIPageViewController {
             go(to: 0, direction: .forward)
         }
     }
-    var currentIndex: Int = 0
     var orderedViewControllers: [UIViewController] = []
     private(set) lazy var tutorialViewControllers: [UIViewController] = {
         return [
@@ -38,6 +38,12 @@ class TutorialPageViewController: UIPageViewController {
             self.newCalibrationViewController(page: "Second Calibration")
         ]
     }()
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        dataSource = self
+    }
 
 }
 
@@ -80,6 +86,31 @@ extension TutorialPageViewController {
                            direction: dir,
                            animated: true,
                            completion: nil)
+    }
+
+}
+
+// MARK: - UIPageViewControllerDataSource
+
+extension TutorialPageViewController: UIPageViewControllerDataSource {
+
+    public func presentationCount(for pageViewController: UIPageViewController) -> Int {
+        return orderedViewControllers.count
+    }
+
+    public func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+
+        tutorialViewController.pageControl.currentPage -= 1
+        tutorialViewController.reevaluateLayout()
+        return orderedViewControllers[tutorialViewController.pageControl.currentPage]
+    }
+
+    public func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+
+        tutorialViewController.pageControl.currentPage += 1
+        tutorialViewController.reevaluateLayout()
+        return orderedViewControllers[tutorialViewController.pageControl.currentPage]
+
     }
 
 }

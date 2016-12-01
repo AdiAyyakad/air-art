@@ -17,6 +17,7 @@ class TutorialViewController: UIViewController {
     weak var pageViewController: TutorialPageViewController! {
         didSet {
             self.pageViewController.isTutorial = self.isTutorial
+            self.pageViewController.tutorialViewController = self
             self.pageControl.numberOfPages = self.pageViewController.orderedViewControllers.count
         }
     }
@@ -44,7 +45,7 @@ class TutorialViewController: UIViewController {
 
 // MARK: - Helpers
 
-private extension TutorialViewController {
+extension TutorialViewController {
 
     func reevaluateLayout() {
         prevButton.isHidden = pageControl.currentPage == 0
