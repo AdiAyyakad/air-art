@@ -26,7 +26,9 @@ class TutorialPageViewController: UIPageViewController {
         return [
             self.newTutorialViewController(page: "First Tutorial"),
             self.newTutorialViewController(page: "Second Tutorial"),
-            self.newTutorialViewController(page: "Third Tutorial")
+            self.newTutorialViewController(page: "Third Tutorial"),
+            self.newCalibrationViewController(page: "First Calibration"),
+            self.newCalibrationViewController(page: "Second Calibration")
         ]
     }()
 

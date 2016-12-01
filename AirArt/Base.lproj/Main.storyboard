@@ -22,21 +22,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L1J-4t-J2g">
-                                <rect key="frame" x="162" y="238.5" width="52" height="30"/>
+                                <rect key="frame" x="162" y="278.5" width="52" height="30"/>
                                 <state key="normal" title="Tutorial"/>
                                 <connections>
                                     <segue destination="WGQ-eH-6a2" kind="presentation" identifier="Tutorial Segue" id="MTz-Rv-th6"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GP4-eJ-rTN">
-                                <rect key="frame" x="157" y="318.5" width="62" height="30"/>
-                                <state key="normal" title="Calibrate"/>
-                                <connections>
-                                    <segue destination="WGQ-eH-6a2" kind="presentation" identifier="Calibration Segue" id="07C-Ar-JBk"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xwY-Sl-SuE">
-                                <rect key="frame" x="164" y="398.5" width="48" height="30"/>
+                                <rect key="frame" x="164" y="358.5" width="48" height="30"/>
                                 <state key="normal" title="Sketch"/>
                                 <connections>
                                     <segue destination="O6X-hL-TYY" kind="presentation" id="a9E-T3-jzq"/>
@@ -45,12 +38,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="GP4-eJ-rTN" firstAttribute="centerY" secondItem="oir-gK-cXc" secondAttribute="centerY" id="0yJ-W9-AHy"/>
-                            <constraint firstItem="xwY-Sl-SuE" firstAttribute="centerX" secondItem="GP4-eJ-rTN" secondAttribute="centerX" id="1aT-AM-lxm"/>
-                            <constraint firstItem="L1J-4t-J2g" firstAttribute="centerX" secondItem="GP4-eJ-rTN" secondAttribute="centerX" id="DhM-HN-U1O"/>
-                            <constraint firstItem="xwY-Sl-SuE" firstAttribute="top" secondItem="GP4-eJ-rTN" secondAttribute="bottom" constant="50" id="KeV-c8-Gow"/>
-                            <constraint firstItem="GP4-eJ-rTN" firstAttribute="centerX" secondItem="oir-gK-cXc" secondAttribute="centerX" id="Vco-0H-nNj"/>
-                            <constraint firstItem="GP4-eJ-rTN" firstAttribute="top" secondItem="L1J-4t-J2g" secondAttribute="bottom" constant="50" id="xa6-RV-XON"/>
+                            <constraint firstItem="L1J-4t-J2g" firstAttribute="centerY" secondItem="oir-gK-cXc" secondAttribute="centerY" constant="-40" id="3lf-fb-Kez"/>
+                            <constraint firstItem="xwY-Sl-SuE" firstAttribute="centerX" secondItem="oir-gK-cXc" secondAttribute="centerX" id="SES-XF-rgV"/>
+                            <constraint firstItem="L1J-4t-J2g" firstAttribute="centerX" secondItem="oir-gK-cXc" secondAttribute="centerX" id="vHW-du-xSq"/>
+                            <constraint firstItem="xwY-Sl-SuE" firstAttribute="centerY" secondItem="oir-gK-cXc" secondAttribute="centerY" constant="40" id="x0b-Vs-f43"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -77,7 +68,4 @@
             <point key="canvasLocation" x="120" y="49"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="07C-Ar-JBk"/>
-    </inferredMetricsTieBreakers>
 </document>
