@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Calibration Page View Controller-->
+        <!--Tutorial Page View Controller-->
         <scene sceneID="AV0-En-EM0">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="1VS-F2-OXc" customClass="CalibrationPageViewController" customModule="AirArt" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="Calibration" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="1VS-F2-OXc" customClass="TutorialPageViewController" customModule="AirArt" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GC6-Fv-Mk7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="225" y="81"/>
@@ -90,7 +90,7 @@
                                     <color key="titleColor" red="0.59607843140000005" green="0.79215686269999996" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="didPresPrev:" destination="KEQ-Vq-7c3" eventType="touchUpInside" id="SbN-CC-e6P"/>
+                                    <action selector="didPressPrev:" destination="KEQ-Vq-7c3" eventType="touchUpInside" id="SbN-CC-e6P"/>
                                 </connections>
                             </button>
                         </subviews>

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4007DC891DEFD030002DC9B4 /* Calibration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4007DC881DEFD030002DC9B4 /* Calibration.storyboard */; };
-		4007DC8C1DEFD06C002DC9B4 /* CalibrationPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4007DC8B1DEFD06C002DC9B4 /* CalibrationPageViewController.swift */; };
 		4007DC8E1DEFD077002DC9B4 /* CalibrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4007DC8D1DEFD077002DC9B4 /* CalibrationViewController.swift */; };
 		4011AFA61D96BA7300F7BE5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011AFA51D96BA7300F7BE5B /* AppDelegate.swift */; };
 		4011AFA81D96BA7300F7BE5B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011AFA71D96BA7300F7BE5B /* ViewController.swift */; };
@@ -40,7 +39,6 @@
 
 /* Begin PBXFileReference section */
 		4007DC881DEFD030002DC9B4 /* Calibration.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Calibration.storyboard; path = Storyboards/Calibration.storyboard; sourceTree = "<group>"; };
-		4007DC8B1DEFD06C002DC9B4 /* CalibrationPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalibrationPageViewController.swift; path = Calibration/CalibrationPageViewController.swift; sourceTree = "<group>"; };
 		4007DC8D1DEFD077002DC9B4 /* CalibrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalibrationViewController.swift; path = Calibration/CalibrationViewController.swift; sourceTree = "<group>"; };
 		4011AFA21D96BA7300F7BE5B /* AirArt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirArt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4011AFA51D96BA7300F7BE5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -82,15 +80,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4007DC8A1DEFD04A002DC9B4 /* Calibration */ = {
-			isa = PBXGroup;
-			children = (
-				4007DC8B1DEFD06C002DC9B4 /* CalibrationPageViewController.swift */,
-				4007DC8D1DEFD077002DC9B4 /* CalibrationViewController.swift */,
-			);
-			name = Calibration;
-			sourceTree = "<group>";
-		};
 		4011AF991D96BA7300F7BE5B = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +125,7 @@
 			children = (
 				4045ED601DEF563600778376 /* TutorialPageViewController.swift */,
 				4045ED671DEF606500778376 /* TutorialViewController.swift */,
+				4007DC8D1DEFD077002DC9B4 /* CalibrationViewController.swift */,
 			);
 			name = Tutorial;
 			sourceTree = "<group>";
@@ -193,7 +183,6 @@
 			isa = PBXGroup;
 			children = (
 				4045ED621DEF5BF200778376 /* Tutorial */,
-				4007DC8A1DEFD04A002DC9B4 /* Calibration */,
 				4011AFA71D96BA7300F7BE5B /* ViewController.swift */,
 			);
 			name = "View Controllers";
@@ -342,7 +331,6 @@
 				4007DC8E1DEFD077002DC9B4 /* CalibrationViewController.swift in Sources */,
 				4011AFA81D96BA7300F7BE5B /* ViewController.swift in Sources */,
 				4011AFA61D96BA7300F7BE5B /* AppDelegate.swift in Sources */,
-				4007DC8C1DEFD06C002DC9B4 /* CalibrationPageViewController.swift in Sources */,
 				4045ED611DEF563600778376 /* TutorialPageViewController.swift in Sources */,
 				4045ED681DEF606500778376 /* TutorialViewController.swift in Sources */,
 				40A0D3191D96F22D001024EF /* Point.swift in Sources */,

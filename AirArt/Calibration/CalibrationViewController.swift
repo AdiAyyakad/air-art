@@ -10,14 +10,14 @@ import UIKit
 
 class CalibrationViewController: UIViewController {
 
-    weak var pageViewController: CalibrationPageViewController!
+    weak var pageViewController: TutorialPageViewController!
 
     @IBAction func didPressNext(_ sender: Any) {
-        pageViewController.next()
+        pageViewController.next(from: 0)
     }
 
     @IBAction func didPressPrev(_ sender: Any) {
-        pageViewController.prev()
+        pageViewController.prev(from: 1)
     }
 
     @IBAction func didPressDone(_ sender: Any) {
