@@ -22,17 +22,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L1J-4t-J2g">
-                                <rect key="frame" x="161" y="318" width="52" height="30"/>
+                                <rect key="frame" x="161" y="269" width="52" height="30"/>
                                 <state key="normal" title="Tutorial"/>
                                 <connections>
                                     <segue destination="WGQ-eH-6a2" kind="presentation" id="MTz-Rv-th6"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GP4-eJ-rTN">
+                                <rect key="frame" x="157" y="369" width="62" height="30"/>
+                                <state key="normal" title="Calibrate"/>
+                                <connections>
+                                    <segue destination="a8D-Ze-8qE" kind="presentation" id="VPx-SR-n8c"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="GP4-eJ-rTN" firstAttribute="centerY" secondItem="oir-gK-cXc" secondAttribute="centerY" constant="50" id="0yJ-W9-AHy"/>
                             <constraint firstItem="L1J-4t-J2g" firstAttribute="centerX" secondItem="oir-gK-cXc" secondAttribute="centerX" id="B4q-FI-LIN"/>
-                            <constraint firstItem="L1J-4t-J2g" firstAttribute="centerY" secondItem="oir-gK-cXc" secondAttribute="centerY" id="vJ6-xW-wsB"/>
+                            <constraint firstItem="GP4-eJ-rTN" firstAttribute="centerX" secondItem="oir-gK-cXc" secondAttribute="centerX" id="Vco-0H-nNj"/>
+                            <constraint firstItem="L1J-4t-J2g" firstAttribute="centerY" secondItem="oir-gK-cXc" secondAttribute="centerY" constant="-50" id="vJ6-xW-wsB"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -48,7 +57,15 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B0Q-Pv-f1I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="49" y="5"/>
+            <point key="canvasLocation" x="46" y="-101"/>
+        </scene>
+        <!--Calibration-->
+        <scene sceneID="Sau-Ty-Rhg">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Calibration" id="a8D-Ze-8qE" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x6L-nf-UXx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="62" y="106"/>
         </scene>
     </scenes>
 </document>

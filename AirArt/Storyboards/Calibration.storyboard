@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1VS-F2-OXc">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Page View Controller-->
+        <scene sceneID="AV0-En-EM0">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="1VS-F2-OXc" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GC6-Fv-Mk7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="225" y="81"/>
+        </scene>
+        <!--Calibration View Controller-->
+        <scene sceneID="H8L-zt-X43">
+            <objects>
+                <viewController storyboardIdentifier="First" id="Qeg-ZE-o8y" customClass="CalibrationViewController" customModule="AirArt" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ykR-lp-RUE"/>
+                        <viewControllerLayoutGuide type="bottom" id="SUU-9I-HJY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1Jc-2w-Jrw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Calibration1.png" translatesAutoresizingMaskIntoConstraints="NO" id="MJO-wC-Ssy">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7LA-h7-Anz">
+                                <rect key="frame" x="165.5" y="567" width="43" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <state key="normal" title="Next">
+                                    <color key="titleColor" red="0.59607843140000005" green="0.79215686269999996" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPressNext:" destination="Qeg-ZE-o8y" eventType="touchUpInside" id="gjq-gp-xE0"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="MJO-wC-Ssy" firstAttribute="top" secondItem="ykR-lp-RUE" secondAttribute="bottom" constant="-20" id="Gfg-Ge-OEE"/>
+                            <constraint firstItem="SUU-9I-HJY" firstAttribute="top" secondItem="7LA-h7-Anz" secondAttribute="bottom" constant="64" id="MNd-xE-FZx"/>
+                            <constraint firstItem="MJO-wC-Ssy" firstAttribute="centerY" secondItem="1Jc-2w-Jrw" secondAttribute="centerY" id="Pl0-rf-yTj"/>
+                            <constraint firstAttribute="leading" secondItem="MJO-wC-Ssy" secondAttribute="leading" id="S0L-MF-4V6"/>
+                            <constraint firstItem="7LA-h7-Anz" firstAttribute="centerX" secondItem="1Jc-2w-Jrw" secondAttribute="centerX" id="XDz-ri-gi1"/>
+                            <constraint firstItem="MJO-wC-Ssy" firstAttribute="centerX" secondItem="1Jc-2w-Jrw" secondAttribute="centerX" id="mOg-tD-uLV"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hUQ-Q1-yNv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-118" y="769"/>
+        </scene>
+        <!--Calibration View Controller-->
+        <scene sceneID="xVy-FD-9cX">
+            <objects>
+                <viewController storyboardIdentifier="Second" id="KEQ-Vq-7c3" customClass="CalibrationViewController" customModule="AirArt" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rxE-8x-gob"/>
+                        <viewControllerLayoutGuide type="bottom" id="dpa-mi-xMh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dFN-T2-8lN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Calibration2.png" translatesAutoresizingMaskIntoConstraints="NO" id="ERy-Iy-mfj">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J16-iS-Qhv">
+                                <rect key="frame" x="278" y="567" width="49" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" red="0.81568627449999997" green="0.0039215686269999999" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPressDone:" destination="KEQ-Vq-7c3" eventType="touchUpInside" id="9L7-WG-m1Z"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pfj-uA-JWh">
+                                <rect key="frame" x="48" y="567" width="41" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <state key="normal" title="Prev">
+                                    <color key="titleColor" red="0.59607843140000005" green="0.79215686269999996" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPresPrev:" destination="KEQ-Vq-7c3" eventType="touchUpInside" id="SbN-CC-e6P"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dpa-mi-xMh" firstAttribute="top" secondItem="pfj-uA-JWh" secondAttribute="bottom" constant="64" id="54s-V0-igf"/>
+                            <constraint firstItem="ERy-Iy-mfj" firstAttribute="leading" secondItem="dFN-T2-8lN" secondAttribute="leading" id="5Vz-6D-2hs"/>
+                            <constraint firstItem="ERy-Iy-mfj" firstAttribute="centerY" secondItem="dFN-T2-8lN" secondAttribute="centerY" id="7ZV-sQ-aWj"/>
+                            <constraint firstItem="ERy-Iy-mfj" firstAttribute="centerX" secondItem="dFN-T2-8lN" secondAttribute="centerX" id="B7s-h6-iLU"/>
+                            <constraint firstAttribute="trailing" secondItem="J16-iS-Qhv" secondAttribute="trailing" constant="48" id="bkQ-52-igy"/>
+                            <constraint firstItem="ERy-Iy-mfj" firstAttribute="top" secondItem="rxE-8x-gob" secondAttribute="bottom" constant="-20" id="jYY-eF-OSA"/>
+                            <constraint firstItem="dpa-mi-xMh" firstAttribute="top" secondItem="J16-iS-Qhv" secondAttribute="bottom" constant="64" id="pmJ-RH-cea"/>
+                            <constraint firstItem="pfj-uA-JWh" firstAttribute="leading" secondItem="dFN-T2-8lN" secondAttribute="leading" constant="48" id="w5I-fw-fXh"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tys-1D-So9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="655" y="769"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Calibration1.png" width="375" height="667"/>
+        <image name="Calibration2.png" width="375" height="667"/>
+    </resources>
+</document>

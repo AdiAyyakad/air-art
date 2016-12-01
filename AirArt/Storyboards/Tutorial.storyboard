@@ -25,9 +25,9 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="First Next" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xuc-Fp-27f">
-                                <rect key="frame" x="159.5" y="567" width="56" height="36"/>
-                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="20"/>
-                                <state key="normal" title="NEXT">
+                                <rect key="frame" x="166.5" y="567" width="43" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <state key="normal" title="Next">
                                     <color key="titleColor" red="0.59607843137254901" green="0.792156862745098" blue="0.23529411764705882" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -66,9 +66,9 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="Second Next" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NIJ-Yb-wUq">
-                                <rect key="frame" x="271" y="567" width="56" height="36"/>
-                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="20"/>
-                                <state key="normal" title="NEXT">
+                                <rect key="frame" x="284" y="567" width="43" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <state key="normal" title="Next">
                                     <color key="titleColor" red="0.59607843140000005" green="0.79215686269999996" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -76,9 +76,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="Second Prev" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Yj-qi-x2G">
-                                <rect key="frame" x="48" y="567" width="55" height="36"/>
-                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="20"/>
-                                <state key="normal" title="PREV">
+                                <rect key="frame" x="48" y="567" width="41" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <state key="normal" title="Prev">
                                     <color key="titleColor" red="0.59607843140000005" green="0.79215686269999996" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -119,9 +119,9 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="Third Prev" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wfw-ex-8UC">
-                                <rect key="frame" x="48" y="567" width="55" height="36"/>
-                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="20"/>
-                                <state key="normal" title="PREV">
+                                <rect key="frame" x="48" y="567" width="41" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <state key="normal" title="Prev">
                                     <color key="titleColor" red="0.59607843140000005" green="0.79215686269999996" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -129,9 +129,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="Third Done" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UGh-N1-Ln2">
-                                <rect key="frame" x="269" y="567" width="58" height="36"/>
-                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="20"/>
-                                <state key="normal" title="DONE">
+                                <rect key="frame" x="278" y="567" width="49" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <state key="normal" title="Done">
                                     <color key="titleColor" red="0.81568627450980391" green="0.0039215686274509803" blue="0.10588235294117647" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>

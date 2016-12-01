@@ -1,5 +1,5 @@
 //
-//  TutorialPageViewController.swift
+//  CalibrationPageViewController.swift
 //  AirArt
 //
 //  Created by Aditya Ayyakad on 11/30/16.
@@ -8,14 +8,13 @@
 
 import UIKit
 
-class TutorialPageViewController: UIPageViewController {
+class CalibrationPageViewController: UIPageViewController {
 
     var currentIndex: Int = 0
-    private(set) lazy var orderedViewControllers: [TutorialViewController] = {
+    private(set) lazy var orderedViewControllers: [CalibrationViewController] = {
         return [
-            self.newTutorialViewController(page: "First"),
-            self.newTutorialViewController(page: "Second"),
-            self.newTutorialViewController(page: "Third")
+            self.newCalibrationViewController(page: "First"),
+            self.newCalibrationViewController(page: "Second")
         ]
     }()
 
@@ -29,56 +28,53 @@ class TutorialPageViewController: UIPageViewController {
 
 // MARK: - Setup
 
-extension TutorialPageViewController {
+extension CalibrationPageViewController {
 
     func setup() {
-
         dataSource = self
 
         setViewControllers([orderedViewControllers[currentIndex]],
                            direction: .forward,
                            animated: true,
                            completion: nil)
-
     }
 
 }
 
 // MARK: - Helpers
 
-private extension TutorialPageViewController {
+private extension CalibrationPageViewController {
 
-    func newTutorialViewController(page name: String) -> TutorialViewController {
+    func newCalibrationViewController(page name: String) -> CalibrationViewController {
 
         guard let storyboard = self.storyboard,
-            let tvc = storyboard.instantiateViewController(withIdentifier: name) as? TutorialViewController else {
-            print("Failed to get TVC")
-            return TutorialViewController()
+            let cvc = storyboard.instantiateViewController(withIdentifier: name) as? CalibrationViewController else {
+            return CalibrationViewController()
         }
 
-        tvc.pageViewController = self
-        return tvc
+        cvc.pageViewController = self
+        return cvc
 
     }
 
 }
 
-// MARK: Page Actions
+// MARK: - Actions
 
-extension TutorialPageViewController {
+extension CalibrationPageViewController {
 
-    func next(from page: Int) {
-        setViewControllers([orderedViewControllers[page+1]],
-                                direction: .forward,
-                                animated: true,
-                                completion: nil)
+    func next() {
+        setViewControllers([orderedViewControllers[1]],
+                           direction: .forward,
+                           animated: true,
+                           completion: nil)
     }
 
-    func prev(from page: Int) {
-        setViewControllers([orderedViewControllers[page-1]],
-                                direction: .reverse,
-                                animated: true,
-                                completion: nil)
+    func prev() {
+        setViewControllers([orderedViewControllers[0]],
+                           direction: .reverse,
+                           animated: true,
+                           completion: nil)
     }
 
     func done() {
@@ -87,9 +83,10 @@ extension TutorialPageViewController {
 
 }
 
-// MARK: UIPageViewControllerDataSource
 
-extension TutorialPageViewController: UIPageViewControllerDataSource {
+// MARK: - UIPageViewDataSource
+
+extension CalibrationPageViewController: UIPageViewControllerDataSource {
 
     public func presentationCount(for pageViewController: UIPageViewController) -> Int {
         return orderedViewControllers.count

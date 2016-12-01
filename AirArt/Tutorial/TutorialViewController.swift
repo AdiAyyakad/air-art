@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum TutorialRestorationIdentifiers: String {
+enum TutorialButtonRestorationIdentifiers: String {
     case FirstNext = "First Next"
     case SecondNext = "Second Next"
     case SecondPrev = "Second Prev"
@@ -24,7 +24,7 @@ enum TutorialPageNum: Int {
 
 class TutorialViewController: UIViewController {
 
-    var pageViewController: TutorialPageViewController!
+    weak var pageViewController: TutorialPageViewController!
 
     @IBAction func didPressPrev(_ sender: Any) {
         guard let btn = sender as? UIButton else {
@@ -32,7 +32,7 @@ class TutorialViewController: UIViewController {
         }
 
         pageViewController.prev(from:
-            btn.restorationIdentifier == TutorialRestorationIdentifiers.SecondPrev.rawValue ?
+            btn.restorationIdentifier == TutorialButtonRestorationIdentifiers.SecondPrev.rawValue ?
                 TutorialPageNum.Second.rawValue :
                 TutorialPageNum.Third.rawValue)
     }
@@ -44,13 +44,13 @@ class TutorialViewController: UIViewController {
         }
 
         pageViewController.next(from:
-            btn.restorationIdentifier == TutorialRestorationIdentifiers.FirstNext.rawValue ?
+            btn.restorationIdentifier == TutorialButtonRestorationIdentifiers.FirstNext.rawValue ?
                 TutorialPageNum.First.rawValue :
                 TutorialPageNum.Second.rawValue)
     }
 
     @IBAction func didPressDone(_ sender: Any) {
-        pageViewController.done(from: TutorialPageNum.Third.rawValue)
+        pageViewController.done()
     }
 
 }
