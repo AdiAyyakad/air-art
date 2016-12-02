@@ -18,7 +18,6 @@
 		4045ED5C1DEF4FF000778376 /* Walkthrough1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4045ED581DEF4FF000778376 /* Walkthrough1.png */; };
 		4045ED5D1DEF4FF000778376 /* Walkthrough2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4045ED591DEF4FF000778376 /* Walkthrough2.png */; };
 		4045ED5E1DEF4FF000778376 /* Walkthrough3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4045ED5A1DEF4FF000778376 /* Walkthrough3.png */; };
-		4045ED611DEF563600778376 /* TutorialPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4045ED601DEF563600778376 /* TutorialPageViewController.swift */; };
 		4045ED681DEF606500778376 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4045ED671DEF606500778376 /* TutorialViewController.swift */; };
 		406FCAB01DEFD7FA00FCCF8F /* Calibration1.png in Resources */ = {isa = PBXBuildFile; fileRef = 406FCAAE1DEFD7FA00FCCF8F /* Calibration1.png */; };
 		406FCAB11DEFD7FA00FCCF8F /* Calibration2.png in Resources */ = {isa = PBXBuildFile; fileRef = 406FCAAF1DEFD7FA00FCCF8F /* Calibration2.png */; };
@@ -57,7 +56,6 @@
 		4045ED581DEF4FF000778376 /* Walkthrough1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Walkthrough1.png; path = Images/Walkthrough1.png; sourceTree = "<group>"; };
 		4045ED591DEF4FF000778376 /* Walkthrough2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Walkthrough2.png; path = Images/Walkthrough2.png; sourceTree = "<group>"; };
 		4045ED5A1DEF4FF000778376 /* Walkthrough3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Walkthrough3.png; path = Images/Walkthrough3.png; sourceTree = "<group>"; };
-		4045ED601DEF563600778376 /* TutorialPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TutorialPageViewController.swift; path = Tutorial/TutorialPageViewController.swift; sourceTree = "<group>"; };
 		4045ED671DEF606500778376 /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TutorialViewController.swift; path = Tutorial/TutorialViewController.swift; sourceTree = "<group>"; };
 		406FCAAE1DEFD7FA00FCCF8F /* Calibration1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Calibration1.png; path = Images/Calibration1.png; sourceTree = "<group>"; };
 		406FCAAF1DEFD7FA00FCCF8F /* Calibration2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Calibration2.png; path = Images/Calibration2.png; sourceTree = "<group>"; };
@@ -128,15 +126,6 @@
 			path = AirArtTests;
 			sourceTree = "<group>";
 		};
-		4045ED621DEF5BF200778376 /* Tutorial */ = {
-			isa = PBXGroup;
-			children = (
-				4045ED671DEF606500778376 /* TutorialViewController.swift */,
-				4045ED601DEF563600778376 /* TutorialPageViewController.swift */,
-			);
-			name = Tutorial;
-			sourceTree = "<group>";
-		};
 		406FCAB21DEFD80000FCCF8F /* Tutorial */ = {
 			isa = PBXGroup;
 			children = (
@@ -190,7 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				40B5FC6C1DEFFC43002FB30B /* MainViewController.swift */,
-				4045ED621DEF5BF200778376 /* Tutorial */,
+				4045ED671DEF606500778376 /* TutorialViewController.swift */,
 				40B0C9BC1DF06B56004A31BA /* SketchViewController.swift */,
 				40B0C9C01DF07392004A31BA /* SettingsViewController.swift */,
 				4011AFA71D96BA7300F7BE5B /* ViewController.swift */,
@@ -344,7 +333,6 @@
 				4011AFA61D96BA7300F7BE5B /* AppDelegate.swift in Sources */,
 				40DC78161DF08CBD00EA50B9 /* SegueIdentifier.swift in Sources */,
 				40B0C9BF1DF06C77004A31BA /* Paint.swift in Sources */,
-				4045ED611DEF563600778376 /* TutorialPageViewController.swift in Sources */,
 				40B5FC6D1DEFFC43002FB30B /* MainViewController.swift in Sources */,
 				4045ED681DEF606500778376 /* TutorialViewController.swift in Sources */,
 				40B0C9BD1DF06B56004A31BA /* SketchViewController.swift in Sources */,

@@ -13,26 +13,68 @@ class TutorialViewController: UIViewController {
     @IBOutlet weak var prevButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet weak var scrollView: UIScrollView!
 
     var isTutorial: Bool!
-    weak var pageViewController: TutorialPageViewController!
+    var orderedImages: [UIImage] = []
 
-    @IBAction func didPressPrev(_ sender: Any) {
-        pageControl.currentPage -= 1
+    private(set) lazy var tutorialImages: [UIImage] = {
+        guard let one = UIImage(named: "Walkthrough1.png"),
+            let two = UIImage(named: "Walkthrough2.png"),
+            let three = UIImage(named: "Walkthrough3.png") else {
+                return []
+        }
 
-        pageViewController.go(to: pageControl.currentPage)
-        reevaluateLayout()
+        return [one, two, three]
+    }()
+
+    private(set) lazy var calibrationImages: [UIImage] = {
+        guard let one = UIImage(named: "Calibration1.png"),
+            let two = UIImage(named: "Calibration2.png") else {
+                return []
+        }
+
+        return [one, two]
+    }()
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        setup()
+        setupBackground()
     }
 
+}
 
-    @IBAction func didPressNext(_ sender: Any) {
-        if pageControl.currentPage == pageControl.numberOfPages - 1 {
-            pageViewController.done()
-        } else {
-            pageControl.currentPage += 1
+// MARK: - Setup
 
-            pageViewController.go(to: pageControl.currentPage)
-            reevaluateLayout()
+extension TutorialViewController {
+
+    func setup() {
+        if let bool = isTutorial {
+            orderedImages = bool ? tutorialImages : calibrationImages
+            pageControl.numberOfPages = orderedImages.count
+        }
+
+        scrollView.alwaysBounceVertical = false
+        scrollView.showsVerticalScrollIndicator = false
+        scrollView.showsHorizontalScrollIndicator = false
+    }
+
+    func setupBackground() {
+        scrollView.frame = CGRect(x: 0,
+                                  y: 0,
+                                  width: CGFloat(orderedImages.count)*view.frame.width,
+                                  height: view.frame.height)
+
+        for i in 0..<orderedImages.count {
+            let imageView = UIView(frame: CGRect(x: CGFloat(i)*view.frame.width,
+                                                 y: 0,
+                                                 width: view.frame.width,
+                                                 height: view.frame.height))
+            imageView.addSubview(UIImageView(image: orderedImages[i]))
+            scrollView.addSubview(imageView)
+
         }
     }
 
@@ -49,23 +91,35 @@ extension TutorialViewController {
 
 }
 
-// MARK: - Embed Segue
+// MARK: - Actions
 
 extension TutorialViewController {
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == SegueIdentifier.Embed.rawValue {
-            guard let pvc = segue.destination as? TutorialPageViewController else {
-                return
-            }
+    @IBAction func didPressPrev(_ sender: Any) {
+        pageControl.currentPage -= 1
 
-            pageViewController = pvc
-            pageViewController.isTutorial = isTutorial
-            pageViewController.tutorialViewController = self
-            pageControl.numberOfPages = self.pageViewController.orderedImages.count
+        go(to: pageControl.currentPage)
+        reevaluateLayout()
+    }
+
+
+    @IBAction func didPressNext(_ sender: Any) {
+        if pageControl.currentPage == pageControl.numberOfPages - 1 {
+            done()
         } else {
-            super.prepare(for: segue, sender: sender)
+            pageControl.currentPage += 1
+
+            go(to: pageControl.currentPage)
+            reevaluateLayout()
         }
+    }
+
+    private func done() {
+        dismiss(animated: true, completion: nil)
+    }
+
+    private func go(to page: Int) {
+        scrollView.setContentOffset(CGPoint(x: CGFloat(page)*view.frame.width, y: 0), animated: true)
     }
 
 }

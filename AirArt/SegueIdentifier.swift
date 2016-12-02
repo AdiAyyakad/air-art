@@ -9,5 +9,4 @@
 enum SegueIdentifier: String {
     case Tutorial = "Tutorial Segue"
     case Calibration = "Calibration Segue"
-    case Embed = "Embed Page View Controller Segue"
 }

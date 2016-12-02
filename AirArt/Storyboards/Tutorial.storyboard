@@ -21,13 +21,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mXN-5c-uSp">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gTT-qn-6e1">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <connections>
-                                    <segue destination="evH-to-lhs" kind="embed" identifier="Embed Page View Controller Segue" id="QNw-CV-MPJ"/>
-                                </connections>
-                            </containerView>
+                            </scrollView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Kvy-er-my8">
                                 <rect key="frame" x="168" y="522" width="39" height="37"/>
                                 <color key="pageIndicatorTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -57,57 +53,27 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="wmI-d8-3bo" firstAttribute="leading" secondItem="ay9-yk-JOn" secondAttribute="leading" constant="48" id="0ts-Xf-qXD"/>
+                            <constraint firstItem="gTT-qn-6e1" firstAttribute="top" secondItem="efT-6g-Vwm" secondAttribute="bottom" constant="-20" id="3I7-gr-Iy6"/>
+                            <constraint firstItem="gTT-qn-6e1" firstAttribute="centerX" secondItem="ay9-yk-JOn" secondAttribute="centerX" id="5PE-BE-6Nu"/>
                             <constraint firstAttribute="trailing" secondItem="xuc-Fp-27f" secondAttribute="trailing" constant="48" id="Q3P-oC-9v0"/>
                             <constraint firstItem="Kvy-er-my8" firstAttribute="centerX" secondItem="ay9-yk-JOn" secondAttribute="centerX" id="Vf3-BN-5Xz"/>
                             <constraint firstItem="veG-KV-wKt" firstAttribute="top" secondItem="xuc-Fp-27f" secondAttribute="bottom" constant="64" id="WAp-xt-bD0"/>
                             <constraint firstItem="veG-KV-wKt" firstAttribute="top" secondItem="wmI-d8-3bo" secondAttribute="bottom" constant="64" id="cuO-A3-mWc"/>
+                            <constraint firstItem="gTT-qn-6e1" firstAttribute="centerY" secondItem="ay9-yk-JOn" secondAttribute="centerY" id="hBU-II-6lm"/>
                             <constraint firstItem="veG-KV-wKt" firstAttribute="top" secondItem="Kvy-er-my8" secondAttribute="bottom" constant="108" id="hEc-Pw-AmL"/>
+                            <constraint firstItem="gTT-qn-6e1" firstAttribute="leading" secondItem="ay9-yk-JOn" secondAttribute="leading" id="zGr-mQ-SfL"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="nextButton" destination="xuc-Fp-27f" id="1BN-cu-Cfh"/>
                         <outlet property="pageControl" destination="Kvy-er-my8" id="vgT-08-ePX"/>
                         <outlet property="prevButton" destination="wmI-d8-3bo" id="mdP-YU-JRC"/>
+                        <outlet property="scrollView" destination="gTT-qn-6e1" id="EVD-AF-wa3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jox-bo-HSk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="194" y="796"/>
-        </scene>
-        <!--Tutorial Page View Controller-->
-        <scene sceneID="w0g-r5-nKQ">
-            <objects>
-                <viewController id="evH-to-lhs" customClass="TutorialPageViewController" customModule="AirArt" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="aoL-Ut-AzW"/>
-                        <viewControllerLayoutGuide type="bottom" id="Fd7-Hm-hz3"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="NoN-HS-das">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" scrollEnabled="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="55S-Ug-udN">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <connections>
-                                    <outlet property="delegate" destination="evH-to-lhs" id="WEC-lP-AGE"/>
-                                </connections>
-                            </scrollView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="55S-Ug-udN" firstAttribute="centerX" secondItem="NoN-HS-das" secondAttribute="centerX" id="DSf-0V-CDa"/>
-                            <constraint firstItem="55S-Ug-udN" firstAttribute="top" secondItem="aoL-Ut-AzW" secondAttribute="bottom" id="R94-il-qxA"/>
-                            <constraint firstAttribute="leading" secondItem="55S-Ug-udN" secondAttribute="leading" id="x2Z-35-vmJ"/>
-                            <constraint firstItem="55S-Ug-udN" firstAttribute="centerY" secondItem="NoN-HS-das" secondAttribute="centerY" id="z8A-yf-NYL"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="scrollView" destination="55S-Ug-udN" id="dHQ-XF-VNg"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fdP-s8-Pki" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1009" y="796"/>
+            <point key="canvasLocation" x="192.80000000000001" y="795.6521739130435"/>
         </scene>
     </scenes>
 </document>
