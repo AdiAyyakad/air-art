@@ -34,7 +34,7 @@ class SettingsViewController: UIViewController {
 
         brushSizeSlider.value = Float(Paint.currentPaint.brushSize)
         brushSizeSlider.addTarget(self, action: #selector(brushSizeDidChange), for: .valueChanged)
-        
+
         // Update the brush preview
         previewView.update()
     }
@@ -72,10 +72,6 @@ extension SettingsViewController {
     func brushSizeDidChange() {
         Paint.currentPaint.brushSize = CGFloat(brushSizeSlider.value)
         previewView.update()
-    }
-
-    func updatePreview() {
-        // TODO: - Preview the brush size and color
     }
 
 }
