@@ -10,41 +10,76 @@ import UIKit
 
 class TutorialViewController: UIViewController {
 
-    var isTutorial: Bool!
     @IBOutlet weak var prevButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var pageControl: UIPageControl!
-    weak var pageViewController: TutorialPageViewController! {
-        didSet {
-            self.pageViewController.isTutorial = self.isTutorial
-            self.pageControl.numberOfPages = self.pageViewController.orderedViewControllers.count
+    @IBOutlet weak var scrollView: UIScrollView!
+
+    var isTutorial: Bool!
+    var orderedImages: [UIImage] = []
+
+    private(set) lazy var tutorialImages: [UIImage] = {
+        guard let one = UIImage(named: "Walkthrough1.png"),
+            let two = UIImage(named: "Walkthrough2.png"),
+            let three = UIImage(named: "Walkthrough3.png") else {
+                return []
+        }
+
+        return [one, two, three]
+    }()
+
+    private(set) lazy var calibrationImages: [UIImage] = {
+        guard let one = UIImage(named: "Calibration1.png"),
+            let two = UIImage(named: "Calibration2.png") else {
+                return []
+        }
+
+        return [one, two]
+    }()
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        setup()
+        setupBackground()
+        setupScrollView()
+    }
+
+}
+
+// MARK: - Setup
+
+extension TutorialViewController {
+
+    func setup() {
+        if let bool = isTutorial {
+            orderedImages = bool ? tutorialImages : calibrationImages
+            pageControl.numberOfPages = orderedImages.count
         }
     }
 
-    @IBAction func didPressPrev(_ sender: Any) {
-        pageControl.currentPage -= 1
+    func setupBackground() {
+        for i in 0..<orderedImages.count {
+            let imageView = UIView(frame: CGRect(x: CGFloat(i)*view.frame.width,
+                                                 y: 0,
+                                                 width: view.frame.width,
+                                                 height: view.frame.height))
+            imageView.addSubview(UIImageView(image: orderedImages[i]))
+            scrollView.addSubview(imageView)
 
-        pageViewController.go(to: pageControl.currentPage, direction: .reverse)
-        reevaluateLayout()
+        }
     }
 
-
-    @IBAction func didPressNext(_ sender: Any) {
-        if pageControl.currentPage == pageControl.numberOfPages - 1 {
-            pageViewController.done()
-        } else {
-            pageControl.currentPage += 1
-
-            pageViewController.go(to: pageControl.currentPage, direction: .forward)
-            reevaluateLayout()
-        }
+    func setupScrollView() {
+        scrollView.delegate = self
+        scrollView.contentSize = CGSize(width: view.frame.width * CGFloat(orderedImages.count), height: view.frame.height)
     }
 
 }
 
 // MARK: - Helpers
 
-private extension TutorialViewController {
+extension TutorialViewController {
 
     func reevaluateLayout() {
         prevButton.isHidden = pageControl.currentPage == 0
@@ -53,20 +88,39 @@ private extension TutorialViewController {
 
 }
 
-// MARK: - Embed Segue
+// MARK: - Actions
 
 extension TutorialViewController {
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == SegueIdentifier.Embed.rawValue {
-            guard let pvc = segue.destination as? TutorialPageViewController else {
-                return
-            }
+    @IBAction func didPressPrev(_ sender: Any) {
+        go(to: pageControl.currentPage - 1)
+    }
 
-            pageViewController = pvc
-        } else {
-            super.prepare(for: segue, sender: sender)
-        }
+
+    @IBAction func didPressNext(_ sender: Any) {
+        pageControl.currentPage == pageControl.numberOfPages - 1 ?
+            done() :
+            go(to: pageControl.currentPage + 1)
+    }
+
+    private func done() {
+        dismiss(animated: true, completion: nil)
+    }
+
+    func go(to page: Int) {
+        scrollView.setContentOffset(CGPoint(x: CGFloat(page)*view.frame.width, y: 0), animated: true)
+    }
+
+}
+
+// MARK: - UIScrollViewDelegate
+
+extension TutorialViewController: UIScrollViewDelegate {
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let page = scrollView.contentOffset.x/view.frame.width
+        pageControl.currentPage = Int(page)
+        reevaluateLayout()
     }
 
 }

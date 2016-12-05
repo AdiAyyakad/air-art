@@ -17,7 +17,11 @@ struct Paint {
     var alpha: CGFloat
     var brushSize: CGFloat
 
-    func getUIColor() -> UIColor {
+    var uiColor: UIColor {
         return UIColor(red: red, green: green, blue: blue, alpha: alpha)
+    }
+
+    var cgColor: CGColor {
+        return uiColor.cgColor
     }
 }

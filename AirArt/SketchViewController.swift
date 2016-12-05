@@ -56,7 +56,7 @@ extension SketchViewController {
 
         context.setLineCap(.round)
         context.setLineWidth(paint.brushSize)
-        context.setStrokeColor(paint.getUIColor().cgColor)
+        context.setStrokeColor(paint.cgColor)
         context.setBlendMode(.normal)
 
         context.strokePath()

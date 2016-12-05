@@ -8,12 +8,6 @@
 
 import UIKit
 
-enum SegueIdentifier: String {
-    case Tutorial = "Tutorial Segue"
-    case Calibration = "Calibration Segue"
-    case Embed = "Embed Page View Controller Segue"
-}
-
 class MainViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

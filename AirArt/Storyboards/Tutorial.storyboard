@@ -21,13 +21,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mXN-5c-uSp">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xUd-st-tUl">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <connections>
-                                    <segue destination="Mni-if-6v5" kind="embed" identifier="Embed Page View Controller Segue" id="Bib-zk-arA"/>
-                                </connections>
-                            </containerView>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </scrollView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Kvy-er-my8">
                                 <rect key="frame" x="168" y="522" width="39" height="37"/>
                                 <color key="pageIndicatorTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -68,171 +65,12 @@
                         <outlet property="nextButton" destination="xuc-Fp-27f" id="1BN-cu-Cfh"/>
                         <outlet property="pageControl" destination="Kvy-er-my8" id="vgT-08-ePX"/>
                         <outlet property="prevButton" destination="wmI-d8-3bo" id="mdP-YU-JRC"/>
+                        <outlet property="scrollView" destination="xUd-st-tUl" id="dR7-QJ-Pq4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jox-bo-HSk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="194" y="796"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="Z9V-rv-9Ym">
-            <objects>
-                <viewController storyboardIdentifier="Second Calibration" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ba0-hQ-lxV" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="5Lj-gu-qsQ"/>
-                        <viewControllerLayoutGuide type="bottom" id="yNF-Ih-8SU"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="XlM-1i-RQt">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Calibration2.png" translatesAutoresizingMaskIntoConstraints="NO" id="zgs-WR-NpH">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="zgs-WR-NpH" firstAttribute="centerX" secondItem="XlM-1i-RQt" secondAttribute="centerX" id="Cvb-OB-Kj3"/>
-                            <constraint firstItem="zgs-WR-NpH" firstAttribute="height" secondItem="XlM-1i-RQt" secondAttribute="height" id="TAf-7f-cpt"/>
-                            <constraint firstItem="zgs-WR-NpH" firstAttribute="width" secondItem="XlM-1i-RQt" secondAttribute="width" id="ba6-iD-aev"/>
-                            <constraint firstItem="zgs-WR-NpH" firstAttribute="centerY" secondItem="XlM-1i-RQt" secondAttribute="centerY" id="j6y-My-vd5"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6ZR-Jp-dW2" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1321" y="2258"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="bfY-ZB-0Qa">
-            <objects>
-                <viewController storyboardIdentifier="Second Tutorial" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cff-NU-07p" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="7ja-jh-7pV"/>
-                        <viewControllerLayoutGuide type="bottom" id="WMQ-Hk-fP0"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="pao-W7-BZp">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Walkthrough2.png" translatesAutoresizingMaskIntoConstraints="NO" id="CHd-6F-2uA">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="CHd-6F-2uA" firstAttribute="centerX" secondItem="pao-W7-BZp" secondAttribute="centerX" id="8Dw-sL-kGa"/>
-                            <constraint firstItem="CHd-6F-2uA" firstAttribute="height" secondItem="pao-W7-BZp" secondAttribute="height" id="8Pc-hc-5hc"/>
-                            <constraint firstItem="CHd-6F-2uA" firstAttribute="centerY" secondItem="pao-W7-BZp" secondAttribute="centerY" id="DJb-vO-gOA"/>
-                            <constraint firstItem="CHd-6F-2uA" firstAttribute="width" secondItem="pao-W7-BZp" secondAttribute="width" id="q8b-p3-w0q"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FpX-et-V8r" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="961" y="1566"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="arj-lg-WnL">
-            <objects>
-                <viewController storyboardIdentifier="Third Tutorial" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Spu-Tf-Tcp" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="xZx-4i-EdA"/>
-                        <viewControllerLayoutGuide type="bottom" id="jvm-jR-Zos"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="jBA-M3-PVx">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Walkthrough3.png" translatesAutoresizingMaskIntoConstraints="NO" id="htc-oZ-EMa">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="htc-oZ-EMa" firstAttribute="height" secondItem="jBA-M3-PVx" secondAttribute="height" id="7tT-25-VUt"/>
-                            <constraint firstItem="htc-oZ-EMa" firstAttribute="centerY" secondItem="jBA-M3-PVx" secondAttribute="centerY" id="Xd3-xh-fQu"/>
-                            <constraint firstItem="htc-oZ-EMa" firstAttribute="centerX" secondItem="jBA-M3-PVx" secondAttribute="centerX" id="hv3-JC-oLm"/>
-                            <constraint firstItem="htc-oZ-EMa" firstAttribute="width" secondItem="jBA-M3-PVx" secondAttribute="width" id="myZ-KY-Enh"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ii1-0O-ETQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1730" y="1566"/>
-        </scene>
-        <!--Tutorial Page View Controller-->
-        <scene sceneID="NTR-GJ-fXh">
-            <objects>
-                <pageViewController storyboardIdentifier="Tutorial" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Mni-if-6v5" customClass="TutorialPageViewController" customModule="AirArt" customModuleProvider="target" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ji6-QH-sdq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="962" y="796"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="cND-6V-Gvy">
-            <objects>
-                <viewController storyboardIdentifier="First Calibration" useStoryboardIdentifierAsRestorationIdentifier="YES" id="IjO-7m-Sam" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jhw-en-NCd"/>
-                        <viewControllerLayoutGuide type="bottom" id="KCC-1h-MSa"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kZC-xj-60T">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Calibration1.png" translatesAutoresizingMaskIntoConstraints="NO" id="VKn-5w-MgN">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="VKn-5w-MgN" firstAttribute="height" secondItem="kZC-xj-60T" secondAttribute="height" id="WNs-L6-0bJ"/>
-                            <constraint firstItem="VKn-5w-MgN" firstAttribute="centerX" secondItem="kZC-xj-60T" secondAttribute="centerX" id="hTS-cC-K1J"/>
-                            <constraint firstItem="VKn-5w-MgN" firstAttribute="centerY" secondItem="kZC-xj-60T" secondAttribute="centerY" id="kH5-bM-gtL"/>
-                            <constraint firstItem="VKn-5w-MgN" firstAttribute="width" secondItem="kZC-xj-60T" secondAttribute="width" id="ni0-K0-mv9"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ilt-qn-aDo" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="594" y="2259"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="8om-5l-WOv">
-            <objects>
-                <viewController storyboardIdentifier="First Tutorial" useStoryboardIdentifierAsRestorationIdentifier="YES" id="r5P-gf-UhK" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="j4i-Du-aap"/>
-                        <viewControllerLayoutGuide type="bottom" id="Dcv-LJ-qgZ"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="6fb-3o-izb">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Walkthrough1.png" translatesAutoresizingMaskIntoConstraints="NO" id="tgM-CG-bur">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="tgM-CG-bur" firstAttribute="centerX" secondItem="6fb-3o-izb" secondAttribute="centerX" id="7ZJ-y5-zDv"/>
-                            <constraint firstItem="tgM-CG-bur" firstAttribute="height" secondItem="6fb-3o-izb" secondAttribute="height" id="Faa-mZ-sUv"/>
-                            <constraint firstItem="tgM-CG-bur" firstAttribute="width" secondItem="6fb-3o-izb" secondAttribute="width" id="QbI-6a-QOt"/>
-                            <constraint firstItem="tgM-CG-bur" firstAttribute="centerY" secondItem="6fb-3o-izb" secondAttribute="centerY" id="TOv-y2-CC2"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="96z-of-0fd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="192.80000000000001" y="1565.6671664167918"/>
+            <point key="canvasLocation" x="192.80000000000001" y="795.6521739130435"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Calibration1.png" width="375" height="667"/>
-        <image name="Calibration2.png" width="375" height="667"/>
-        <image name="Walkthrough1.png" width="375" height="667"/>
-        <image name="Walkthrough2.png" width="375" height="667"/>
-        <image name="Walkthrough3.png" width="375" height="667"/>
-    </resources>
 </document>
