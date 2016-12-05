@@ -14,6 +14,7 @@ class TutorialViewController: UIViewController {
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var skipButton: UIButton!
 
     var isTutorial: Bool!
     var orderedImages: [UIImage] = []
@@ -55,6 +56,7 @@ extension TutorialViewController {
         if let bool = isTutorial {
             orderedImages = bool ? tutorialImages : calibrationImages
             pageControl.numberOfPages = orderedImages.count
+            skipButton.isHidden = !bool
         }
     }
 
@@ -101,6 +103,10 @@ extension TutorialViewController {
         pageControl.currentPage == pageControl.numberOfPages - 1 ?
             done() :
             go(to: pageControl.currentPage + 1)
+    }
+
+    @IBAction func didPressSkip(_ sender: Any) {
+        done()
     }
 
     private func done() {
