@@ -42,6 +42,7 @@ class TutorialViewController: UIViewController {
 
         setup()
         setupBackground()
+        setupScrollView()
     }
 
 }
@@ -55,18 +56,9 @@ extension TutorialViewController {
             orderedImages = bool ? tutorialImages : calibrationImages
             pageControl.numberOfPages = orderedImages.count
         }
-
-        scrollView.alwaysBounceVertical = false
-        scrollView.showsVerticalScrollIndicator = false
-        scrollView.showsHorizontalScrollIndicator = false
     }
 
     func setupBackground() {
-        scrollView.frame = CGRect(x: 0,
-                                  y: 0,
-                                  width: CGFloat(orderedImages.count)*view.frame.width,
-                                  height: view.frame.height)
-
         for i in 0..<orderedImages.count {
             let imageView = UIView(frame: CGRect(x: CGFloat(i)*view.frame.width,
                                                  y: 0,
@@ -76,6 +68,11 @@ extension TutorialViewController {
             scrollView.addSubview(imageView)
 
         }
+    }
+
+    func setupScrollView() {
+        scrollView.delegate = self
+        scrollView.contentSize = CGSize(width: view.frame.width * CGFloat(orderedImages.count), height: view.frame.height)
     }
 
 }
@@ -96,30 +93,34 @@ extension TutorialViewController {
 extension TutorialViewController {
 
     @IBAction func didPressPrev(_ sender: Any) {
-        pageControl.currentPage -= 1
-
-        go(to: pageControl.currentPage)
-        reevaluateLayout()
+        go(to: pageControl.currentPage - 1)
     }
 
 
     @IBAction func didPressNext(_ sender: Any) {
-        if pageControl.currentPage == pageControl.numberOfPages - 1 {
-            done()
-        } else {
-            pageControl.currentPage += 1
-
-            go(to: pageControl.currentPage)
-            reevaluateLayout()
-        }
+        pageControl.currentPage == pageControl.numberOfPages - 1 ?
+            done() :
+            go(to: pageControl.currentPage + 1)
     }
 
     private func done() {
         dismiss(animated: true, completion: nil)
     }
 
-    private func go(to page: Int) {
+    func go(to page: Int) {
         scrollView.setContentOffset(CGPoint(x: CGFloat(page)*view.frame.width, y: 0), animated: true)
+    }
+
+}
+
+// MARK: - UIScrollViewDelegate
+
+extension TutorialViewController: UIScrollViewDelegate {
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let page = scrollView.contentOffset.x/view.frame.width
+        pageControl.currentPage = Int(page)
+        reevaluateLayout()
     }
 
 }
