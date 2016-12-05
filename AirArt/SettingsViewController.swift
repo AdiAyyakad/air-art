@@ -15,7 +15,7 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var blueSlider: UISlider!
     @IBOutlet weak var alphaSlider: UISlider!
     @IBOutlet weak var brushSizeSlider: UISlider!
-    @IBOutlet weak var previewView: UIImageView!
+    @IBOutlet weak var previewView: BrushPreview!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +34,9 @@ class SettingsViewController: UIViewController {
 
         brushSizeSlider.value = Float(Paint.currentPaint.brushSize)
         brushSizeSlider.addTarget(self, action: #selector(brushSizeDidChange), for: .valueChanged)
+        
+        // Update the brush preview
+        previewView.update()
     }
 
 }
@@ -48,22 +51,27 @@ extension SettingsViewController {
 
     func redDidChange() {
         Paint.currentPaint.red = CGFloat(redSlider.value)
+        previewView.update()
     }
 
     func greenDidChange() {
         Paint.currentPaint.green = CGFloat(greenSlider.value)
+        previewView.update()
     }
 
     func blueDidChange() {
         Paint.currentPaint.blue = CGFloat(blueSlider.value)
+        previewView.update()
     }
 
     func alphaDidChange() {
         Paint.currentPaint.alpha = CGFloat(alphaSlider.value)
+        previewView.update()
     }
 
     func brushSizeDidChange() {
         Paint.currentPaint.brushSize = CGFloat(brushSizeSlider.value)
+        previewView.update()
     }
 
     func updatePreview() {

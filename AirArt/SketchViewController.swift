@@ -43,7 +43,6 @@ extension SketchViewController {
     }
 
     func drawLineFrom(fromPoint: CGPoint, toPoint: CGPoint) {
-
         UIGraphicsBeginImageContext(view.frame.size)
         guard let context = UIGraphicsGetCurrentContext() else {
             UIGraphicsEndImageContext()
