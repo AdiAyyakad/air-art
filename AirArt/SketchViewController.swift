@@ -82,6 +82,11 @@ extension SketchViewController {
         sketchView.undo()
     }
 
+    @IBAction func didPressSave(_ sender: Any) {
+        let image = UIImage(view: sketchView)
+        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+    }
+
     @IBAction func didPressRedo(_ sender: Any) {
         sketchView.redo()
     }
