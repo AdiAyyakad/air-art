@@ -8,20 +8,107 @@
 
 import UIKit
 import CoreGraphics
+import CoreMotion
 
 class SketchViewController: UIViewController {
 
     @IBOutlet weak var sketchView: SketchView!
+
+    let scale = 10.0
     var path = UIBezierPath()
+    var touch: CGPoint = .zero
+    var presentedTutorial = false
+    let motionManager = CMMotionManager()
+
+    var initialXAccel: Double!
+    var initialYAccel: Double!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let pan = UIPanGestureRecognizer(target: self, action: #selector(panDraw(_:)))
-        pan.minimumNumberOfTouches = 1
-        pan.maximumNumberOfTouches = 1
+        setupMotion()
+    }
 
-        sketchView.addGestureRecognizer(pan)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        /*
+        if !UserDefaults.standard.bool(forKey: UserDefaultsKeys.PresentedTutorial.rawValue) {
+            presentTutorial()
+            UserDefaults.standard.set(true, forKey: UserDefaultsKeys.PresentedTutorial.rawValue)
+        }
+         */
+
+        if !presentedTutorial {
+            presentTutorial()
+            presentedTutorial = true
+        }
+    }
+
+}
+
+// MARK: - Setup
+
+extension SketchViewController {
+
+    func setupMotion() {
+        motionManager.accelerometerUpdateInterval = 0.1
+    }
+
+}
+
+// MARK: - Accelerometer Data Handler
+
+extension SketchViewController {
+
+    func beginGettingData() {
+        guard let queue = OperationQueue.current else {
+            NSLog("No operation queue")
+            return
+        }
+
+        DLog("Begin getting data")
+        path = UIBezierPath()
+        path.move(to: touch)
+        path.lineCapStyle = .round
+
+        sketchView.add(path: path, paint: Paint.currentPaint)
+
+        motionManager.startAccelerometerUpdates(to: queue, withHandler: handler)
+    }
+
+    func endGettingData() {
+        DLog("End getting data")
+        initialXAccel = nil
+        initialYAccel = nil
+
+        motionManager.stopAccelerometerUpdates()
+    }
+
+    private func handler(data: CMAccelerometerData?, error: Error?) {
+        guard let accelerationData = data else {
+            DLog("Error receiving accelerometer data: \(error!)")
+            return
+        }
+
+        handleData(accelerationData.acceleration)
+    }
+
+    private func handleData(_ acceleration: CMAcceleration) {
+        if initialXAccel == nil || initialYAccel == nil {
+            initialXAccel = acceleration.x
+            initialYAccel = acceleration.y
+        }
+
+        let deltaX = (acceleration.x - initialXAccel) * scale
+        let deltaY = (acceleration.y - initialYAccel) * scale
+
+        let nextPoint = CGPoint(x: touch.x+CGFloat(deltaX), y: touch.y+CGFloat(deltaY))
+
+        path.addLine(to: nextPoint)
+        touch = nextPoint
+
+        sketchView.setNeedsDisplay()
     }
     
     @IBAction func didPressEdit(_ sender: AnyObject) {
@@ -37,7 +124,18 @@ class SketchViewController: UIViewController {
 extension SketchViewController {
 
     @IBAction func didPressDone(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        let alert = UIAlertController(title: "Confirmation", message: "Are you sure you want to save your image?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { [unowned self] action in
+            guard let image = UIImage(view: self.sketchView) else {
+                DLog("Could not convert image to view")
+                return
+            }
+
+            UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+
+        present(alert, animated: true, completion: nil)
     }
 
     @IBAction func didPressUndo(_ sender: Any) {
@@ -45,38 +143,37 @@ extension SketchViewController {
     }
     
 
-    @IBAction func didPressSave(_ sender: Any) {
-        let image = UIImage(view: sketchView)
-        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
-    }
-
     @IBAction func didPressRedo(_ sender: Any) {
         sketchView.redo()
     }
 
+    @IBAction func didPressClose(_ sender: Any) {
+        let alert = UIAlertController(title: "Confirmation", message: "Are you sure you want to save your image?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { [unowned self] action in
+            self.sketchView.clear()
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+
+        present(alert, animated: true, completion: nil)
+    }
+
 }
 
-// MARK: - UIPanGestureRecognizer
+// MARK: - UITapGestureRecognizer
 
 extension SketchViewController {
 
-    func panDraw(_ pan: UIPanGestureRecognizer) {
-        let currentPoint = pan.location(in: view)
-
-        switch pan.state {
-        case .began:
-            path = UIBezierPath()
-            path.lineCapStyle = .round
-
-            sketchView.add(path: path, paint: Paint.currentPaint)
-            path.move(to: currentPoint)
-        case .changed:
-            path.addLine(to: currentPoint)
-        default:
-            break
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let touchDown = touches.first else {
+            return
         }
 
-        sketchView.setNeedsDisplay()
+        touch = touchDown.location(in: view)
+        beginGettingData()
+    }
+
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        endGettingData()
     }
 
 }

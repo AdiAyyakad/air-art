@@ -80,7 +80,6 @@ extension UIImageView {
     
     func updatePreview() {
         var paint: Paint { return Paint.currentPaint }
-
         
         UIGraphicsBeginImageContext(frame.size)
         

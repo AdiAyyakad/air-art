@@ -10,11 +10,21 @@ import Foundation
 import UIKit
 
 extension UIImage {
-    convenience init(view: UIView) {
+
+    convenience init?(view: UIView) {
+
         UIGraphicsBeginImageContext(view.frame.size)
+
         view.layer.render(in: UIGraphicsGetCurrentContext()!)
         let image = UIGraphicsGetImageFromCurrentImageContext()
+
         UIGraphicsEndImageContext()
-        self.init(cgImage: (image?.cgImage)!)
+
+        guard let img = image else {
+            return nil
+        }
+
+        self.init(cgImage: (img.cgImage)!)
     }
+
 }

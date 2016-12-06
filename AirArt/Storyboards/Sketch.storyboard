@@ -23,55 +23,66 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nsS-yj-RHt" customClass="SketchView" customModule="AirArt" customModuleProvider="target">
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3vd-Sm-Yf5">
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="86" id="Q4n-dB-40h"/>
-                                            <constraint firstAttribute="height" constant="50" id="kaY-FP-vJS"/>
-                                        </constraints>
+                                        <rect key="frame" x="309" y="601" width="58" height="58"/>
+                                        <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
                                         <state key="normal" image="doneButton.png"/>
                                         <connections>
                                             <action selector="didPressDone:" destination="jTf-aI-2Vm" eventType="touchUpInside" id="nS0-Id-Bmi"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13Q-a5-ufF">
+                                        <rect key="frame" x="8" y="74" width="36" height="38"/>
+                                        <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
+                                        <state key="normal" image="settingsButton.png"/>
+                                        <connections>
+                                            <segue destination="m5c-dN-7Si" kind="presentation" id="EZc-gc-ffV"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Svn-5u-hFC">
+                                        <rect key="frame" x="331" y="29" width="36" height="36"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="36" id="2gH-y4-vRg"/>
+                                            <constraint firstAttribute="width" secondItem="Svn-5u-hFC" secondAttribute="height" multiplier="1:1" id="6cV-rw-bgS"/>
+                                        </constraints>
+                                        <inset key="contentEdgeInsets" minX="4" minY="4" maxX="4" maxY="4"/>
+                                        <state key="normal" image="closeButton.png"/>
+                                        <connections>
+                                            <action selector="didPressClose:" destination="jTf-aI-2Vm" eventType="touchUpInside" id="9Gm-px-ZbZ"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bvx-gu-8Pe">
+                                        <rect key="frame" x="44" y="28" width="36" height="38"/>
+                                        <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
                                         <state key="normal" image="redoButton.png"/>
                                         <connections>
                                             <action selector="didPressRedo:" destination="jTf-aI-2Vm" eventType="touchUpInside" id="NT9-Li-AoJ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0AO-XH-Ilf">
+                                        <rect key="frame" x="8" y="28" width="36" height="38"/>
+                                        <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
                                         <state key="normal" image="undoButton.png"/>
                                         <connections>
                                             <action selector="didPressUndo:" destination="jTf-aI-2Vm" eventType="touchUpInside" id="JFy-9g-q9f"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13Q-a5-ufF">
-                                        <state key="normal" image="settingsButton.png"/>
-                                        <connections>
-                                            <action selector="didPressEdit:" destination="jTf-aI-2Vm" eventType="touchUpInside" id="S8E-xX-9v2"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QrI-Q6-IyW">
-                                        <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
-                                        <state key="normal" title="Save"/>
-                                        <connections>
-                                            <action selector="didPressSave:" destination="jTf-aI-2Vm" eventType="touchUpInside" id="ehT-tM-oeJ"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="0AO-XH-Ilf" firstAttribute="baseline" secondItem="bvx-gu-8Pe" secondAttribute="baseline" id="9cY-v8-0AN"/>
-                                    <constraint firstItem="13Q-a5-ufF" firstAttribute="top" secondItem="nsS-yj-RHt" secondAttribute="top" constant="29" id="AhR-EE-nfA"/>
+                                    <constraint firstItem="0AO-XH-Ilf" firstAttribute="centerX" secondItem="13Q-a5-ufF" secondAttribute="centerX" id="2dE-YO-zkM"/>
                                     <constraint firstItem="3vd-Sm-Yf5" firstAttribute="bottom" secondItem="nsS-yj-RHt" secondAttribute="bottomMargin" id="Bs8-KM-CeC"/>
-                                    <constraint firstAttribute="bottomMargin" secondItem="QrI-Q6-IyW" secondAttribute="bottom" id="Cej-bN-lHP"/>
+                                    <constraint firstItem="bvx-gu-8Pe" firstAttribute="width" secondItem="0AO-XH-Ilf" secondAttribute="width" id="Hlm-qx-zBa"/>
+                                    <constraint firstItem="Svn-5u-hFC" firstAttribute="width" secondItem="bvx-gu-8Pe" secondAttribute="width" id="Jg2-7U-YUn"/>
                                     <constraint firstAttribute="leadingMargin" secondItem="13Q-a5-ufF" secondAttribute="leading" id="LFb-BH-o0g"/>
-                                    <constraint firstItem="13Q-a5-ufF" firstAttribute="top" secondItem="0AO-XH-Ilf" secondAttribute="top" id="N13-dx-JGL"/>
-                                    <constraint firstAttribute="trailing" secondItem="bvx-gu-8Pe" secondAttribute="trailing" constant="17" id="R8A-V6-omV"/>
-                                    <constraint firstItem="0AO-XH-Ilf" firstAttribute="firstBaseline" secondItem="bvx-gu-8Pe" secondAttribute="firstBaseline" id="XjB-GE-AeJ"/>
+                                    <constraint firstItem="Svn-5u-hFC" firstAttribute="centerY" secondItem="bvx-gu-8Pe" secondAttribute="centerY" id="QWK-Am-hj6"/>
+                                    <constraint firstItem="0AO-XH-Ilf" firstAttribute="centerY" secondItem="bvx-gu-8Pe" secondAttribute="centerY" id="U3S-YN-k89"/>
+                                    <constraint firstItem="0AO-XH-Ilf" firstAttribute="leading" secondItem="nsS-yj-RHt" secondAttribute="leadingMargin" id="XCX-k6-Jyw"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="Svn-5u-hFC" secondAttribute="trailing" id="ZDp-ce-oxq"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="3vd-Sm-Yf5" secondAttribute="trailing" id="ZsJ-np-To2"/>
-                                    <constraint firstItem="bvx-gu-8Pe" firstAttribute="leading" secondItem="0AO-XH-Ilf" secondAttribute="trailing" constant="17" id="b15-RX-XYo"/>
-                                    <constraint firstItem="QrI-Q6-IyW" firstAttribute="leading" secondItem="nsS-yj-RHt" secondAttribute="leadingMargin" id="bms-j2-F3M"/>
-                                    <constraint firstItem="13Q-a5-ufF" firstAttribute="baseline" secondItem="0AO-XH-Ilf" secondAttribute="baseline" id="jiX-g0-7eu"/>
+                                    <constraint firstItem="bvx-gu-8Pe" firstAttribute="leading" secondItem="0AO-XH-Ilf" secondAttribute="trailing" id="b15-RX-XYo"/>
+                                    <constraint firstItem="0AO-XH-Ilf" firstAttribute="top" secondItem="nsS-yj-RHt" secondAttribute="top" constant="28" id="eN7-W3-1Q0"/>
+                                    <constraint firstItem="0AO-XH-Ilf" firstAttribute="width" secondItem="13Q-a5-ufF" secondAttribute="width" id="vk6-x2-r3j"/>
+                                    <constraint firstItem="13Q-a5-ufF" firstAttribute="top" secondItem="0AO-XH-Ilf" secondAttribute="bottom" constant="8" id="wvN-e5-hGj"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -89,7 +100,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yfn-m5-ufv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137" y="-90"/>
+            <point key="canvasLocation" x="136.80000000000001" y="-90.404797601199405"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="NUS-5w-yJh">
@@ -196,18 +207,18 @@
                             <constraint firstItem="Hae-cG-PFT" firstAttribute="trailing" secondItem="1fd-KJ-02p" secondAttribute="trailingMargin" id="1dK-Qv-mZB"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Td6-OE-Ger" secondAttribute="trailing" id="4F5-JN-Ov3"/>
                             <constraint firstAttribute="leadingMargin" secondItem="Ca1-UT-tVn" secondAttribute="leading" id="4TH-KQ-7u6"/>
-                            <constraint firstItem="Hae-cG-PFT" firstAttribute="leading" secondItem="xkW-dM-LNj" secondAttribute="leading" id="4hA-TK-avO"/>
+                            <constraint firstItem="Hae-cG-PFT" firstAttribute="leading" secondItem="xkW-dM-LNj" secondAttribute="leading" constant="-4" id="4hA-TK-avO"/>
                             <constraint firstItem="G8i-QH-PlK" firstAttribute="top" secondItem="AlS-Js-DH6" secondAttribute="bottom" constant="8" id="5qX-K1-Efu"/>
                             <constraint firstItem="3la-if-GTO" firstAttribute="top" secondItem="Td6-OE-Ger" secondAttribute="bottom" constant="32" id="7S2-m5-cZ0"/>
                             <constraint firstItem="G8i-QH-PlK" firstAttribute="leading" secondItem="mox-ec-6xq" secondAttribute="leading" id="7o7-7W-YgV"/>
                             <constraint firstItem="Hae-cG-PFT" firstAttribute="leading" secondItem="1fd-KJ-02p" secondAttribute="leadingMargin" id="9sr-WT-yqf"/>
                             <constraint firstItem="xkW-dM-LNj" firstAttribute="trailing" secondItem="0Wr-Pn-qVf" secondAttribute="trailing" id="BPD-jc-Bb2"/>
-                            <constraint firstItem="AlS-Js-DH6" firstAttribute="leading" secondItem="1fd-KJ-02p" secondAttribute="leadingMargin" constant="6" id="DQU-ru-8Ub"/>
+                            <constraint firstItem="AlS-Js-DH6" firstAttribute="leading" secondItem="1fd-KJ-02p" secondAttribute="leadingMargin" constant="10" id="DQU-ru-8Ub"/>
                             <constraint firstItem="Td6-OE-Ger" firstAttribute="width" secondItem="Ca1-UT-tVn" secondAttribute="width" id="Hg0-FI-p8e"/>
                             <constraint firstItem="AlS-Js-DH6" firstAttribute="top" secondItem="0Wr-Pn-qVf" secondAttribute="bottom" constant="8" id="JNi-mz-RbB"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="xkW-dM-LNj" secondAttribute="trailing" constant="18" id="PnQ-OK-aVm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xkW-dM-LNj" secondAttribute="trailing" constant="14" id="PnQ-OK-aVm"/>
                             <constraint firstItem="mox-ec-6xq" firstAttribute="top" secondItem="G8i-QH-PlK" secondAttribute="bottom" constant="8" id="RIQ-bs-1Cj"/>
-                            <constraint firstItem="Ca1-UT-tVn" firstAttribute="top" secondItem="mox-ec-6xq" secondAttribute="bottom" constant="8" id="TRJ-rj-u0c"/>
+                            <constraint firstItem="Ca1-UT-tVn" firstAttribute="top" secondItem="mox-ec-6xq" secondAttribute="bottom" constant="32" id="TRJ-rj-u0c"/>
                             <constraint firstItem="AlS-Js-DH6" firstAttribute="leading" secondItem="G8i-QH-PlK" secondAttribute="leading" id="UFF-zT-fRv"/>
                             <constraint firstItem="OSt-uN-8uY" firstAttribute="leading" secondItem="1fd-KJ-02p" secondAttribute="leadingMargin" constant="17" id="X9v-qm-w6Y"/>
                             <constraint firstItem="G8i-QH-PlK" firstAttribute="trailing" secondItem="mox-ec-6xq" secondAttribute="trailing" id="dWI-M5-w4a"/>
@@ -218,9 +229,9 @@
                             <constraint firstItem="xkW-dM-LNj" firstAttribute="leading" secondItem="0Wr-Pn-qVf" secondAttribute="leading" id="j7o-MW-92x"/>
                             <constraint firstItem="Ca1-UT-tVn" firstAttribute="centerY" secondItem="Td6-OE-Ger" secondAttribute="centerY" id="q5p-il-Yaq"/>
                             <constraint firstItem="OSt-uN-8uY" firstAttribute="top" secondItem="4c6-Ge-GQX" secondAttribute="bottom" id="q6H-c2-ZmQ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="AlS-Js-DH6" secondAttribute="trailing" constant="12" id="xXA-D7-wXU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="AlS-Js-DH6" secondAttribute="trailing" constant="8" id="xXA-D7-wXU"/>
                             <constraint firstItem="Td6-OE-Ger" firstAttribute="leading" secondItem="Ca1-UT-tVn" secondAttribute="trailing" id="xgT-HH-udV"/>
-                            <constraint firstItem="0Wr-Pn-qVf" firstAttribute="leading" secondItem="Ca1-UT-tVn" secondAttribute="leading" id="zRt-xD-6lu"/>
+                            <constraint firstItem="0Wr-Pn-qVf" firstAttribute="leading" secondItem="Ca1-UT-tVn" secondAttribute="leading" constant="4" id="zRt-xD-6lu"/>
                         </constraints>
                     </view>
                     <connections>
@@ -463,6 +474,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="closeButton.png" width="48" height="48"/>
         <image name="doneButton.png" width="42" height="42"/>
         <image name="redoButton.png" width="20" height="19"/>
         <image name="settingsButton.png" width="17" height="18"/>

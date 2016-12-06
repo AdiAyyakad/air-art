@@ -27,15 +27,6 @@ extension UIViewController {
 
         present(cvc, animated: true, completion: nil)
     }
-    
-    func presentSketchView() {
-        guard let svc = initializeSketchView(isSketch: false) else {
-            DLog("Failed to display sketch view")
-            return
-        }
-        
-        present(svc, animated: true, completion: nil)
-    }
 
     private func initialize(isTutorial: Bool) -> UIViewController? {
         let storyboard = UIStoryboard(name: "Tutorial", bundle: nil)
@@ -46,16 +37,6 @@ extension UIViewController {
 
         tvc.isTutorial = isTutorial
         return tvc
-    }
-    
-    private func initializeSketchView(isSketch: Bool) -> UIViewController? {
-        let storyboard = UIStoryboard(name: "Sketch", bundle: nil)
-        
-        guard let svc = storyboard.instantiateInitialViewController() as? SketchViewController else {
-            return nil
-        }
-        
-        return svc
     }
 
 }
