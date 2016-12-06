@@ -25,12 +25,12 @@
 		40682BCF1DF76C1800F8E448 /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40682BCE1DF76C1800F8E448 /* UserDefaultsKeys.swift */; };
 		406FCAB01DEFD7FA00FCCF8F /* Calibration1.png in Resources */ = {isa = PBXBuildFile; fileRef = 406FCAAE1DEFD7FA00FCCF8F /* Calibration1.png */; };
 		406FCAB11DEFD7FA00FCCF8F /* Calibration2.png in Resources */ = {isa = PBXBuildFile; fileRef = 406FCAAF1DEFD7FA00FCCF8F /* Calibration2.png */; };
+		40822DEC1DF77F7800C1118E /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3A5951DF739EE00B3C4CB /* UIImageExtension.swift */; };
 		4084AF831DF66B050039ED61 /* BlockerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4084AF821DF66B050039ED61 /* BlockerView.swift */; };
 		40A0D3191D96F22D001024EF /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A0D3181D96F22D001024EF /* Point.swift */; };
 		40B0C9BB1DF06B3B004A31BA /* Sketch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40B0C9BA1DF06B3B004A31BA /* Sketch.storyboard */; };
 		40B0C9BD1DF06B56004A31BA /* SketchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B0C9BC1DF06B56004A31BA /* SketchViewController.swift */; };
 		40B0C9BF1DF06C77004A31BA /* Paint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B0C9BE1DF06C77004A31BA /* Paint.swift */; };
-		40B0C9C11DF07392004A31BA /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B0C9C01DF07392004A31BA /* SettingsViewController.swift */; };
 		40F1ECA51DF686D8005C5E19 /* SketchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F1ECA41DF686D8005C5E19 /* SketchView.swift */; };
 		40F1ECA71DF69415005C5E19 /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F1ECA61DF69415005C5E19 /* Path.swift */; };
 		7F3903DC1DF7329500644E8D /* doneButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3903D01DF7329500644E8D /* doneButton.png */; };
@@ -45,8 +45,8 @@
 		7F3903E51DF7329500644E8D /* undoButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3903D91DF7329500644E8D /* undoButton.png */; };
 		7F3903E61DF7329500644E8D /* undoButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3903DA1DF7329500644E8D /* undoButton@2x.png */; };
 		7F3903E71DF7329500644E8D /* undoButton@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3903DB1DF7329500644E8D /* undoButton@3x.png */; };
+		7F3903E91DF75AC600644E8D /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3903E81DF75AC500644E8D /* SettingsTableViewController.swift */; };
 		86A358D81DF49D8500715247 /* BrushPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A358D71DF49D8500715247 /* BrushPreview.swift */; };
-		FAF3A5961DF739EE00B3C4CB /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3A5951DF739EE00B3C4CB /* UIImageExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,7 +87,6 @@
 		40B0C9BA1DF06B3B004A31BA /* Sketch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Sketch.storyboard; path = Storyboards/Sketch.storyboard; sourceTree = "<group>"; };
 		40B0C9BC1DF06B56004A31BA /* SketchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SketchViewController.swift; sourceTree = "<group>"; };
 		40B0C9BE1DF06C77004A31BA /* Paint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Paint.swift; sourceTree = "<group>"; };
-		40B0C9C01DF07392004A31BA /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		40F1ECA41DF686D8005C5E19 /* SketchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SketchView.swift; sourceTree = "<group>"; };
 		40F1ECA61DF69415005C5E19 /* Path.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
 		7F3903D01DF7329500644E8D /* doneButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = doneButton.png; sourceTree = "<group>"; };
@@ -102,6 +101,7 @@
 		7F3903D91DF7329500644E8D /* undoButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = undoButton.png; sourceTree = "<group>"; };
 		7F3903DA1DF7329500644E8D /* undoButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "undoButton@2x.png"; sourceTree = "<group>"; };
 		7F3903DB1DF7329500644E8D /* undoButton@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "undoButton@3x.png"; sourceTree = "<group>"; };
+		7F3903E81DF75AC500644E8D /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		86A358D71DF49D8500715247 /* BrushPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrushPreview.swift; sourceTree = "<group>"; };
 		FAF3A5951DF739EE00B3C4CB /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -230,7 +230,7 @@
 			children = (
 				4045ED671DEF606500778376 /* TutorialViewController.swift */,
 				40B0C9BC1DF06B56004A31BA /* SketchViewController.swift */,
-				40B0C9C01DF07392004A31BA /* SettingsViewController.swift */,
+				7F3903E81DF75AC500644E8D /* SettingsTableViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -324,7 +324,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = Adi;
 				TargetAttributes = {
 					4011AFA11D96BA7300F7BE5B = {
@@ -434,10 +434,10 @@
 				40B0C9BD1DF06B56004A31BA /* SketchViewController.swift in Sources */,
 				40682BCF1DF76C1800F8E448 /* UserDefaultsKeys.swift in Sources */,
 				4067FC6F1DF65E9B00745F44 /* Macros.swift in Sources */,
-				FAF3A5961DF739EE00B3C4CB /* UIImageExtension.swift in Sources */,
+				40822DEC1DF77F7800C1118E /* UIImageExtension.swift in Sources */,
+				7F3903E91DF75AC600644E8D /* SettingsTableViewController.swift in Sources */,
 				40F1ECA71DF69415005C5E19 /* Path.swift in Sources */,
 				40A0D3191D96F22D001024EF /* Point.swift in Sources */,
-				40B0C9C11DF07392004A31BA /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

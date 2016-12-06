@@ -111,6 +111,12 @@ extension SketchViewController {
         sketchView.setNeedsDisplay()
     }
 
+    @IBAction func didPressEdit(_ sender: AnyObject) {
+        let storyboard = UIStoryboard(name: "Sketch", bundle: nil)
+        let NC = storyboard.instantiateViewController(withIdentifier: "SettingsNavigationController") as! UINavigationController
+        present(NC, animated: true, completion: nil)
+    }
+
 }
 
 // MARK: - Action
