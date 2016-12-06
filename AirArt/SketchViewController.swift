@@ -83,7 +83,11 @@ extension SketchViewController {
     }
 
     @IBAction func didPressSave(_ sender: Any) {
-        let image = UIImage(view: sketchView)
+        guard let image = UIImage(view: sketchView) else {
+            DLog("Could not convert image to view")
+            return
+        }
+
         UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
     }
 
