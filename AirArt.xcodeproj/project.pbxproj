@@ -31,6 +31,18 @@
 		40B0C9C11DF07392004A31BA /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B0C9C01DF07392004A31BA /* SettingsViewController.swift */; };
 		40F1ECA51DF686D8005C5E19 /* SketchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F1ECA41DF686D8005C5E19 /* SketchView.swift */; };
 		40F1ECA71DF69415005C5E19 /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F1ECA61DF69415005C5E19 /* Path.swift */; };
+		7F3903DC1DF7329500644E8D /* doneButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3903D01DF7329500644E8D /* doneButton.png */; };
+		7F3903DD1DF7329500644E8D /* doneButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3903D11DF7329500644E8D /* doneButton@2x.png */; };
+		7F3903DE1DF7329500644E8D /* doneButton@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3903D21DF7329500644E8D /* doneButton@3x.png */; };
+		7F3903DF1DF7329500644E8D /* redoButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3903D31DF7329500644E8D /* redoButton.png */; };
+		7F3903E01DF7329500644E8D /* redoButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3903D41DF7329500644E8D /* redoButton@2x.png */; };
+		7F3903E11DF7329500644E8D /* redoButton@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3903D51DF7329500644E8D /* redoButton@3x.png */; };
+		7F3903E21DF7329500644E8D /* settingsButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3903D61DF7329500644E8D /* settingsButton.png */; };
+		7F3903E31DF7329500644E8D /* settingsButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3903D71DF7329500644E8D /* settingsButton@2x.png */; };
+		7F3903E41DF7329500644E8D /* settingsButton@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3903D81DF7329500644E8D /* settingsButton@3x.png */; };
+		7F3903E51DF7329500644E8D /* undoButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3903D91DF7329500644E8D /* undoButton.png */; };
+		7F3903E61DF7329500644E8D /* undoButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3903DA1DF7329500644E8D /* undoButton@2x.png */; };
+		7F3903E71DF7329500644E8D /* undoButton@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3903DB1DF7329500644E8D /* undoButton@3x.png */; };
 		86A358D81DF49D8500715247 /* BrushPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A358D71DF49D8500715247 /* BrushPreview.swift */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +85,18 @@
 		40B0C9C01DF07392004A31BA /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		40F1ECA41DF686D8005C5E19 /* SketchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SketchView.swift; sourceTree = "<group>"; };
 		40F1ECA61DF69415005C5E19 /* Path.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
+		7F3903D01DF7329500644E8D /* doneButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = doneButton.png; sourceTree = "<group>"; };
+		7F3903D11DF7329500644E8D /* doneButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "doneButton@2x.png"; sourceTree = "<group>"; };
+		7F3903D21DF7329500644E8D /* doneButton@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "doneButton@3x.png"; sourceTree = "<group>"; };
+		7F3903D31DF7329500644E8D /* redoButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redoButton.png; sourceTree = "<group>"; };
+		7F3903D41DF7329500644E8D /* redoButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "redoButton@2x.png"; sourceTree = "<group>"; };
+		7F3903D51DF7329500644E8D /* redoButton@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "redoButton@3x.png"; sourceTree = "<group>"; };
+		7F3903D61DF7329500644E8D /* settingsButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settingsButton.png; sourceTree = "<group>"; };
+		7F3903D71DF7329500644E8D /* settingsButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settingsButton@2x.png"; sourceTree = "<group>"; };
+		7F3903D81DF7329500644E8D /* settingsButton@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settingsButton@3x.png"; sourceTree = "<group>"; };
+		7F3903D91DF7329500644E8D /* undoButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = undoButton.png; sourceTree = "<group>"; };
+		7F3903DA1DF7329500644E8D /* undoButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "undoButton@2x.png"; sourceTree = "<group>"; };
+		7F3903DB1DF7329500644E8D /* undoButton@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "undoButton@3x.png"; sourceTree = "<group>"; };
 		86A358D71DF49D8500715247 /* BrushPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrushPreview.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -176,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				4045ED571DEF4FF000778376 /* SplashScreen.png */,
+				7F3903CF1DF7329500644E8D /* AirArtButtons */,
 				406FCAB21DEFD80000FCCF8F /* Tutorial */,
 				406FCAB31DEFD80700FCCF8F /* Calibration */,
 				4011AFAC1D96BA7300F7BE5B /* Assets.xcassets */,
@@ -223,6 +248,25 @@
 				40F1ECA41DF686D8005C5E19 /* SketchView.swift */,
 			);
 			name = "Custom Views";
+			sourceTree = "<group>";
+		};
+		7F3903CF1DF7329500644E8D /* AirArtButtons */ = {
+			isa = PBXGroup;
+			children = (
+				7F3903D01DF7329500644E8D /* doneButton.png */,
+				7F3903D11DF7329500644E8D /* doneButton@2x.png */,
+				7F3903D21DF7329500644E8D /* doneButton@3x.png */,
+				7F3903D31DF7329500644E8D /* redoButton.png */,
+				7F3903D41DF7329500644E8D /* redoButton@2x.png */,
+				7F3903D51DF7329500644E8D /* redoButton@3x.png */,
+				7F3903D61DF7329500644E8D /* settingsButton.png */,
+				7F3903D71DF7329500644E8D /* settingsButton@2x.png */,
+				7F3903D81DF7329500644E8D /* settingsButton@3x.png */,
+				7F3903D91DF7329500644E8D /* undoButton.png */,
+				7F3903DA1DF7329500644E8D /* undoButton@2x.png */,
+				7F3903DB1DF7329500644E8D /* undoButton@3x.png */,
+			);
+			path = AirArtButtons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,17 +356,29 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F3903E61DF7329500644E8D /* undoButton@2x.png in Resources */,
 				406FCAB01DEFD7FA00FCCF8F /* Calibration1.png in Resources */,
 				4045ED5C1DEF4FF000778376 /* Walkthrough1.png in Resources */,
+				7F3903DF1DF7329500644E8D /* redoButton.png in Resources */,
 				4045ED5D1DEF4FF000778376 /* Walkthrough2.png in Resources */,
+				7F3903E41DF7329500644E8D /* settingsButton@3x.png in Resources */,
+				7F3903E01DF7329500644E8D /* redoButton@2x.png in Resources */,
+				7F3903DD1DF7329500644E8D /* doneButton@2x.png in Resources */,
+				7F3903E21DF7329500644E8D /* settingsButton.png in Resources */,
+				7F3903DC1DF7329500644E8D /* doneButton.png in Resources */,
+				7F3903E51DF7329500644E8D /* undoButton.png in Resources */,
 				40B0C9BB1DF06B3B004A31BA /* Sketch.storyboard in Resources */,
 				406FCAB11DEFD7FA00FCCF8F /* Calibration2.png in Resources */,
 				4011AFB01D96BA7300F7BE5B /* LaunchScreen.storyboard in Resources */,
 				4011AFAD1D96BA7300F7BE5B /* Assets.xcassets in Resources */,
 				4045ED5B1DEF4FF000778376 /* SplashScreen.png in Resources */,
+				7F3903E31DF7329500644E8D /* settingsButton@2x.png in Resources */,
 				4045ED561DEF4DEA00778376 /* Tutorial.storyboard in Resources */,
 				4045ED5E1DEF4FF000778376 /* Walkthrough3.png in Resources */,
+				7F3903E11DF7329500644E8D /* redoButton@3x.png in Resources */,
 				4011AFAB1D96BA7300F7BE5B /* Main.storyboard in Resources */,
+				7F3903DE1DF7329500644E8D /* doneButton@3x.png in Resources */,
+				7F3903E71DF7329500644E8D /* undoButton@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
