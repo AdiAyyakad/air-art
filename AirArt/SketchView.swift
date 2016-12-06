@@ -52,4 +52,9 @@ extension SketchView {
         setNeedsDisplay()
     }
 
+    func clear() {
+        paths = []
+        setNeedsDisplay()
+    }
+
 }

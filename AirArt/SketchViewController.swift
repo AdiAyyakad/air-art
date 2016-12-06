@@ -118,24 +118,36 @@ extension SketchViewController {
 extension SketchViewController {
 
     @IBAction func didPressDone(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        let alert = UIAlertController(title: "Confirmation", message: "Are you sure you want to save your image?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { [unowned self] action in
+            guard let image = UIImage(view: self.sketchView) else {
+                DLog("Could not convert image to view")
+                return
+            }
+
+            UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+
+        present(alert, animated: true, completion: nil)
     }
 
     @IBAction func didPressUndo(_ sender: Any) {
         sketchView.undo()
     }
 
-    @IBAction func didPressSave(_ sender: Any) {
-        guard let image = UIImage(view: sketchView) else {
-            DLog("Could not convert image to view")
-            return
-        }
-
-        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
-    }
-
     @IBAction func didPressRedo(_ sender: Any) {
         sketchView.redo()
+    }
+
+    @IBAction func didPressClose(_ sender: Any) {
+        let alert = UIAlertController(title: "Confirmation", message: "Are you sure you want to save your image?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { [unowned self] action in
+            self.sketchView.clear()
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+
+        present(alert, animated: true, completion: nil)
     }
 
 }

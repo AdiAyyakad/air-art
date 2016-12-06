@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -33,8 +34,28 @@
                                             <action selector="didPressDone:" destination="jTf-aI-2Vm" eventType="touchUpInside" id="nS0-Id-Bmi"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13Q-a5-ufF">
+                                        <rect key="frame" x="8" y="74" width="36" height="38"/>
+                                        <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
+                                        <state key="normal" image="settingsButton.png"/>
+                                        <connections>
+                                            <segue destination="m5c-dN-7Si" kind="presentation" id="EZc-gc-ffV"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Svn-5u-hFC">
+                                        <rect key="frame" x="331" y="29" width="36" height="36"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="36" id="2gH-y4-vRg"/>
+                                            <constraint firstAttribute="width" secondItem="Svn-5u-hFC" secondAttribute="height" multiplier="1:1" id="6cV-rw-bgS"/>
+                                        </constraints>
+                                        <inset key="contentEdgeInsets" minX="4" minY="4" maxX="4" maxY="4"/>
+                                        <state key="normal" image="closeButton.png"/>
+                                        <connections>
+                                            <action selector="didPressClose:" destination="jTf-aI-2Vm" eventType="touchUpInside" id="9Gm-px-ZbZ"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bvx-gu-8Pe">
-                                        <rect key="frame" x="322" y="28" width="36" height="38"/>
+                                        <rect key="frame" x="44" y="28" width="36" height="38"/>
                                         <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
                                         <state key="normal" image="redoButton.png"/>
                                         <connections>
@@ -42,42 +63,30 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0AO-XH-Ilf">
-                                        <rect key="frame" x="269" y="28" width="36" height="38"/>
+                                        <rect key="frame" x="8" y="28" width="36" height="38"/>
                                         <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
                                         <state key="normal" image="undoButton.png"/>
                                         <connections>
                                             <action selector="didPressUndo:" destination="jTf-aI-2Vm" eventType="touchUpInside" id="JFy-9g-q9f"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13Q-a5-ufF">
-                                        <rect key="frame" x="8" y="28" width="33" height="38"/>
-                                        <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
-                                        <state key="normal" image="settingsButton.png"/>
-                                        <connections>
-                                            <segue destination="m5c-dN-7Si" kind="presentation" id="EZc-gc-ffV"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QrI-Q6-IyW">
-                                        <rect key="frame" x="8" y="625" width="50" height="34"/>
-                                        <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
-                                        <state key="normal" title="Save"/>
-                                        <connections>
-                                            <action selector="didPressSave:" destination="jTf-aI-2Vm" eventType="touchUpInside" id="ehT-tM-oeJ"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="13Q-a5-ufF" firstAttribute="top" secondItem="nsS-yj-RHt" secondAttribute="top" constant="28" id="AhR-EE-nfA"/>
+                                    <constraint firstItem="0AO-XH-Ilf" firstAttribute="centerX" secondItem="13Q-a5-ufF" secondAttribute="centerX" id="2dE-YO-zkM"/>
                                     <constraint firstItem="3vd-Sm-Yf5" firstAttribute="bottom" secondItem="nsS-yj-RHt" secondAttribute="bottomMargin" id="Bs8-KM-CeC"/>
-                                    <constraint firstAttribute="bottomMargin" secondItem="QrI-Q6-IyW" secondAttribute="bottom" id="Cej-bN-lHP"/>
+                                    <constraint firstItem="bvx-gu-8Pe" firstAttribute="width" secondItem="0AO-XH-Ilf" secondAttribute="width" id="Hlm-qx-zBa"/>
+                                    <constraint firstItem="Svn-5u-hFC" firstAttribute="width" secondItem="bvx-gu-8Pe" secondAttribute="width" id="Jg2-7U-YUn"/>
                                     <constraint firstAttribute="leadingMargin" secondItem="13Q-a5-ufF" secondAttribute="leading" id="LFb-BH-o0g"/>
-                                    <constraint firstItem="13Q-a5-ufF" firstAttribute="centerY" secondItem="0AO-XH-Ilf" secondAttribute="centerY" id="Moo-6E-UdB"/>
-                                    <constraint firstAttribute="trailing" secondItem="bvx-gu-8Pe" secondAttribute="trailing" constant="17" id="R8A-V6-omV"/>
+                                    <constraint firstItem="Svn-5u-hFC" firstAttribute="centerY" secondItem="bvx-gu-8Pe" secondAttribute="centerY" id="QWK-Am-hj6"/>
                                     <constraint firstItem="0AO-XH-Ilf" firstAttribute="centerY" secondItem="bvx-gu-8Pe" secondAttribute="centerY" id="U3S-YN-k89"/>
+                                    <constraint firstItem="0AO-XH-Ilf" firstAttribute="leading" secondItem="nsS-yj-RHt" secondAttribute="leadingMargin" id="XCX-k6-Jyw"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="Svn-5u-hFC" secondAttribute="trailing" id="ZDp-ce-oxq"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="3vd-Sm-Yf5" secondAttribute="trailing" id="ZsJ-np-To2"/>
-                                    <constraint firstItem="bvx-gu-8Pe" firstAttribute="leading" secondItem="0AO-XH-Ilf" secondAttribute="trailing" constant="17" id="b15-RX-XYo"/>
-                                    <constraint firstItem="QrI-Q6-IyW" firstAttribute="leading" secondItem="nsS-yj-RHt" secondAttribute="leadingMargin" id="bms-j2-F3M"/>
+                                    <constraint firstItem="bvx-gu-8Pe" firstAttribute="leading" secondItem="0AO-XH-Ilf" secondAttribute="trailing" id="b15-RX-XYo"/>
+                                    <constraint firstItem="0AO-XH-Ilf" firstAttribute="top" secondItem="nsS-yj-RHt" secondAttribute="top" constant="28" id="eN7-W3-1Q0"/>
+                                    <constraint firstItem="0AO-XH-Ilf" firstAttribute="width" secondItem="13Q-a5-ufF" secondAttribute="width" id="vk6-x2-r3j"/>
+                                    <constraint firstItem="13Q-a5-ufF" firstAttribute="top" secondItem="0AO-XH-Ilf" secondAttribute="bottom" constant="8" id="wvN-e5-hGj"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -95,7 +104,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yfn-m5-ufv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137" y="-90"/>
+            <point key="canvasLocation" x="136.80000000000001" y="-90.404797601199405"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="NUS-5w-yJh">
@@ -251,6 +260,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="closeButton.png" width="48" height="48"/>
         <image name="doneButton.png" width="42" height="42"/>
         <image name="redoButton.png" width="20" height="19"/>
         <image name="settingsButton.png" width="17" height="18"/>
