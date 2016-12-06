@@ -26,15 +26,29 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bvx-gu-8Pe">
+                                <rect key="frame" x="187.5" y="28" width="86" height="30"/>
+                                <state key="normal" title="Redo"/>
+                                <connections>
+                                    <action selector="didPressRedo:" destination="jTf-aI-2Vm" eventType="touchUpInside" id="NT9-Li-AoJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0AO-XH-Ilf">
+                                <rect key="frame" x="102" y="28" width="85.5" height="30"/>
+                                <state key="normal" title="Undo"/>
+                                <connections>
+                                    <action selector="didPressUndo:" destination="jTf-aI-2Vm" eventType="touchUpInside" id="JFy-9g-q9f"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3vd-Sm-Yf5">
-                                <rect key="frame" x="322" y="20" width="37" height="30"/>
+                                <rect key="frame" x="273.5" y="28" width="85.5" height="30"/>
                                 <state key="normal" title="Done"/>
                                 <connections>
                                     <action selector="didPressDone:" destination="jTf-aI-2Vm" eventType="touchUpInside" id="nS0-Id-Bmi"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13Q-a5-ufF">
-                                <rect key="frame" x="16" y="20" width="57" height="30"/>
+                                <rect key="frame" x="16" y="28" width="86" height="30"/>
                                 <state key="normal" title="Settings"/>
                                 <connections>
                                     <segue destination="m5c-dN-7Si" kind="presentation" id="EZc-gc-ffV"/>
@@ -43,14 +57,22 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="13Q-a5-ufF" firstAttribute="top" secondItem="rN7-f5-zbR" secondAttribute="bottom" id="4Ui-zy-16j"/>
+                            <constraint firstItem="13Q-a5-ufF" firstAttribute="top" secondItem="rN7-f5-zbR" secondAttribute="bottom" constant="8" id="4Ui-zy-16j"/>
+                            <constraint firstItem="0AO-XH-Ilf" firstAttribute="width" secondItem="13Q-a5-ufF" secondAttribute="width" id="80i-8O-Txj"/>
                             <constraint firstItem="nsS-yj-RHt" firstAttribute="centerY" secondItem="Mxh-gR-Ulc" secondAttribute="centerY" id="Ahj-OI-hEy"/>
+                            <constraint firstItem="3vd-Sm-Yf5" firstAttribute="leading" secondItem="bvx-gu-8Pe" secondAttribute="trailing" id="Ds3-di-uhA"/>
+                            <constraint firstItem="0AO-XH-Ilf" firstAttribute="centerY" secondItem="13Q-a5-ufF" secondAttribute="centerY" id="P23-8C-vWA"/>
                             <constraint firstAttribute="trailingMargin" secondItem="3vd-Sm-Yf5" secondAttribute="trailing" id="Xwc-lj-Qo4"/>
-                            <constraint firstItem="3vd-Sm-Yf5" firstAttribute="top" secondItem="rN7-f5-zbR" secondAttribute="bottom" id="jde-1L-JVf"/>
+                            <constraint firstItem="0AO-XH-Ilf" firstAttribute="centerY" secondItem="bvx-gu-8Pe" secondAttribute="centerY" id="buL-hf-pd2"/>
+                            <constraint firstItem="0AO-XH-Ilf" firstAttribute="leading" secondItem="13Q-a5-ufF" secondAttribute="trailing" id="dY4-eb-rdP"/>
+                            <constraint firstItem="13Q-a5-ufF" firstAttribute="width" secondItem="3vd-Sm-Yf5" secondAttribute="width" id="hzK-LP-AA1"/>
+                            <constraint firstItem="bvx-gu-8Pe" firstAttribute="leading" secondItem="0AO-XH-Ilf" secondAttribute="trailing" id="mdW-0U-UcJ"/>
                             <constraint firstItem="nsS-yj-RHt" firstAttribute="centerX" secondItem="Mxh-gR-Ulc" secondAttribute="centerX" id="rGm-kT-zGa"/>
                             <constraint firstItem="nsS-yj-RHt" firstAttribute="height" secondItem="Mxh-gR-Ulc" secondAttribute="height" id="tfI-Hs-PYX"/>
                             <constraint firstAttribute="leadingMargin" secondItem="13Q-a5-ufF" secondAttribute="leading" id="vHG-lW-rH7"/>
+                            <constraint firstItem="3vd-Sm-Yf5" firstAttribute="centerY" secondItem="13Q-a5-ufF" secondAttribute="centerY" id="wcz-Ao-WQz"/>
                             <constraint firstItem="nsS-yj-RHt" firstAttribute="width" secondItem="Mxh-gR-Ulc" secondAttribute="width" id="wvS-jo-JFm"/>
+                            <constraint firstItem="13Q-a5-ufF" firstAttribute="width" secondItem="bvx-gu-8Pe" secondAttribute="width" id="zjc-pT-lio"/>
                         </constraints>
                     </view>
                     <connections>

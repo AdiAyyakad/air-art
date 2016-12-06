@@ -31,9 +31,15 @@ class SketchViewController: UIViewController {
 extension SketchViewController {
 
     @IBAction func didPressDone(_ sender: Any) {
-
         dismiss(animated: true, completion: nil)
+    }
 
+    @IBAction func didPressUndo(_ sender: Any) {
+        sketchView.undo()
+    }
+
+    @IBAction func didPressRedo(_ sender: Any) {
+        sketchView.redo()
     }
 
 }

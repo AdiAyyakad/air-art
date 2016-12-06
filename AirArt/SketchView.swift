@@ -27,6 +27,10 @@ class SketchView: UIView {
 extension SketchView {
 
     func add(path: UIBezierPath, paint: Paint) {
+        if !undonePaths.isEmpty {
+            undonePaths = []
+        }
+
         paths.append(Path(uiBezierPath: path, paint: Paint(paint: paint)))
     }
 
@@ -36,6 +40,7 @@ extension SketchView {
         }
 
         undonePaths.append(last)
+        setNeedsDisplay()
     }
 
     func redo() {
@@ -44,6 +49,7 @@ extension SketchView {
         }
 
         paths.append(last)
+        setNeedsDisplay()
     }
 
 }
