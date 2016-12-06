@@ -111,7 +111,7 @@ extension TutorialViewController {
     }
 
     private func done() {
-        dismiss(animated: false, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
 
     func go(to page: Int) {

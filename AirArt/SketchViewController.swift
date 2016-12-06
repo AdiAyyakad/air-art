@@ -110,7 +110,7 @@ extension SketchViewController {
 
         sketchView.setNeedsDisplay()
     }
-    
+
     @IBAction func didPressEdit(_ sender: AnyObject) {
         let storyboard = UIStoryboard(name: "Sketch", bundle: nil)
         let NC = storyboard.instantiateViewController(withIdentifier: "SettingsNavigationController") as! UINavigationController
@@ -141,7 +141,6 @@ extension SketchViewController {
     @IBAction func didPressUndo(_ sender: Any) {
         sketchView.undo()
     }
-    
 
     @IBAction func didPressRedo(_ sender: Any) {
         sketchView.redo()
