@@ -33,7 +33,7 @@ class SketchViewController: UIViewController {
 extension SketchViewController {
 
     func setupMotion() {
-        motionManager.accelerometerUpdateInterval = 0.2
+        motionManager.accelerometerUpdateInterval = 0.1
     }
 
 }
@@ -83,7 +83,7 @@ extension SketchViewController {
 
         let deltaX = (acceleration.x - initialXAccel) * scale
         let deltaY = (acceleration.y - initialYAccel) * scale
-        DLog("Deltas: \(deltaX), \(deltaY)")
+
         let nextPoint = CGPoint(x: touch.x+CGFloat(deltaX), y: touch.y+CGFloat(deltaY))
 
         path.addLine(to: nextPoint)
