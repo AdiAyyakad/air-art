@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct Paint {
+struct Paint: Equatable {
     public static var currentPaint: Paint = Paint(red: 0, green: 0, blue: 0, alpha: 1.0, brushSize: 10.0)
 
     var red: CGFloat
@@ -39,5 +39,9 @@ struct Paint {
         self.blue = paint.blue
         self.alpha = paint.alpha
         self.brushSize = paint.brushSize
+    }
+
+    public static func == (lhs: Paint, rhs: Paint) -> Bool {
+        return lhs.red == rhs.red && lhs.green == rhs.green && lhs.blue == rhs.blue && lhs.alpha == rhs.alpha && lhs.brushSize == rhs.brushSize
     }
 }

@@ -9,23 +9,41 @@
 import UIKit
 
 class SketchView: UIView {
-    var paths: [UIBezierPath] = []
-    var paints: [Paint] = []
+    var paths: [Path] = []
+    var undonePaths: [Path] = []
 
     override func draw(_ rect: CGRect) {
-        for i in 0..<paths.count {
-            let path = paths[i]
-            let paint = paints[i]
+        for pathStruct in paths {
+            let path = pathStruct.uiBezierPath
+            let paint = pathStruct.paint
 
             paint.uiColor.setStroke()
             path.lineWidth = paint.brushSize
             path.stroke()
         }
     }
+}
+
+extension SketchView {
 
     func add(path: UIBezierPath, paint: Paint) {
-        paths.append(path)
-        paints.append(Paint(paint: paint))
+        paths.append(Path(uiBezierPath: path, paint: Paint(paint: paint)))
+    }
+
+    func undo() {
+        guard let last = paths.popLast() else {
+            return
+        }
+
+        undonePaths.append(last)
+    }
+
+    func redo() {
+        guard let last = undonePaths.popLast() else {
+            return
+        }
+
+        paths.append(last)
     }
 
 }
