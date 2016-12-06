@@ -8,20 +8,88 @@
 
 import UIKit
 import CoreGraphics
+import CoreMotion
 
 class SketchViewController: UIViewController {
 
     @IBOutlet weak var sketchView: SketchView!
     var path = UIBezierPath()
+    let motionManager = CMMotionManager()
+    var touch: CGPoint = .zero
+    var initialXAccel: Double!
+    var initialYAccel: Double!
+    let scale = 10.0
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let pan = UIPanGestureRecognizer(target: self, action: #selector(panDraw(_:)))
-        pan.minimumNumberOfTouches = 1
-        pan.maximumNumberOfTouches = 1
+        setupMotion()
+    }
 
-        sketchView.addGestureRecognizer(pan)
+}
+
+// MARK: - Setup
+
+extension SketchViewController {
+
+    func setupMotion() {
+        motionManager.accelerometerUpdateInterval = 0.2
+    }
+
+}
+
+// MARK: - Accelerometer Data Handler
+
+extension SketchViewController {
+
+    func beginGettingData() {
+        guard let queue = OperationQueue.current else {
+            NSLog("No operation queue")
+            return
+        }
+
+        DLog("Begin getting data")
+        path = UIBezierPath()
+        path.move(to: touch)
+        path.lineCapStyle = .round
+
+        sketchView.add(path: path, paint: Paint.currentPaint)
+
+        motionManager.startAccelerometerUpdates(to: queue, withHandler: handler)
+    }
+
+    func endGettingData() {
+        DLog("End getting data")
+        initialXAccel = nil
+        initialYAccel = nil
+
+        motionManager.stopAccelerometerUpdates()
+    }
+
+    private func handler(data: CMAccelerometerData?, error: Error?) {
+        guard let accelerationData = data else {
+            DLog("Error receiving accelerometer data: \(error!)")
+            return
+        }
+
+        handleData(accelerationData.acceleration)
+    }
+
+    private func handleData(_ acceleration: CMAcceleration) {
+        if initialXAccel == nil || initialYAccel == nil {
+            initialXAccel = acceleration.x
+            initialYAccel = acceleration.y
+        }
+
+        let deltaX = (acceleration.x - initialXAccel) * scale
+        let deltaY = (acceleration.y - initialYAccel) * scale
+        DLog("Deltas: \(deltaX), \(deltaY)")
+        let nextPoint = CGPoint(x: touch.x+CGFloat(deltaX), y: touch.y+CGFloat(deltaY))
+
+        path.addLine(to: nextPoint)
+        touch = nextPoint
+
+        sketchView.setNeedsDisplay()
     }
 
 }
@@ -39,7 +107,11 @@ extension SketchViewController {
     }
 
     @IBAction func didPressSave(_ sender: Any) {
-        let image = UIImage(view: sketchView)
+        guard let image = UIImage(view: sketchView) else {
+            DLog("Could not convert image to view")
+            return
+        }
+
         UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
     }
 
@@ -49,27 +121,21 @@ extension SketchViewController {
 
 }
 
-// MARK: - UIPanGestureRecognizer
+// MARK: - UITapGestureRecognizer
 
 extension SketchViewController {
 
-    func panDraw(_ pan: UIPanGestureRecognizer) {
-        let currentPoint = pan.location(in: view)
-
-        switch pan.state {
-        case .began:
-            path = UIBezierPath()
-            path.lineCapStyle = .round
-
-            sketchView.add(path: path, paint: Paint.currentPaint)
-            path.move(to: currentPoint)
-        case .changed:
-            path.addLine(to: currentPoint)
-        default:
-            break
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let touchDown = touches.first else {
+            return
         }
 
-        sketchView.setNeedsDisplay()
+        touch = touchDown.location(in: view)
+        beginGettingData()
+    }
+
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        endGettingData()
     }
 
 }

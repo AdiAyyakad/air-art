@@ -44,7 +44,7 @@
 		7F3903E61DF7329500644E8D /* undoButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3903DA1DF7329500644E8D /* undoButton@2x.png */; };
 		7F3903E71DF7329500644E8D /* undoButton@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3903DB1DF7329500644E8D /* undoButton@3x.png */; };
 		86A358D81DF49D8500715247 /* BrushPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A358D71DF49D8500715247 /* BrushPreview.swift */; };
-		FAF3A5961DF739EE00B3C4CB /* ViewToImageConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3A5951DF739EE00B3C4CB /* ViewToImageConverter.swift */; };
+		FAF3A5961DF739EE00B3C4CB /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3A5951DF739EE00B3C4CB /* UIImageExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,7 +99,7 @@
 		7F3903DA1DF7329500644E8D /* undoButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "undoButton@2x.png"; sourceTree = "<group>"; };
 		7F3903DB1DF7329500644E8D /* undoButton@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "undoButton@3x.png"; sourceTree = "<group>"; };
 		86A358D71DF49D8500715247 /* BrushPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrushPreview.swift; sourceTree = "<group>"; };
-		FAF3A5951DF739EE00B3C4CB /* ViewToImageConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewToImageConverter.swift; sourceTree = "<group>"; };
+		FAF3A5951DF739EE00B3C4CB /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +165,7 @@
 		4067FC6B1DF65B9B00745F44 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				FAF3A5951DF739EE00B3C4CB /* UIImageExtension.swift */,
 				4067FC671DF657EF00745F44 /* UIViewControllerExtension.swift */,
 				4067FC6E1DF65E9B00745F44 /* Macros.swift */,
 			);
@@ -224,7 +225,6 @@
 		4084AE011D96C54200B812DE /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				FAF3A5951DF739EE00B3C4CB /* ViewToImageConverter.swift */,
 				4067FC691DF65B2B00745F44 /* MainViewController.swift */,
 				4045ED671DEF606500778376 /* TutorialViewController.swift */,
 				40B0C9BC1DF06B56004A31BA /* SketchViewController.swift */,
@@ -426,7 +426,7 @@
 				40B0C9BD1DF06B56004A31BA /* SketchViewController.swift in Sources */,
 				4067FC6F1DF65E9B00745F44 /* Macros.swift in Sources */,
 				4067FC6A1DF65B2B00745F44 /* MainViewController.swift in Sources */,
-				FAF3A5961DF739EE00B3C4CB /* ViewToImageConverter.swift in Sources */,
+				FAF3A5961DF739EE00B3C4CB /* UIImageExtension.swift in Sources */,
 				40F1ECA71DF69415005C5E19 /* Path.swift in Sources */,
 				40A0D3191D96F22D001024EF /* Point.swift in Sources */,
 				40B0C9C11DF07392004A31BA /* SettingsViewController.swift in Sources */,

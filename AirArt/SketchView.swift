@@ -52,6 +52,4 @@ extension SketchView {
         setNeedsDisplay()
     }
 
-    
-
 }

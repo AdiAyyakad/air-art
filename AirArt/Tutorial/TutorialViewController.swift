@@ -57,6 +57,7 @@ extension TutorialViewController {
             orderedImages = bool ? tutorialImages : calibrationImages
             pageControl.numberOfPages = orderedImages.count
             skipButton.isHidden = !bool
+            pageControl.isHidden = orderedImages.count <= 1
         }
     }
 
