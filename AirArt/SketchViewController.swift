@@ -12,11 +12,7 @@ import CoreGraphics
 class SketchViewController: UIViewController {
 
     @IBOutlet weak var sketchView: SketchView!
-
-    var lastPoint = CGPoint.zero
     var path = UIBezierPath()
-    var paint: Paint { return Paint.currentPaint }
-    var swiped = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,9 +20,6 @@ class SketchViewController: UIViewController {
         let pan = UIPanGestureRecognizer(target: self, action: #selector(panDraw(_:)))
         pan.minimumNumberOfTouches = 1
         pan.maximumNumberOfTouches = 1
-
-        path.lineCapStyle = .round
-        sketchView.path = path
 
         sketchView.addGestureRecognizer(pan)
     }
@@ -54,7 +47,10 @@ extension SketchViewController {
 
         switch pan.state {
         case .began:
-            lastPoint = currentPoint
+            path = UIBezierPath()
+            path.lineCapStyle = .round
+
+            sketchView.add(path: path, paint: Paint.currentPaint)
             path.move(to: currentPoint)
         case .changed:
             path.addLine(to: currentPoint)

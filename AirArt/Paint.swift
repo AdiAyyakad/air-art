@@ -24,4 +24,20 @@ struct Paint {
     var cgColor: CGColor {
         return uiColor.cgColor
     }
+
+    init(red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat, brushSize: CGFloat) {
+        self.red = red
+        self.green = green
+        self.blue = blue
+        self.alpha = alpha
+        self.brushSize = brushSize
+    }
+
+    init(paint: Paint) {
+        self.red = paint.red
+        self.green = paint.green
+        self.blue = paint.blue
+        self.alpha = paint.alpha
+        self.brushSize = paint.brushSize
+    }
 }
