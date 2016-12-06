@@ -16,12 +16,10 @@ class BlockerView: UIView {
     override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
         for subview in subviews {
             if subview.frame.contains(point) && subview.isUserInteractionEnabled {
-                DLog("Captured by subview")
                 return true
             }
         }
 
-        DLog("Not captured in subviews")
         return false
     }
 }
