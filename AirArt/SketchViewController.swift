@@ -8,20 +8,64 @@
 
 import UIKit
 import CoreGraphics
+import CoreMotion
 
 class SketchViewController: UIViewController {
 
     @IBOutlet weak var sketchView: SketchView!
     var path = UIBezierPath()
+    let motionManager = CMMotionManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupPan()
+    }
+
+}
+
+// MARK: - Setup
+
+extension SketchViewController {
+
+    func setupPan() {
         let pan = UIPanGestureRecognizer(target: self, action: #selector(panDraw(_:)))
         pan.minimumNumberOfTouches = 1
         pan.maximumNumberOfTouches = 1
 
         sketchView.addGestureRecognizer(pan)
+    }
+
+}
+
+// MARK: - Accelerometer Data Handler
+
+extension SketchViewController {
+
+    func beginGettingData() {
+        guard let queue = OperationQueue.current else {
+            NSLog("No operation queue")
+            return
+        }
+
+        motionManager.startAccelerometerUpdates(to: queue, withHandler: handler)
+    }
+
+    func endGettingData() {
+        motionManager.stopAccelerometerUpdates()
+    }
+
+    private func handler(data: CMAccelerometerData?, error: Error?) {
+        guard let accelerationData = data else {
+            DLog("Error receiving accelerometer data: \(error!)")
+            return
+        }
+
+        handleData(accelerationData.acceleration)
+    }
+
+    private func handleData(_ acceleration: CMAcceleration) {
+        DLog("\(acceleration.x), \(acceleration.y)")
     }
 
 }
