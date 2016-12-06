@@ -13,17 +13,36 @@ import CoreMotion
 class SketchViewController: UIViewController {
 
     @IBOutlet weak var sketchView: SketchView!
+
+    let scale = 10.0
     var path = UIBezierPath()
-    let motionManager = CMMotionManager()
     var touch: CGPoint = .zero
+    var presentedTutorial = false
+    let motionManager = CMMotionManager()
+
     var initialXAccel: Double!
     var initialYAccel: Double!
-    let scale = 10.0
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupMotion()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        /*
+        if !UserDefaults.standard.bool(forKey: UserDefaultsKeys.PresentedTutorial.rawValue) {
+            presentTutorial()
+            UserDefaults.standard.set(true, forKey: UserDefaultsKeys.PresentedTutorial.rawValue)
+        }
+         */
+
+        if !presentedTutorial {
+            presentTutorial()
+            presentedTutorial = true
+        }
     }
 
 }
@@ -33,7 +52,7 @@ class SketchViewController: UIViewController {
 extension SketchViewController {
 
     func setupMotion() {
-        motionManager.accelerometerUpdateInterval = 0.2
+        motionManager.accelerometerUpdateInterval = 0.1
     }
 
 }
@@ -83,7 +102,7 @@ extension SketchViewController {
 
         let deltaX = (acceleration.x - initialXAccel) * scale
         let deltaY = (acceleration.y - initialYAccel) * scale
-        DLog("Deltas: \(deltaX), \(deltaY)")
+
         let nextPoint = CGPoint(x: touch.x+CGFloat(deltaX), y: touch.y+CGFloat(deltaY))
 
         path.addLine(to: nextPoint)
