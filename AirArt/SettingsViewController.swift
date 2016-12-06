@@ -79,3 +79,11 @@ extension SettingsViewController {
     }
 
 }
+
+// MARK: - Gesture Recognizer
+
+extension SettingsViewController {
+
+
+
+}

@@ -23,6 +23,7 @@
 		4067FC6F1DF65E9B00745F44 /* Macros.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4067FC6E1DF65E9B00745F44 /* Macros.swift */; };
 		406FCAB01DEFD7FA00FCCF8F /* Calibration1.png in Resources */ = {isa = PBXBuildFile; fileRef = 406FCAAE1DEFD7FA00FCCF8F /* Calibration1.png */; };
 		406FCAB11DEFD7FA00FCCF8F /* Calibration2.png in Resources */ = {isa = PBXBuildFile; fileRef = 406FCAAF1DEFD7FA00FCCF8F /* Calibration2.png */; };
+		4084AF831DF66B050039ED61 /* BlockerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4084AF821DF66B050039ED61 /* BlockerView.swift */; };
 		40A0D3191D96F22D001024EF /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A0D3181D96F22D001024EF /* Point.swift */; };
 		40B0C9BB1DF06B3B004A31BA /* Sketch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40B0C9BA1DF06B3B004A31BA /* Sketch.storyboard */; };
 		40B0C9BD1DF06B56004A31BA /* SketchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B0C9BC1DF06B56004A31BA /* SketchViewController.swift */; };
@@ -62,6 +63,7 @@
 		4067FC6E1DF65E9B00745F44 /* Macros.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Macros.swift; sourceTree = "<group>"; };
 		406FCAAE1DEFD7FA00FCCF8F /* Calibration1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Calibration1.png; path = Images/Calibration1.png; sourceTree = "<group>"; };
 		406FCAAF1DEFD7FA00FCCF8F /* Calibration2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Calibration2.png; path = Images/Calibration2.png; sourceTree = "<group>"; };
+		4084AF821DF66B050039ED61 /* BlockerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockerView.swift; sourceTree = "<group>"; };
 		40A0D3181D96F22D001024EF /* Point.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
 		40B0C9BA1DF06B3B004A31BA /* Sketch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Sketch.storyboard; path = Storyboards/Sketch.storyboard; sourceTree = "<group>"; };
 		40B0C9BC1DF06B56004A31BA /* SketchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SketchViewController.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 				4045ED671DEF606500778376 /* TutorialViewController.swift */,
 				40B0C9BC1DF06B56004A31BA /* SketchViewController.swift */,
 				40B0C9C01DF07392004A31BA /* SettingsViewController.swift */,
+				4084AF821DF66B050039ED61 /* BlockerView.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				4011AFA61D96BA7300F7BE5B /* AppDelegate.swift in Sources */,
 				40B0C9BF1DF06C77004A31BA /* Paint.swift in Sources */,
 				4045ED681DEF606500778376 /* TutorialViewController.swift in Sources */,
+				4084AF831DF66B050039ED61 /* BlockerView.swift in Sources */,
 				40B0C9BD1DF06B56004A31BA /* SketchViewController.swift in Sources */,
 				4067FC6F1DF65E9B00745F44 /* Macros.swift in Sources */,
 				4067FC6A1DF65B2B00745F44 /* MainViewController.swift in Sources */,

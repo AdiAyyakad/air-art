@@ -76,7 +76,7 @@
                         <viewControllerLayoutGuide type="top" id="4c6-Ge-GQX"/>
                         <viewControllerLayoutGuide type="bottom" id="3la-if-GTO"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="1fd-KJ-02p">
+                    <view key="view" contentMode="scaleToFill" id="1fd-KJ-02p" customClass="BlockerView" customModule="AirArt" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
