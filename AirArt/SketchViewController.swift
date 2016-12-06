@@ -35,6 +35,8 @@ extension SketchViewController {
     }
 
     @IBAction func didPressUndo(_ sender: Any) {
+        let image = UIImage(view: sketchView)
+        UIImageWriteToSavedPhotosAlbum(image,nil,nil,nil)
         sketchView.undo()
     }
 
