@@ -25,7 +25,7 @@
                                 <rect key="frame" x="162" y="278.5" width="52" height="30"/>
                                 <state key="normal" title="Tutorial"/>
                                 <connections>
-                                    <segue destination="WGQ-eH-6a2" kind="presentation" identifier="Tutorial Segue" id="MTz-Rv-th6"/>
+                                    <action selector="didPressTutorial:" destination="ITY-NX-Du4" eventType="touchUpInside" id="hVo-iU-J5X"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xwY-Sl-SuE">
@@ -48,16 +48,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mTS-P6-Udo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-500" y="4.9475262368815596"/>
-        </scene>
-        <!--Tutorial-->
-        <scene sceneID="5eX-S6-fcV">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Tutorial" id="WGQ-eH-6a2" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="emn-ah-hN3"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="B0Q-Pv-f1I" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="124" y="-20"/>
         </scene>
         <!--Sketch-->
         <scene sceneID="kCV-zz-QfQ">

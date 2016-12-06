@@ -49,6 +49,10 @@ extension SettingsViewController {
         dismiss(animated: true, completion: nil)
     }
 
+    @IBAction func didPressRecalibrate(_ sender: Any) {
+        presentCalibration()
+    }
+
     func redDidChange() {
         Paint.currentPaint.red = CGFloat(redSlider.value)
         previewView.update()
@@ -72,22 +76,6 @@ extension SettingsViewController {
     func brushSizeDidChange() {
         Paint.currentPaint.brushSize = CGFloat(brushSizeSlider.value)
         previewView.update()
-    }
-
-}
-
-// MARK: - Segue
-
-extension SettingsViewController {
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == SegueIdentifier.Calibration.rawValue {
-            guard let cvc = segue.destination as? TutorialViewController else {
-                return
-            }
-
-            cvc.isTutorial = false
-        }
     }
 
 }

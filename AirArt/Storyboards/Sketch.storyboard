@@ -163,7 +163,7 @@
                                 <rect key="frame" x="16" y="604.5" width="171.5" height="30"/>
                                 <state key="normal" title="Recalibrate"/>
                                 <connections>
-                                    <segue destination="kaT-l6-NXR" kind="presentation" identifier="Calibration Segue" id="jzm-jT-fFK"/>
+                                    <action selector="didPressRecalibrate:" destination="m5c-dN-7Si" eventType="touchUpInside" id="oyf-iH-Jff"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Td6-OE-Ger">
@@ -219,14 +219,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HUd-D0-66J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="885.60000000000002" y="-90.404797601199405"/>
-        </scene>
-        <!--Tutorial-->
-        <scene sceneID="sJL-UW-2Yz">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Tutorial" id="kaT-l6-NXR" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eC7-Ov-aos" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="886" y="320"/>
         </scene>
     </scenes>
 </document>
