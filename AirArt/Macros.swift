@@ -9,5 +9,10 @@
 import Foundation
 
 func DLog(_ msg: String, _ filename: String = #file, _ function: String = #function, _ line: Int = #line) {
-    NSLog("[\(filename):\(line)] \(function) - \(msg)")
+    guard let file = filename.components(separatedBy: "/").last else {
+        NSLog("[\(filename)):\(line)] \(function) - \(msg)")
+        return
+    }
+
+    NSLog("[\(file)):\(line)] \(function) - \(msg)")
 }

@@ -29,6 +29,8 @@
 		40B0C9BD1DF06B56004A31BA /* SketchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B0C9BC1DF06B56004A31BA /* SketchViewController.swift */; };
 		40B0C9BF1DF06C77004A31BA /* Paint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B0C9BE1DF06C77004A31BA /* Paint.swift */; };
 		40B0C9C11DF07392004A31BA /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B0C9C01DF07392004A31BA /* SettingsViewController.swift */; };
+		40F1ECA51DF686D8005C5E19 /* SketchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F1ECA41DF686D8005C5E19 /* SketchView.swift */; };
+		40F1ECA71DF69415005C5E19 /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F1ECA61DF69415005C5E19 /* Path.swift */; };
 		86A358D81DF49D8500715247 /* BrushPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A358D71DF49D8500715247 /* BrushPreview.swift */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +71,8 @@
 		40B0C9BC1DF06B56004A31BA /* SketchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SketchViewController.swift; sourceTree = "<group>"; };
 		40B0C9BE1DF06C77004A31BA /* Paint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Paint.swift; sourceTree = "<group>"; };
 		40B0C9C01DF07392004A31BA /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		40F1ECA41DF686D8005C5E19 /* SketchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SketchView.swift; sourceTree = "<group>"; };
+		40F1ECA61DF69415005C5E19 /* Path.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
 		86A358D71DF49D8500715247 /* BrushPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrushPreview.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -114,6 +118,7 @@
 				4011AFA51D96BA7300F7BE5B /* AppDelegate.swift */,
 				4084AE001D96C53C00B812DE /* Storyboards */,
 				40A0D3171D96F209001024EF /* Models */,
+				40F1ECA31DF684E2005C5E19 /* Custom Views */,
 				4084AE011D96C54200B812DE /* View Controllers */,
 				4067FC6B1DF65B9B00745F44 /* Extensions */,
 				4084ADFF1D96C53100B812DE /* Resources */,
@@ -196,7 +201,6 @@
 				4045ED671DEF606500778376 /* TutorialViewController.swift */,
 				40B0C9BC1DF06B56004A31BA /* SketchViewController.swift */,
 				40B0C9C01DF07392004A31BA /* SettingsViewController.swift */,
-				4084AF821DF66B050039ED61 /* BlockerView.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -206,9 +210,19 @@
 			children = (
 				40A0D3181D96F22D001024EF /* Point.swift */,
 				40B0C9BE1DF06C77004A31BA /* Paint.swift */,
-				86A358D71DF49D8500715247 /* BrushPreview.swift */,
+				40F1ECA61DF69415005C5E19 /* Path.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		40F1ECA31DF684E2005C5E19 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				86A358D71DF49D8500715247 /* BrushPreview.swift */,
+				4084AF821DF66B050039ED61 /* BlockerView.swift */,
+				40F1ECA41DF686D8005C5E19 /* SketchView.swift */,
+			);
+			name = "Custom Views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -347,11 +361,13 @@
 				86A358D81DF49D8500715247 /* BrushPreview.swift in Sources */,
 				4011AFA61D96BA7300F7BE5B /* AppDelegate.swift in Sources */,
 				40B0C9BF1DF06C77004A31BA /* Paint.swift in Sources */,
+				40F1ECA51DF686D8005C5E19 /* SketchView.swift in Sources */,
 				4045ED681DEF606500778376 /* TutorialViewController.swift in Sources */,
 				4084AF831DF66B050039ED61 /* BlockerView.swift in Sources */,
 				40B0C9BD1DF06B56004A31BA /* SketchViewController.swift in Sources */,
 				4067FC6F1DF65E9B00745F44 /* Macros.swift in Sources */,
 				4067FC6A1DF65B2B00745F44 /* MainViewController.swift in Sources */,
+				40F1ECA71DF69415005C5E19 /* Path.swift in Sources */,
 				40A0D3191D96F22D001024EF /* Point.swift in Sources */,
 				40B0C9C11DF07392004A31BA /* SettingsViewController.swift in Sources */,
 			);
