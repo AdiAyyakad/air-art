@@ -10,7 +10,7 @@ import UIKit
 
 enum ResuseIdentifier: String {
     case Tutorial = "Tutorial"
-    case Calibration = "Calibration"
+    case Calibration = "Calibrate"
 }
 
 class SettingsTableViewController: UITableViewController {
