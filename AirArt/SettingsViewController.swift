@@ -56,6 +56,7 @@ extension SettingsViewController {
     func redDidChange() {
         Paint.currentPaint.red = CGFloat(redSlider.value)
         previewView.update()
+        
     }
 
     func greenDidChange() {

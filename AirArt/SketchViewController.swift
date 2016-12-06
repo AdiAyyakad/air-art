@@ -23,6 +23,12 @@ class SketchViewController: UIViewController {
 
         sketchView.addGestureRecognizer(pan)
     }
+    
+    @IBAction func didPressEdit(_ sender: AnyObject) {
+        let storyboard = UIStoryboard(name: "Sketch", bundle: nil)
+        let NC = storyboard.instantiateViewController(withIdentifier: "SettingsNavigationController") as! UINavigationController
+        present(NC, animated: true, completion: nil)
+    }
 
 }
 
@@ -37,6 +43,7 @@ extension SketchViewController {
     @IBAction func didPressUndo(_ sender: Any) {
         sketchView.undo()
     }
+    
 
     @IBAction func didPressSave(_ sender: Any) {
         let image = UIImage(view: sketchView)
