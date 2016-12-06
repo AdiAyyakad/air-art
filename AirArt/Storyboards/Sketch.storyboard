@@ -22,12 +22,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5XK-aH-KrB">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nsS-yj-RHt" customClass="SketchView" customModule="AirArt" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WFA-Tp-1dE">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3vd-Sm-Yf5">
                                 <rect key="frame" x="322" y="20" width="37" height="30"/>
                                 <state key="normal" title="Done"/>
@@ -45,23 +43,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="WFA-Tp-1dE" firstAttribute="centerX" secondItem="Mxh-gR-Ulc" secondAttribute="centerX" id="1bc-ZI-JU0"/>
-                            <constraint firstItem="WFA-Tp-1dE" firstAttribute="top" secondItem="rN7-f5-zbR" secondAttribute="bottom" constant="-20" id="3jX-9A-uDH"/>
                             <constraint firstItem="13Q-a5-ufF" firstAttribute="top" secondItem="rN7-f5-zbR" secondAttribute="bottom" id="4Ui-zy-16j"/>
-                            <constraint firstItem="5XK-aH-KrB" firstAttribute="top" secondItem="rN7-f5-zbR" secondAttribute="bottom" constant="-20" id="AzE-lM-quT"/>
+                            <constraint firstItem="nsS-yj-RHt" firstAttribute="centerY" secondItem="Mxh-gR-Ulc" secondAttribute="centerY" id="Ahj-OI-hEy"/>
                             <constraint firstAttribute="trailingMargin" secondItem="3vd-Sm-Yf5" secondAttribute="trailing" id="Xwc-lj-Qo4"/>
-                            <constraint firstAttribute="leading" secondItem="5XK-aH-KrB" secondAttribute="leading" id="fjM-8Y-dQD"/>
-                            <constraint firstItem="5XK-aH-KrB" firstAttribute="centerX" secondItem="Mxh-gR-Ulc" secondAttribute="centerX" id="gbD-EU-Nc8"/>
-                            <constraint firstItem="WFA-Tp-1dE" firstAttribute="centerY" secondItem="Mxh-gR-Ulc" secondAttribute="centerY" id="hDL-MM-fJX"/>
-                            <constraint firstItem="5XK-aH-KrB" firstAttribute="centerY" secondItem="Mxh-gR-Ulc" secondAttribute="centerY" id="hFr-2v-BZb"/>
                             <constraint firstItem="3vd-Sm-Yf5" firstAttribute="top" secondItem="rN7-f5-zbR" secondAttribute="bottom" id="jde-1L-JVf"/>
-                            <constraint firstAttribute="leading" secondItem="WFA-Tp-1dE" secondAttribute="leading" id="vBc-49-HSu"/>
+                            <constraint firstItem="nsS-yj-RHt" firstAttribute="centerX" secondItem="Mxh-gR-Ulc" secondAttribute="centerX" id="rGm-kT-zGa"/>
+                            <constraint firstItem="nsS-yj-RHt" firstAttribute="height" secondItem="Mxh-gR-Ulc" secondAttribute="height" id="tfI-Hs-PYX"/>
                             <constraint firstAttribute="leadingMargin" secondItem="13Q-a5-ufF" secondAttribute="leading" id="vHG-lW-rH7"/>
+                            <constraint firstItem="nsS-yj-RHt" firstAttribute="width" secondItem="Mxh-gR-Ulc" secondAttribute="width" id="wvS-jo-JFm"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="mainImageView" destination="5XK-aH-KrB" id="UdV-yL-xD9"/>
-                        <outlet property="tempImageView" destination="WFA-Tp-1dE" id="dVV-mX-AR2"/>
+                        <outlet property="sketchView" destination="nsS-yj-RHt" id="3z3-5P-lZU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yfn-m5-ufv" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -11,11 +11,25 @@ import CoreGraphics
 
 class SketchViewController: UIViewController {
 
-    @IBOutlet weak var mainImageView: UIImageView!
-    @IBOutlet weak var tempImageView: UIImageView!
+    @IBOutlet weak var sketchView: SketchView!
+
     var lastPoint = CGPoint.zero
+    var path = UIBezierPath()
     var paint: Paint { return Paint.currentPaint }
     var swiped = false
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        let pan = UIPanGestureRecognizer(target: self, action: #selector(panDraw(_:)))
+        pan.minimumNumberOfTouches = 1
+        pan.maximumNumberOfTouches = 1
+
+        path.lineCapStyle = .round
+        sketchView.path = path
+
+        sketchView.addGestureRecognizer(pan)
+    }
 
 }
 
@@ -35,72 +49,20 @@ extension SketchViewController {
 
 extension SketchViewController {
 
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        swiped = false
-        if let touch = touches.first {
-            lastPoint = touch.location(in: self.view)
-        }
-    }
+    func panDraw(_ pan: UIPanGestureRecognizer) {
+        let currentPoint = pan.location(in: view)
 
-    func drawLineFrom(fromPoint: CGPoint, toPoint: CGPoint) {
-        UIGraphicsBeginImageContext(view.frame.size)
-        guard let context = UIGraphicsGetCurrentContext() else {
-            UIGraphicsEndImageContext()
-            return
-        }
-
-        tempImageView.image?.draw(in: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height))
-
-        context.move(to: fromPoint)
-        context.addLine(to: toPoint)
-
-        context.setLineCap(.round)
-        context.setLineWidth(paint.brushSize)
-        context.setStrokeColor(paint.cgColor)
-        context.setBlendMode(.normal)
-
-        context.strokePath()
-
-        tempImageView.image = UIGraphicsGetImageFromCurrentImageContext()
-        tempImageView.alpha = paint.alpha
-        UIGraphicsEndImageContext()
-
-    }
-
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        swiped = true
-        if let touch = touches.first {
-            let currentPoint = touch.location(in: view)
-            drawLineFrom(fromPoint: lastPoint, toPoint: currentPoint)
+        switch pan.state {
+        case .began:
             lastPoint = currentPoint
-        }
-    }
-
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-
-        if !swiped {
-            // draw a single point
-            drawLineFrom(fromPoint: lastPoint, toPoint: lastPoint)
+            path.move(to: currentPoint)
+        case .changed:
+            path.addLine(to: currentPoint)
+        default:
+            break
         }
 
-        // Merge tempImageView into mainImageView
-        UIGraphicsBeginImageContext(mainImageView.frame.size)
-        mainImageView.image?.draw(in: CGRect(x: 0,
-                                             y: 0,
-                                             width: view.frame.size.width,
-                                             height: view.frame.size.height),
-                                  blendMode: .normal,
-                                  alpha: 1.0)
-        tempImageView.image?.draw(in: CGRect(x: 0,
-                                               y: 0,
-                                               width: view.frame.size.width,
-                                               height: view.frame.size.height),
-                                        blendMode: .normal,
-                                        alpha: paint.alpha)
-        mainImageView.image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-
-        tempImageView.image = nil
+        sketchView.setNeedsDisplay()
     }
 
 }
