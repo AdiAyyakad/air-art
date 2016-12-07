@@ -25,74 +25,66 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nsS-yj-RHt" customClass="SketchView" customModule="AirArt" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3vd-Sm-Yf5">
-                                        <rect key="frame" x="309" y="601" width="58" height="58"/>
-                                        <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
-                                        <state key="normal" image="doneButton.png"/>
-                                        <connections>
-                                            <action selector="didPressDone:" destination="jTf-aI-2Vm" eventType="touchUpInside" id="nS0-Id-Bmi"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13Q-a5-ufF">
-                                        <rect key="frame" x="8" y="74" width="36" height="38"/>
-                                        <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
-                                        <state key="normal" image="settingsButton.png"/>
-                                        <connections>
-                                            <segue destination="f5w-yg-e2g" kind="show" id="4sl-Lz-flE"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Svn-5u-hFC">
-                                        <rect key="frame" x="331" y="29" width="36" height="36"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="36" id="2gH-y4-vRg"/>
-                                            <constraint firstAttribute="width" secondItem="Svn-5u-hFC" secondAttribute="height" multiplier="1:1" id="6cV-rw-bgS"/>
-                                        </constraints>
-                                        <inset key="contentEdgeInsets" minX="4" minY="4" maxX="4" maxY="4"/>
-                                        <state key="normal" image="closeButton.png"/>
-                                        <connections>
-                                            <action selector="didPressClose:" destination="jTf-aI-2Vm" eventType="touchUpInside" id="9Gm-px-ZbZ"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bvx-gu-8Pe">
-                                        <rect key="frame" x="44" y="28" width="36" height="38"/>
-                                        <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
-                                        <state key="normal" image="redoButton.png"/>
-                                        <connections>
-                                            <action selector="didPressRedo:" destination="jTf-aI-2Vm" eventType="touchUpInside" id="NT9-Li-AoJ"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0AO-XH-Ilf">
-                                        <rect key="frame" x="8" y="28" width="36" height="38"/>
-                                        <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
-                                        <state key="normal" image="undoButton.png"/>
-                                        <connections>
-                                            <action selector="didPressUndo:" destination="jTf-aI-2Vm" eventType="touchUpInside" id="JFy-9g-q9f"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="0AO-XH-Ilf" firstAttribute="centerX" secondItem="13Q-a5-ufF" secondAttribute="centerX" id="2dE-YO-zkM"/>
-                                    <constraint firstItem="3vd-Sm-Yf5" firstAttribute="bottom" secondItem="nsS-yj-RHt" secondAttribute="bottomMargin" id="Bs8-KM-CeC"/>
-                                    <constraint firstItem="bvx-gu-8Pe" firstAttribute="width" secondItem="0AO-XH-Ilf" secondAttribute="width" id="Hlm-qx-zBa"/>
-                                    <constraint firstItem="Svn-5u-hFC" firstAttribute="width" secondItem="bvx-gu-8Pe" secondAttribute="width" id="Jg2-7U-YUn"/>
-                                    <constraint firstAttribute="leadingMargin" secondItem="13Q-a5-ufF" secondAttribute="leading" id="LFb-BH-o0g"/>
-                                    <constraint firstItem="Svn-5u-hFC" firstAttribute="centerY" secondItem="bvx-gu-8Pe" secondAttribute="centerY" id="QWK-Am-hj6"/>
-                                    <constraint firstItem="0AO-XH-Ilf" firstAttribute="centerY" secondItem="bvx-gu-8Pe" secondAttribute="centerY" id="U3S-YN-k89"/>
-                                    <constraint firstItem="0AO-XH-Ilf" firstAttribute="leading" secondItem="nsS-yj-RHt" secondAttribute="leadingMargin" id="XCX-k6-Jyw"/>
-                                    <constraint firstAttribute="trailingMargin" secondItem="Svn-5u-hFC" secondAttribute="trailing" id="ZDp-ce-oxq"/>
-                                    <constraint firstAttribute="trailingMargin" secondItem="3vd-Sm-Yf5" secondAttribute="trailing" id="ZsJ-np-To2"/>
-                                    <constraint firstItem="bvx-gu-8Pe" firstAttribute="leading" secondItem="0AO-XH-Ilf" secondAttribute="trailing" id="b15-RX-XYo"/>
-                                    <constraint firstItem="0AO-XH-Ilf" firstAttribute="top" secondItem="nsS-yj-RHt" secondAttribute="top" constant="28" id="eN7-W3-1Q0"/>
-                                    <constraint firstItem="0AO-XH-Ilf" firstAttribute="width" secondItem="13Q-a5-ufF" secondAttribute="width" id="vk6-x2-r3j"/>
-                                    <constraint firstItem="13Q-a5-ufF" firstAttribute="top" secondItem="0AO-XH-Ilf" secondAttribute="bottom" constant="8" id="wvN-e5-hGj"/>
-                                </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bvx-gu-8Pe">
+                                <rect key="frame" x="52" y="27" width="36" height="38"/>
+                                <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
+                                <state key="normal" image="redoButton.png"/>
+                                <connections>
+                                    <action selector="didPressRedo:" destination="jTf-aI-2Vm" eventType="touchUpInside" id="NT9-Li-AoJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0AO-XH-Ilf">
+                                <rect key="frame" x="16" y="27" width="36" height="38"/>
+                                <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
+                                <state key="normal" image="undoButton.png"/>
+                                <connections>
+                                    <action selector="didPressUndo:" destination="jTf-aI-2Vm" eventType="touchUpInside" id="JFy-9g-q9f"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13Q-a5-ufF">
+                                <rect key="frame" x="17.5" y="65" width="33" height="38"/>
+                                <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
+                                <state key="normal" image="settingsButton.png"/>
+                                <connections>
+                                    <segue destination="f5w-yg-e2g" kind="show" id="4sl-Lz-flE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3vd-Sm-Yf5">
+                                <rect key="frame" x="301" y="601" width="58" height="58"/>
+                                <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
+                                <state key="normal" image="doneButton.png"/>
+                                <connections>
+                                    <action selector="didPressDone:" destination="jTf-aI-2Vm" eventType="touchUpInside" id="nS0-Id-Bmi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Svn-5u-hFC">
+                                <rect key="frame" x="323" y="28" width="36" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="36" id="2gH-y4-vRg"/>
+                                    <constraint firstAttribute="width" secondItem="Svn-5u-hFC" secondAttribute="height" multiplier="1:1" id="6cV-rw-bgS"/>
+                                </constraints>
+                                <inset key="contentEdgeInsets" minX="4" minY="4" maxX="4" maxY="4"/>
+                                <state key="normal" image="closeButton.png"/>
+                                <connections>
+                                    <action selector="didPressClose:" destination="jTf-aI-2Vm" eventType="touchUpInside" id="9Gm-px-ZbZ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Svn-5u-hFC" firstAttribute="top" secondItem="rN7-f5-zbR" secondAttribute="bottom" constant="8" id="3co-Kf-z2u"/>
+                            <constraint firstItem="13Q-a5-ufF" firstAttribute="top" secondItem="0AO-XH-Ilf" secondAttribute="bottom" id="4Q0-SV-t42"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3vd-Sm-Yf5" secondAttribute="trailing" id="6BE-HQ-e7j"/>
+                            <constraint firstItem="bvx-gu-8Pe" firstAttribute="leading" secondItem="0AO-XH-Ilf" secondAttribute="trailing" id="8Oy-6V-wO5"/>
                             <constraint firstItem="nsS-yj-RHt" firstAttribute="centerY" secondItem="Mxh-gR-Ulc" secondAttribute="centerY" id="Ahj-OI-hEy"/>
+                            <constraint firstItem="bvx-gu-8Pe" firstAttribute="centerY" secondItem="Svn-5u-hFC" secondAttribute="centerY" id="S9H-EA-y1l"/>
+                            <constraint firstItem="RWX-Nn-mzM" firstAttribute="top" secondItem="3vd-Sm-Yf5" secondAttribute="bottom" constant="8" id="Sl9-5a-gUK"/>
+                            <constraint firstItem="bvx-gu-8Pe" firstAttribute="centerY" secondItem="0AO-XH-Ilf" secondAttribute="centerY" id="dmh-q7-adn"/>
+                            <constraint firstItem="13Q-a5-ufF" firstAttribute="centerX" secondItem="0AO-XH-Ilf" secondAttribute="centerX" id="fPh-bd-bQz"/>
+                            <constraint firstItem="0AO-XH-Ilf" firstAttribute="leading" secondItem="Mxh-gR-Ulc" secondAttribute="leadingMargin" id="ox2-4Q-i0V"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Svn-5u-hFC" secondAttribute="trailing" id="pLU-xK-uPF"/>
                             <constraint firstItem="nsS-yj-RHt" firstAttribute="centerX" secondItem="Mxh-gR-Ulc" secondAttribute="centerX" id="rGm-kT-zGa"/>
                             <constraint firstItem="nsS-yj-RHt" firstAttribute="height" secondItem="Mxh-gR-Ulc" secondAttribute="height" id="tfI-Hs-PYX"/>
                             <constraint firstItem="nsS-yj-RHt" firstAttribute="width" secondItem="Mxh-gR-Ulc" secondAttribute="width" id="wvS-jo-JFm"/>
@@ -123,7 +115,7 @@
                                         <rect key="frame" x="0.0" y="55.5" width="375" height="240"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Cen-Er-8zE" id="dGX-cF-zVB">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="239"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="239.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dJs-Ft-5yM">
@@ -148,7 +140,7 @@
                                         <rect key="frame" x="0.0" y="351.5" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pC1-ja-1mM" id="s9o-5n-2VN">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="0.0" maxValue="50" translatesAutoresizingMaskIntoConstraints="NO" id="Nah-q7-Teo">
@@ -170,7 +162,7 @@
                                         <rect key="frame" x="0.0" y="467.5" width="375" height="275"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="v9L-sT-qzV" id="gdh-mM-qf9">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="274"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="274.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lkt-Ij-HNd">
@@ -255,7 +247,7 @@
                                         <rect key="frame" x="0.0" y="798.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ymc-zg-5f7" id="UdC-BQ-ktz">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Help" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e4a-4o-1OV">
@@ -272,7 +264,7 @@
                                         <rect key="frame" x="0.0" y="842.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pqg-wC-Quz" id="qNV-Ky-ZKE">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Calibrate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ka-VH-RQS">
