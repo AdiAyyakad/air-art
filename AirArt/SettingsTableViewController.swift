@@ -29,6 +29,9 @@ class SettingsTableViewController: UITableViewController {
 
     @IBOutlet weak var colorPreviewWindow: UIImageView!
 
+    @IBOutlet weak var rgbLabel: UILabel!
+    @IBOutlet weak var hexLabel: UILabel!
+
     /**
      * Used to keep track of previous color, in case the user wants
      * to dismiss their changes by clicking cancel.
@@ -38,6 +41,15 @@ class SettingsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setup()
+    }
+}
+
+// MARK: - Setup
+
+extension SettingsTableViewController {
+
+    func setup() {
         setupSliders()
         setupHSBView()
 
@@ -47,11 +59,6 @@ class SettingsTableViewController: UITableViewController {
         // Save old color, in case
         previousColor = Paint(paint: Paint.currentPaint)
     }
-}
-
-// MARK: - Setup
-
-extension SettingsTableViewController {
 
     func setupSliders() {
         redSlider.value = Float(Paint.currentPaint.red)
@@ -144,6 +151,7 @@ extension SettingsTableViewController {
 
         if rgbView.isHidden {
             hsbView.color = Paint.currentPaint.uiColor
+            hsbView.brightness = Paint.currentPaint.uiColor.getHSBComponents()[2]
         } else {
             redSlider.value = Float(Paint.currentPaint.red)
             greenSlider.value = Float(Paint.currentPaint.green)
@@ -191,6 +199,15 @@ extension SettingsTableViewController {
     func update() {
         previewImageView.updatePreview()
         colorPreviewWindow.backgroundColor = Paint.currentPaint.uiColor
+
+        let rgbComp = Paint.currentPaint.uiColor.getRGBComponents()
+        let r = Int(rgbComp[0] * 255)
+        let g = Int(rgbComp[1] * 255)
+        let b = Int(rgbComp[2] * 255)
+        let a = Int(rgbComp[3] * 255)
+
+        rgbLabel.text = String(format: "rgba (%d, %d, %d, %.02f)", r, g, b, rgbComp[3])
+        hexLabel.text = String(format:"0x%02X%02X%02X%02X", r, g, b, a)
     }
 
 }

@@ -11,10 +11,10 @@ import UIKit
 extension UIColor {
 
     /**
-     Index 1 = red
-     Index 2 = green
-     Index 3 = blue
-     Index 4 = alpha
+     Index 0 = red;
+     Index 1 = green;
+     Index 2 = blue;
+     Index 3 = alpha;
      */
     func getRGBComponents() -> [CGFloat] {
         var red: CGFloat = -1.0
@@ -28,10 +28,10 @@ extension UIColor {
     }
 
     /**
-     Index 1 = hue
-     Index 2 = saturation
-     Index 3 = brightness
-     Index 4 = alpha
+     Index 0 = hue;
+     Index 1 = saturation;
+     Index 2 = brightness;
+     Index 3 = alpha;
      */
     func getHSBComponents() -> [CGFloat] {
         var hue: CGFloat = -1.0

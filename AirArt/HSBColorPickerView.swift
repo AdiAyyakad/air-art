@@ -20,13 +20,25 @@ class HSBColorPickerView: UIView {
 
     var brightness: CGFloat = 1.0 {
         didSet {
-            setNeedsDisplay()
+            var hue: CGFloat = -1.0
+            var sat: CGFloat = -1.0
+            var alpha: CGFloat = -1.0
+
+            color.getHue(&hue, saturation: &sat, brightness: nil, alpha: &alpha)
+
+            color = UIColor(hue: hue, saturation: sat, brightness: brightness, alpha: alpha)
         }
     }
 
     var colorAlpha: CGFloat = 1.0 {
         didSet {
-            setNeedsDisplay()
+            var hue: CGFloat = -1.0
+            var sat: CGFloat = -1.0
+            var bright: CGFloat = -1.0
+
+            color.getHue(&hue, saturation: &sat, brightness: &bright, alpha: nil)
+
+            color = UIColor(hue: hue, saturation: sat, brightness: bright, alpha: colorAlpha)
         }
     }
 
@@ -55,7 +67,6 @@ class HSBColorPickerView: UIView {
     func setup() {
         setupBackground()
         populateSubviews()
-
     }
 
     func setupBackground() {

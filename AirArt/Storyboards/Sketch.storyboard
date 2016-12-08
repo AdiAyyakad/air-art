@@ -234,20 +234,38 @@
                                                         <constraint firstAttribute="width" constant="80" id="eeW-yB-Jez"/>
                                                     </constraints>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RGB" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="55D-VS-R6d">
+                                                    <rect key="frame" x="89" y="275" width="34" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hex" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="hAu-sF-t84">
+                                                    <rect key="frame" x="251" y="275" width="30" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="55D-VS-R6d" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="UMv-du-XC7" secondAttribute="leadingMargin" id="2m9-Pe-qZS"/>
                                                 <constraint firstItem="pDO-En-CnS" firstAttribute="height" secondItem="bbN-4U-FHF" secondAttribute="height" id="379-J2-vtE"/>
                                                 <constraint firstItem="d1U-WM-tGa" firstAttribute="centerX" secondItem="UMv-du-XC7" secondAttribute="centerX" id="3H2-yk-hOi"/>
                                                 <constraint firstItem="bbN-4U-FHF" firstAttribute="top" secondItem="d1U-WM-tGa" secondAttribute="bottom" constant="8" id="5le-r0-W6I"/>
                                                 <constraint firstItem="pDO-En-CnS" firstAttribute="width" secondItem="bbN-4U-FHF" secondAttribute="width" id="6Ft-pf-fVb"/>
                                                 <constraint firstItem="hoP-ri-QFa" firstAttribute="top" secondItem="bbN-4U-FHF" secondAttribute="bottom" constant="8" id="911-qz-5Wr"/>
                                                 <constraint firstItem="pDO-En-CnS" firstAttribute="centerX" secondItem="bbN-4U-FHF" secondAttribute="centerX" id="ChH-9Z-kjM"/>
+                                                <constraint firstItem="hAu-sF-t84" firstAttribute="centerY" secondItem="hoP-ri-QFa" secondAttribute="centerY" id="GRO-fa-Ji7"/>
+                                                <constraint firstItem="hAu-sF-t84" firstAttribute="leading" secondItem="hoP-ri-QFa" secondAttribute="trailing" constant="24" id="L0Y-Ar-pLr"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="hoP-ri-QFa" secondAttribute="bottom" constant="8" id="MBc-Io-25u"/>
+                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="hAu-sF-t84" secondAttribute="trailing" id="Oqd-ou-gxc"/>
                                                 <constraint firstItem="d1U-WM-tGa" firstAttribute="top" secondItem="UMv-du-XC7" secondAttribute="topMargin" constant="8" id="PTZ-HH-tOn"/>
                                                 <constraint firstItem="bbN-4U-FHF" firstAttribute="leading" secondItem="UMv-du-XC7" secondAttribute="leadingMargin" constant="8" id="SDP-hb-tyA"/>
                                                 <constraint firstItem="bbN-4U-FHF" firstAttribute="centerX" secondItem="d1U-WM-tGa" secondAttribute="centerX" id="T68-wq-KPn"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="bbN-4U-FHF" secondAttribute="trailing" constant="8" id="Yvm-pY-lrn"/>
                                                 <constraint firstItem="hoP-ri-QFa" firstAttribute="centerX" secondItem="d1U-WM-tGa" secondAttribute="centerX" id="YwY-oL-2Lv"/>
+                                                <constraint firstItem="55D-VS-R6d" firstAttribute="centerY" secondItem="hoP-ri-QFa" secondAttribute="centerY" id="gqg-1T-Grv"/>
+                                                <constraint firstItem="hoP-ri-QFa" firstAttribute="leading" secondItem="55D-VS-R6d" secondAttribute="trailing" constant="24" id="lkR-ha-76y"/>
                                                 <constraint firstItem="pDO-En-CnS" firstAttribute="centerY" secondItem="bbN-4U-FHF" secondAttribute="centerY" id="nAu-Qy-ycw"/>
                                                 <constraint firstItem="d1U-WM-tGa" firstAttribute="leading" secondItem="UMv-du-XC7" secondAttribute="leadingMargin" constant="8" id="zBR-SX-dYW"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="d1U-WM-tGa" secondAttribute="trailing" constant="8" id="zcI-PR-FwM"/>
@@ -319,11 +337,13 @@
                         <outlet property="brushSizeSlider" destination="Nah-q7-Teo" id="1ce-7U-x54"/>
                         <outlet property="colorPreviewWindow" destination="hoP-ri-QFa" id="7Iw-M0-wcj"/>
                         <outlet property="greenSlider" destination="elF-Bl-1hT" id="IG4-8i-gUz"/>
+                        <outlet property="hexLabel" destination="hAu-sF-t84" id="tc6-ez-nuf"/>
                         <outlet property="hsbView" destination="pDO-En-CnS" id="leE-qA-qCE"/>
                         <outlet property="opacitySlider" destination="SE5-7A-yBl" id="fKt-Mt-hDh"/>
                         <outlet property="previewImageView" destination="dJs-Ft-5yM" id="TX2-CJ-AsE"/>
                         <outlet property="redSlider" destination="5TD-Js-XV8" id="6ax-z8-mfU"/>
                         <outlet property="rgbHSBSegmentedControl" destination="d1U-WM-tGa" id="gst-zf-YMl"/>
+                        <outlet property="rgbLabel" destination="55D-VS-R6d" id="Yp9-N0-qSa"/>
                         <outlet property="rgbView" destination="bbN-4U-FHF" id="e5G-li-FFE"/>
                     </connections>
                 </tableViewController>
