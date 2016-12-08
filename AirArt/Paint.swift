@@ -9,16 +9,29 @@
 import UIKit
 
 struct Paint: Equatable {
-    public static var currentPaint: Paint = Paint(red: 0, green: 0, blue: 0, alpha: 1.0, brushSize: 10.0)
+    public static var currentPaint = Paint(red: 0, green: 0, blue: 0, alpha: 1.0, brushSize: 10.0)
 
-    var red: CGFloat
-    var green: CGFloat
-    var blue: CGFloat
     var alpha: CGFloat
+
+    var red: CGFloat = 0.0
+    var green: CGFloat = 0.0
+    var blue: CGFloat = 0.0
+
     var brushSize: CGFloat
 
     var uiColor: UIColor {
-        return UIColor(red: red, green: green, blue: blue, alpha: alpha)
+        get {
+            return UIColor(red: red, green: green, blue: blue, alpha: alpha)
+        }
+
+        set {
+            let components = newValue.getRGBComponents()
+
+            red = components[0]
+            green = components[1]
+            blue = components[2]
+            alpha = components[3]
+        }
     }
 
     var cgColor: CGColor {
@@ -42,6 +55,10 @@ struct Paint: Equatable {
     }
 
     public static func == (lhs: Paint, rhs: Paint) -> Bool {
-        return lhs.red == rhs.red && lhs.green == rhs.green && lhs.blue == rhs.blue && lhs.alpha == rhs.alpha && lhs.brushSize == rhs.brushSize
+        return lhs.red == rhs.red &&
+            lhs.green == rhs.green &&
+            lhs.blue == rhs.blue &&
+            lhs.alpha == rhs.alpha &&
+            lhs.brushSize == rhs.brushSize
     }
 }

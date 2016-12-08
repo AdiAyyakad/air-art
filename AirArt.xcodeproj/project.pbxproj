@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		400574031DF96DF300F961CF /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400574021DF96DF300F961CF /* UIColorExtension.swift */; };
+		400574051DF9749500F961CF /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400574041DF9749500F961CF /* Utility.swift */; };
 		4011AFA61D96BA7300F7BE5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011AFA51D96BA7300F7BE5B /* AppDelegate.swift */; };
 		4011AFAD1D96BA7300F7BE5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4011AFAC1D96BA7300F7BE5B /* Assets.xcassets */; };
 		4011AFB01D96BA7300F7BE5B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4011AFAE1D96BA7300F7BE5B /* LaunchScreen.storyboard */; };
@@ -20,8 +22,10 @@
 		4063C11A1DF7788700CFA262 /* closeButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 4063C1171DF7788700CFA262 /* closeButton.png */; };
 		4063C11B1DF7788700CFA262 /* closeButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4063C1181DF7788700CFA262 /* closeButton@2x.png */; };
 		4063C11C1DF7788700CFA262 /* closeButton@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4063C1191DF7788700CFA262 /* closeButton@3x.png */; };
-		406626C31DF9241300CAB38B /* HSLColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406626C21DF9241300CAB38B /* HSLColorView.swift */; };
+		406626C31DF9241300CAB38B /* HSColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406626C21DF9241300CAB38B /* HSColorView.swift */; };
 		406626C71DF9485E00CAB38B /* BrightnessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406626C61DF9485E00CAB38B /* BrightnessView.swift */; };
+		406626C91DF9559D00CAB38B /* HSBColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406626C81DF9559D00CAB38B /* HSBColorPickerView.swift */; };
+		406626CB1DF95DB700CAB38B /* HSBView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406626CA1DF95DB700CAB38B /* HSBView.swift */; };
 		4067FC681DF657EF00745F44 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4067FC671DF657EF00745F44 /* UIViewControllerExtension.swift */; };
 		4067FC6F1DF65E9B00745F44 /* Macros.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4067FC6E1DF65E9B00745F44 /* Macros.swift */; };
 		40682BCF1DF76C1800F8E448 /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40682BCE1DF76C1800F8E448 /* UserDefaultsKeys.swift */; };
@@ -63,6 +67,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		400574021DF96DF300F961CF /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		400574041DF9749500F961CF /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		4011AFA21D96BA7300F7BE5B /* AirArt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirArt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4011AFA51D96BA7300F7BE5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4011AFAC1D96BA7300F7BE5B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -80,8 +86,10 @@
 		4063C1171DF7788700CFA262 /* closeButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = closeButton.png; sourceTree = "<group>"; };
 		4063C1181DF7788700CFA262 /* closeButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "closeButton@2x.png"; sourceTree = "<group>"; };
 		4063C1191DF7788700CFA262 /* closeButton@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "closeButton@3x.png"; sourceTree = "<group>"; };
-		406626C21DF9241300CAB38B /* HSLColorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HSLColorView.swift; sourceTree = "<group>"; };
+		406626C21DF9241300CAB38B /* HSColorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HSColorView.swift; sourceTree = "<group>"; };
 		406626C61DF9485E00CAB38B /* BrightnessView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrightnessView.swift; sourceTree = "<group>"; };
+		406626C81DF9559D00CAB38B /* HSBColorPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HSBColorPickerView.swift; sourceTree = "<group>"; };
+		406626CA1DF95DB700CAB38B /* HSBView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HSBView.swift; sourceTree = "<group>"; };
 		4067FC671DF657EF00745F44 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		4067FC6E1DF65E9B00745F44 /* Macros.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Macros.swift; sourceTree = "<group>"; };
 		40682BCE1DF76C1800F8E448 /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
@@ -172,6 +180,17 @@
 			path = AirArtTests;
 			sourceTree = "<group>";
 		};
+		406626CC1DF9627400CAB38B /* HSBView */ = {
+			isa = PBXGroup;
+			children = (
+				406626C81DF9559D00CAB38B /* HSBColorPickerView.swift */,
+				406626CA1DF95DB700CAB38B /* HSBView.swift */,
+				406626C61DF9485E00CAB38B /* BrightnessView.swift */,
+				406626C21DF9241300CAB38B /* HSColorView.swift */,
+			);
+			name = HSBView;
+			sourceTree = "<group>";
+		};
 		4067FC6B1DF65B9B00745F44 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -180,6 +199,8 @@
 				4067FC6E1DF65E9B00745F44 /* Macros.swift */,
 				40B04AE81DF919A600ED77E0 /* UIImageViewExtension.swift */,
 				40B04AEA1DF9207300ED77E0 /* UIAlertControllerExtension.swift */,
+				400574021DF96DF300F961CF /* UIColorExtension.swift */,
+				400574041DF9749500F961CF /* Utility.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -259,8 +280,7 @@
 			children = (
 				86A358D71DF49D8500715247 /* BrushPreview.swift */,
 				40F1ECA41DF686D8005C5E19 /* SketchView.swift */,
-				406626C61DF9485E00CAB38B /* BrightnessView.swift */,
-				406626C21DF9241300CAB38B /* HSLColorView.swift */,
+				406626CC1DF9627400CAB38B /* HSBView */,
 			);
 			name = "Custom Views";
 			sourceTree = "<group>";
@@ -436,16 +456,20 @@
 				4067FC681DF657EF00745F44 /* UIViewControllerExtension.swift in Sources */,
 				40B04AEB1DF9207300ED77E0 /* UIAlertControllerExtension.swift in Sources */,
 				86A358D81DF49D8500715247 /* BrushPreview.swift in Sources */,
+				406626C91DF9559D00CAB38B /* HSBColorPickerView.swift in Sources */,
 				4011AFA61D96BA7300F7BE5B /* AppDelegate.swift in Sources */,
 				40B0C9BF1DF06C77004A31BA /* Paint.swift in Sources */,
 				40F1ECA51DF686D8005C5E19 /* SketchView.swift in Sources */,
+				400574031DF96DF300F961CF /* UIColorExtension.swift in Sources */,
 				40B04AE91DF919A600ED77E0 /* UIImageViewExtension.swift in Sources */,
 				4045ED681DEF606500778376 /* TutorialViewController.swift in Sources */,
-				406626C31DF9241300CAB38B /* HSLColorView.swift in Sources */,
+				406626C31DF9241300CAB38B /* HSColorView.swift in Sources */,
 				40B0C9BD1DF06B56004A31BA /* SketchViewController.swift in Sources */,
 				40682BCF1DF76C1800F8E448 /* UserDefaultsKeys.swift in Sources */,
 				4067FC6F1DF65E9B00745F44 /* Macros.swift in Sources */,
+				400574051DF9749500F961CF /* Utility.swift in Sources */,
 				40822DEC1DF77F7800C1118E /* UIImageExtension.swift in Sources */,
+				406626CB1DF95DB700CAB38B /* HSBView.swift in Sources */,
 				7F3903E91DF75AC600644E8D /* SettingsTableViewController.swift in Sources */,
 				40F1ECA71DF69415005C5E19 /* Path.swift in Sources */,
 				40A0D3191D96F22D001024EF /* Point.swift in Sources */,

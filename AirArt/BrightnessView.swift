@@ -9,16 +9,10 @@
 import UIKit
 
 @IBDesignable
-class BrightnessView: UIView {
+class BrightnessView: HSBView {
 
-    @IBInspectable internal var brightness: CGFloat = 1.0 {
-        didSet {
-            setNeedsDisplay()
-        }
-    }
-    internal var currentColor: UIColor = .white
-    internal var gradientWidth: Int { return Int(bounds.width / 2) }
-    internal let padding: CGFloat = 8
+    var gradientWidth: Int { return Int(bounds.width / 2) }
+    var padding: CGFloat { return superHSBColorPickerView.padding }
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -34,42 +28,20 @@ class BrightnessView: UIView {
 
 }
 
-// MARK: - Setup
-
-private extension BrightnessView {
-
-    func setup() {
-        setupBackground()
-        setupGestureRecognizers()
-    }
-
-    func setupBackground() {
-        backgroundColor = .clear
-    }
-
-    func setupGestureRecognizers() {
-        let tap = UITapGestureRecognizer(target: self, action: #selector(recognize(_:)))
-        let pan = UIPanGestureRecognizer(target: self, action: #selector(recognize(_:)))
-        addGestureRecognizer(tap)
-        addGestureRecognizer(pan)
-    }
-
-}
-
 // MARK: - Gesture Recgonizer
 
-internal extension BrightnessView {
+extension BrightnessView {
 
-    func recognize(_ gesture: UIGestureRecognizer) {
-        let rowTouched = gesture.location(in: self).y
-        changeBrightness(to: rowTouched / bounds.height)
+    override func recognize(_ gesture: UIGestureRecognizer) {
+        let rowTouched = Utility.clamp(gesture.location(in: self).y, min: 0, max: bounds.height)
+        brightness = 1 - (rowTouched / bounds.height)
     }
 
 }
 
 // MARK: - Helper
 
-internal extension BrightnessView {
+extension BrightnessView {
 
     func getPoint(from brightness: CGFloat) -> CGPoint {
         return CGPoint(x: CGFloat(gradientWidth) + padding, y: bounds.height - (brightness * bounds.height))
@@ -77,19 +49,9 @@ internal extension BrightnessView {
 
 }
 
-// MARK: - Accessors
-
-extension BrightnessView {
-
-    func changeBrightness(to newBrightness: CGFloat) {
-        brightness = newBrightness
-    }
-
-}
-
 // MARK: - Draw
 
-internal extension BrightnessView {
+extension BrightnessView {
 
     override func draw(_ rect: CGRect) {
         drawGradient()

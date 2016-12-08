@@ -17,10 +17,16 @@ class SettingsTableViewController: UITableViewController {
 
     @IBOutlet weak var previewImageView: BrushPreview!
     @IBOutlet weak var brushSizeSlider: UISlider!
+    @IBOutlet weak var rgbHSBSegmentedControl: UISegmentedControl! // 0 is RGB, 1 is HSB
+
     @IBOutlet weak var redSlider: UISlider!
     @IBOutlet weak var greenSlider: UISlider!
     @IBOutlet weak var blueSlider: UISlider!
     @IBOutlet weak var opacitySlider: UISlider!
+
+    @IBOutlet weak var rgbView: UIStackView!
+    @IBOutlet weak var hsbView: HSBColorPickerView!
+
     @IBOutlet weak var colorPreviewWindow: UIImageView!
 
     /**
@@ -32,6 +38,22 @@ class SettingsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupSliders()
+        setupHSBView()
+
+        // Update the brush preview
+        update()
+
+        // Save old color, in case
+        previousColor = Paint(paint: Paint.currentPaint)
+    }
+}
+
+// MARK: - Setup
+
+extension SettingsTableViewController {
+
+    func setupSliders() {
         redSlider.value = Float(Paint.currentPaint.red)
         redSlider.addTarget(self, action: #selector(redDidChange), for: .valueChanged)
 
@@ -46,18 +68,17 @@ class SettingsTableViewController: UITableViewController {
 
         brushSizeSlider.value = Float(Paint.currentPaint.brushSize)
         brushSizeSlider.addTarget(self, action: #selector(brushSizeDidChange), for: .valueChanged)
-
-        // Update the brush preview
-        previewImageView.updatePreview()
-        colorPreviewWindow.backgroundColor = Paint.currentPaint.uiColor
-
-        previousColor = Paint(paint: Paint.currentPaint)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func setupHSBView() {
+        hsbView.delegate = self
     }
+
+}
+
+// MARK: - UIBarButtonItem Action
+
+extension SettingsTableViewController {
 
     @IBAction func cancelButtonPressed(_ sender: AnyObject) {
         let alert = UIAlertController(title: "Are you sure you want to cancel?",
@@ -80,8 +101,11 @@ class SettingsTableViewController: UITableViewController {
     @IBAction func goButtonTapped(_ sender: AnyObject) {
         dismiss(animated: true, completion: nil)
     }
+}
 
-    // MARK: - Table view data source
+// MARK: - UITableViewDataSource
+
+extension SettingsTableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -108,40 +132,76 @@ class SettingsTableViewController: UITableViewController {
         }
 
     }
+}
+
+// MARK: - UISegmentedController Value Changed Action
+
+extension SettingsTableViewController {
+
+    @IBAction func didChangeValue(_ sender: UISegmentedControl) {
+        rgbView.isHidden = rgbHSBSegmentedControl.selectedSegmentIndex == 1
+        hsbView.isHidden = rgbHSBSegmentedControl.selectedSegmentIndex == 0
+
+        if rgbView.isHidden {
+            hsbView.color = Paint.currentPaint.uiColor
+        } else {
+            redSlider.value = Float(Paint.currentPaint.red)
+            greenSlider.value = Float(Paint.currentPaint.green)
+            blueSlider.value = Float(Paint.currentPaint.blue)
+            opacitySlider.value = Float(Paint.currentPaint.alpha)
+        }
+    }
 
 }
 
+// MARK: - UISlider Value Changed Actions
 
 extension SettingsTableViewController {
 
     func redDidChange() {
         Paint.currentPaint.red = CGFloat(redSlider.value)
-        previewImageView.updatePreview()
-        colorPreviewWindow.backgroundColor = Paint.currentPaint.uiColor
+        update()
     }
 
     func greenDidChange() {
         Paint.currentPaint.green = CGFloat(greenSlider.value)
-        previewImageView.updatePreview()
-        colorPreviewWindow.backgroundColor = Paint.currentPaint.uiColor
+        update()
     }
 
     func blueDidChange() {
         Paint.currentPaint.blue = CGFloat(blueSlider.value)
-        previewImageView.updatePreview()
-        colorPreviewWindow.backgroundColor = Paint.currentPaint.uiColor
+        update()
     }
 
     func alphaDidChange() {
         Paint.currentPaint.alpha = CGFloat(opacitySlider.value)
-        previewImageView.updatePreview()
-        colorPreviewWindow.backgroundColor = Paint.currentPaint.uiColor
+        update()
     }
 
     func brushSizeDidChange() {
         Paint.currentPaint.brushSize = CGFloat(brushSizeSlider.value)
+        update()
+    }
+}
+
+// MARK: - Helper
+
+extension SettingsTableViewController {
+
+    func update() {
         previewImageView.updatePreview()
         colorPreviewWindow.backgroundColor = Paint.currentPaint.uiColor
+    }
+
+}
+
+// MARK: - HSBColorPickerViewDelegate
+
+extension SettingsTableViewController: HSBColorPickerViewDelegate {
+
+    func colorDidChange(to color: UIColor) {
+        Paint.currentPaint.uiColor = color
+        update()
     }
 
 }

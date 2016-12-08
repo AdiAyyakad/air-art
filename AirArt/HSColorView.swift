@@ -9,15 +9,7 @@
 import UIKit
 
 @IBDesignable
-class HSLColorView: UIView {
-
-    @IBInspectable internal var currentColor: UIColor = .white {
-        didSet {
-            setNeedsDisplay()
-        }
-    }
-    internal var brightness: CGFloat = 1.0
-    internal var colorAlpha: CGFloat = 1.0
+class HSColorView: HSBView {
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -33,62 +25,21 @@ class HSLColorView: UIView {
 
 }
 
-// MARK: - Setup
-
-private extension HSLColorView {
-
-    func setup() {
-        setupGestureRecognizers()
-    }
-
-    private func setupGestureRecognizers() {
-        let tap = UITapGestureRecognizer(target: self, action: #selector(recognize(_:)))
-        let pan = UIPanGestureRecognizer(target: self, action: #selector(recognize(_:)))
-        addGestureRecognizer(tap)
-        addGestureRecognizer(pan)
-    }
-}
-
 // MARK: - Gesture Recognizers
 
-extension HSLColorView {
+extension HSColorView {
 
-    func recognize(_ gesture: UIGestureRecognizer) {
+    override func recognize(_ gesture: UIGestureRecognizer) {
         let point = gesture.location(in: self)
-        currentColor = getColor(at: point)
-    }
-
-}
-
-// MARK: - Accessors
-
-extension HSLColorView {
-
-    func changeBrightness(to newBrightness: CGFloat) {
-        brightness = newBrightness
-        reevaluateCurrentColor()
-    }
-
-    func changeColorAlpha(to newColorAlpha: CGFloat) {
-        colorAlpha = newColorAlpha
-        reevaluateCurrentColor()
-    }
-
-    private func reevaluateCurrentColor() {
-        var hue: CGFloat = -1.0
-        var sat: CGFloat = -1.0
-        var bright: CGFloat = -1.0
-        var alph: CGFloat = -1.0
-
-        currentColor.getHue(&hue, saturation: &sat, brightness: &bright, alpha: &alph)
-        currentColor = UIColor(hue: hue, saturation: sat, brightness: bright, alpha: alph)
+        currentColor = getColor(at: CGPoint(x: Utility.clamp(point.x, min: 0, max: bounds.width),
+                                            y: Utility.clamp(point.y, min: 0, max: bounds.height)))
     }
 
 }
 
 // MARK: - Helpers
 
-extension HSLColorView {
+extension HSColorView {
 
     func getPoint(from color: UIColor) -> CGPoint? {
 
@@ -117,13 +68,16 @@ extension HSLColorView {
 
 // MARK: - Draw
 
-extension HSLColorView {
+extension HSColorView {
 
     override func draw(_ rect: CGRect) {
         createHSL()
         createCrosshairs()?.stroke()
     }
 
+    /**
+     Creates the actual background of HSL generated colors
+     */
     private func createHSL() {
         guard let context = UIGraphicsGetCurrentContext() else {
             DLog("Could not get current context")
@@ -142,6 +96,27 @@ extension HSLColorView {
         }
     }
 
+    /**
+     Creates a crosshairs as follows:
+
+                   |
+                   |
+             ______|______
+            /      |      \
+           /       |       \
+          |        |        |
+          |        |        |
+     -----------------------------
+          |        |        |
+          |        |        |
+           \       |       /
+            \______|______/
+                   |
+                   |
+                   |
+
+    More or less
+     */
     private func createCrosshairs() -> UIBezierPath? {
         guard let currentColorPoint = getPoint(from: currentColor) else {
             DLog("Could not get point from current color")
