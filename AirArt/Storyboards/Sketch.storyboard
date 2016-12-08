@@ -136,7 +136,7 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Brush Size" id="QFq-NR-nOr">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="60" id="pC1-ja-1mM">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="60" id="pC1-ja-1mM">
                                         <rect key="frame" x="0.0" y="351.5" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pC1-ja-1mM" id="s9o-5n-2VN">
