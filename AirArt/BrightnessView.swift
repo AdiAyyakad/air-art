@@ -13,17 +13,15 @@ class BrightnessView: HSBView {
 
     var gradientWidth: Int { return Int(bounds.width / 2) }
     var padding: CGFloat { return superHSBColorPickerView.padding }
+    let pointerView = PointerView(frame: CGRect(origin: .zero,
+                                                size: CGSize(width: PointerView.size,
+                                                             height: PointerView.size)))
 
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+    override func setup() {
+        super.setup()
 
-        setup()
-    }
-
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-
-        setup()
+        addSubview(pointerView)
+        pointerView.move(center: CGPoint(x: CGFloat(gradientWidth) + padding, y: bounds.height))
     }
 
 }
@@ -35,16 +33,8 @@ extension BrightnessView {
     override func recognize(_ gesture: UIGestureRecognizer) {
         let rowTouched = Utility.clamp(gesture.location(in: self).y, min: 0, max: bounds.height)
         brightness = 1 - (rowTouched / bounds.height)
-    }
 
-}
-
-// MARK: - Helper
-
-extension BrightnessView {
-
-    func getPoint(from brightness: CGFloat) -> CGPoint {
-        return CGPoint(x: CGFloat(gradientWidth) + padding, y: bounds.height - (brightness * bounds.height))
+        pointerView.move(to: rowTouched)
     }
 
 }
@@ -54,15 +44,8 @@ extension BrightnessView {
 extension BrightnessView {
 
     override func draw(_ rect: CGRect) {
+        DLog("Drawing Brightness")
         drawGradient()
-
-        let pointer = createPointer(to: getPoint(from: brightness))
-
-        UIColor.lightGray.setFill()
-        pointer.fill()
-
-        UIColor.darkGray.setStroke()
-        pointer.stroke()
     }
 
     private func drawGradient() {
@@ -71,59 +54,77 @@ extension BrightnessView {
             return
         }
 
-        var hue: CGFloat = -1.0
-        var sat: CGFloat = -1.0
-        var alph: CGFloat = -1.0
-
-        currentColor.getHue(&hue, saturation: &sat, brightness: nil, alpha: &alph)
-
         // Iterate through the brightness values
-        for bright in 0..<Int(bounds.height) {
+        for iBrightness in 0..<Int(bounds.height) {
             UIColor(hue: hue,
                     saturation: sat,
-                    brightness: CGFloat(bright) / bounds.height,
-                    alpha: alph).setFill()
+                    brightness: CGFloat(iBrightness) / bounds.height,
+                    alpha: colorAlpha).setFill()
 
-            context.fill(CGRect(x: 0, y: Int(bounds.height) - bright, width: gradientWidth, height: 1))
+            context.fill(CGRect(x: 0, y: Int(bounds.height) - iBrightness, width: gradientWidth, height: 1))
         }
     }
 
-    /**
-     Creates the following "pointer" with the verticies labelled as follows:
+}
 
-            Top Left Box    Top Right Box
-                 _____________
-                /            |
-               /             |
-              /              |
-             / Point         |
-             \               |
-              \              |
-               \             |
-                \____________|
-          Bottom Left Box   Bottom Right Box
+class PointerView: UIView {
+    public static let size: CGFloat = 6.0
 
-      More or less
-     */
-    private func createPointer(to point: CGPoint) -> UIBezierPath {
+    // MARK: - Inits
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setup()
+    }
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setup()
+    }
+
+    // MARK: - Setup
+
+    func setup() {
+        center = .zero
+
+        let pointerLayer = CAShapeLayer()
+
+        pointerLayer.path = createPointer().cgPath
+        pointerLayer.fillColor = UIColor.lightGray.cgColor
+        pointerLayer.strokeColor = UIColor.darkGray.cgColor
+        pointerLayer.lineWidth = 2.0
+
+        layer.addSublayer(pointerLayer)
+
+    }
+
+    // MARK: - Action
+
+    func move(to y: CGFloat) {
+        center.y = y
+    }
+
+    func move(center toPoint: CGPoint) {
+        center = toPoint
+    }
+
+    // MARK: - UIBezierPath
+
+    private func createPointer() -> UIBezierPath {
         let pointer = UIBezierPath()
-        let size: CGFloat = 6.0
 
-        let topLeftBox = CGPoint(x: point.x + size, y: point.y + size)
-        let topRightBox = CGPoint(x: topLeftBox.x + size*2, y: topLeftBox.y)
-        let bottomLeftBox = CGPoint(x: point.x + size, y: point.y - size)
-        let bottomRightBox = CGPoint(x: bottomLeftBox.x + size*2, y: bottomLeftBox.y)
+        let topLeftBox = CGPoint(x: center.x + PointerView.size, y: center.y + PointerView.size)
+        let topRightBox = CGPoint(x: topLeftBox.x + PointerView.size * 2, y: topLeftBox.y)
+        let bottomLeftBox = CGPoint(x: center.x + PointerView.size, y: center.y - PointerView.size)
+        let bottomRightBox = CGPoint(x: bottomLeftBox.x + PointerView.size * 2, y: bottomLeftBox.y)
 
-        pointer.move(to: point)
+        pointer.move(to: center)
         pointer.addLine(to: topLeftBox)
         pointer.addLine(to: topRightBox)
         pointer.addLine(to: bottomRightBox)
         pointer.addLine(to: bottomLeftBox)
         pointer.close()
 
-        pointer.lineWidth = 2.0
-
         return pointer
     }
-
 }

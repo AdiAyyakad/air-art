@@ -185,8 +185,8 @@
 			children = (
 				406626C81DF9559D00CAB38B /* HSBColorPickerView.swift */,
 				406626CA1DF95DB700CAB38B /* HSBView.swift */,
-				406626C61DF9485E00CAB38B /* BrightnessView.swift */,
 				406626C21DF9241300CAB38B /* HSColorView.swift */,
+				406626C61DF9485E00CAB38B /* BrightnessView.swift */,
 			);
 			name = HSBView;
 			sourceTree = "<group>";
