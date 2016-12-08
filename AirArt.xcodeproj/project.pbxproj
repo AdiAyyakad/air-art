@@ -21,13 +21,13 @@
 		4063C11B1DF7788700CFA262 /* closeButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4063C1181DF7788700CFA262 /* closeButton@2x.png */; };
 		4063C11C1DF7788700CFA262 /* closeButton@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4063C1191DF7788700CFA262 /* closeButton@3x.png */; };
 		406626C31DF9241300CAB38B /* HSLColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406626C21DF9241300CAB38B /* HSLColorView.swift */; };
+		406626C71DF9485E00CAB38B /* BrightnessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406626C61DF9485E00CAB38B /* BrightnessView.swift */; };
 		4067FC681DF657EF00745F44 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4067FC671DF657EF00745F44 /* UIViewControllerExtension.swift */; };
 		4067FC6F1DF65E9B00745F44 /* Macros.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4067FC6E1DF65E9B00745F44 /* Macros.swift */; };
 		40682BCF1DF76C1800F8E448 /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40682BCE1DF76C1800F8E448 /* UserDefaultsKeys.swift */; };
 		406FCAB01DEFD7FA00FCCF8F /* Calibration1.png in Resources */ = {isa = PBXBuildFile; fileRef = 406FCAAE1DEFD7FA00FCCF8F /* Calibration1.png */; };
 		406FCAB11DEFD7FA00FCCF8F /* Calibration2.png in Resources */ = {isa = PBXBuildFile; fileRef = 406FCAAF1DEFD7FA00FCCF8F /* Calibration2.png */; };
 		40822DEC1DF77F7800C1118E /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3A5951DF739EE00B3C4CB /* UIImageExtension.swift */; };
-		4084AF831DF66B050039ED61 /* BlockerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4084AF821DF66B050039ED61 /* BlockerView.swift */; };
 		40A0D3191D96F22D001024EF /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A0D3181D96F22D001024EF /* Point.swift */; };
 		40B04AE91DF919A600ED77E0 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B04AE81DF919A600ED77E0 /* UIImageViewExtension.swift */; };
 		40B04AEB1DF9207300ED77E0 /* UIAlertControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B04AEA1DF9207300ED77E0 /* UIAlertControllerExtension.swift */; };
@@ -81,12 +81,12 @@
 		4063C1181DF7788700CFA262 /* closeButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "closeButton@2x.png"; sourceTree = "<group>"; };
 		4063C1191DF7788700CFA262 /* closeButton@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "closeButton@3x.png"; sourceTree = "<group>"; };
 		406626C21DF9241300CAB38B /* HSLColorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HSLColorView.swift; sourceTree = "<group>"; };
+		406626C61DF9485E00CAB38B /* BrightnessView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrightnessView.swift; sourceTree = "<group>"; };
 		4067FC671DF657EF00745F44 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		4067FC6E1DF65E9B00745F44 /* Macros.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Macros.swift; sourceTree = "<group>"; };
 		40682BCE1DF76C1800F8E448 /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
 		406FCAAE1DEFD7FA00FCCF8F /* Calibration1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Calibration1.png; path = Images/Calibration1.png; sourceTree = "<group>"; };
 		406FCAAF1DEFD7FA00FCCF8F /* Calibration2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Calibration2.png; path = Images/Calibration2.png; sourceTree = "<group>"; };
-		4084AF821DF66B050039ED61 /* BlockerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockerView.swift; sourceTree = "<group>"; };
 		40A0D3181D96F22D001024EF /* Point.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
 		40B04AE81DF919A600ED77E0 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		40B04AEA1DF9207300ED77E0 /* UIAlertControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAlertControllerExtension.swift; sourceTree = "<group>"; };
@@ -258,8 +258,8 @@
 			isa = PBXGroup;
 			children = (
 				86A358D71DF49D8500715247 /* BrushPreview.swift */,
-				4084AF821DF66B050039ED61 /* BlockerView.swift */,
 				40F1ECA41DF686D8005C5E19 /* SketchView.swift */,
+				406626C61DF9485E00CAB38B /* BrightnessView.swift */,
 				406626C21DF9241300CAB38B /* HSLColorView.swift */,
 			);
 			name = "Custom Views";
@@ -442,7 +442,6 @@
 				40B04AE91DF919A600ED77E0 /* UIImageViewExtension.swift in Sources */,
 				4045ED681DEF606500778376 /* TutorialViewController.swift in Sources */,
 				406626C31DF9241300CAB38B /* HSLColorView.swift in Sources */,
-				4084AF831DF66B050039ED61 /* BlockerView.swift in Sources */,
 				40B0C9BD1DF06B56004A31BA /* SketchViewController.swift in Sources */,
 				40682BCF1DF76C1800F8E448 /* UserDefaultsKeys.swift in Sources */,
 				4067FC6F1DF65E9B00745F44 /* Macros.swift in Sources */,
@@ -450,6 +449,7 @@
 				7F3903E91DF75AC600644E8D /* SettingsTableViewController.swift in Sources */,
 				40F1ECA71DF69415005C5E19 /* Path.swift in Sources */,
 				40A0D3191D96F22D001024EF /* Point.swift in Sources */,
+				406626C71DF9485E00CAB38B /* BrightnessView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

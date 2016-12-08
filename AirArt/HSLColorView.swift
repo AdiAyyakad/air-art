@@ -11,14 +11,13 @@ import UIKit
 @IBDesignable
 class HSLColorView: UIView {
 
-    var currentColor: UIColor = .white {
+    @IBInspectable internal var currentColor: UIColor = .white {
         didSet {
             setNeedsDisplay()
         }
     }
-
-    @IBInspectable var brightness: CGFloat = 1.0
-    @IBInspectable var colorAlpha: CGFloat = 1.0
+    internal var brightness: CGFloat = 1.0
+    internal var colorAlpha: CGFloat = 1.0
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -36,7 +35,7 @@ class HSLColorView: UIView {
 
 // MARK: - Setup
 
-extension HSLColorView {
+private extension HSLColorView {
 
     func setup() {
         setupGestureRecognizers()
@@ -67,10 +66,22 @@ extension HSLColorView {
 
     func changeBrightness(to newBrightness: CGFloat) {
         brightness = newBrightness
+        reevaluateCurrentColor()
     }
 
     func changeColorAlpha(to newColorAlpha: CGFloat) {
         colorAlpha = newColorAlpha
+        reevaluateCurrentColor()
+    }
+
+    private func reevaluateCurrentColor() {
+        var hue: CGFloat = -1.0
+        var sat: CGFloat = -1.0
+        var bright: CGFloat = -1.0
+        var alph: CGFloat = -1.0
+
+        currentColor.getHue(&hue, saturation: &sat, brightness: &bright, alpha: &alph)
+        currentColor = UIColor(hue: hue, saturation: sat, brightness: bright, alpha: alph)
     }
 
 }
@@ -83,6 +94,7 @@ extension HSLColorView {
 
         var hue: CGFloat = -1.0
         var sat: CGFloat = -1.0
+
         color.getHue(&hue,
                      saturation: &sat,
                      brightness: nil,
@@ -114,6 +126,7 @@ extension HSLColorView {
 
     private func createHSL() {
         guard let context = UIGraphicsGetCurrentContext() else {
+            DLog("Could not get current context")
             return
         }
 
@@ -131,6 +144,7 @@ extension HSLColorView {
 
     private func createCrosshairs() -> UIBezierPath? {
         guard let currentColorPoint = getPoint(from: currentColor) else {
+            DLog("Could not get point from current color")
             return nil
         }
 

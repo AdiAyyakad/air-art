@@ -334,24 +334,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oVF-H6-ume" customClass="HSLColorView" customModule="AirArt" customModuleProvider="target">
-                                <rect key="frame" x="52.5" y="199" width="269" height="269"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="16" y="199" width="269" height="269"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="oVF-H6-ume" secondAttribute="height" multiplier="1:1" id="noA-E5-3gI"/>
                                 </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4ad-SG-qxR" customClass="BrightnessView" customModule="AirArt" customModuleProvider="target">
+                                <rect key="frame" x="293" y="199" width="66" height="269"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="oVF-H6-ume" firstAttribute="centerY" secondItem="ilh-0f-ZaF" secondAttribute="centerY" id="5ru-sP-E3i"/>
-                            <constraint firstItem="oVF-H6-ume" firstAttribute="centerX" secondItem="ilh-0f-ZaF" secondAttribute="centerX" id="eji-ID-WGC"/>
+                            <constraint firstItem="4ad-SG-qxR" firstAttribute="centerY" secondItem="oVF-H6-ume" secondAttribute="centerY" id="IZ7-xO-x1z"/>
+                            <constraint firstItem="oVF-H6-ume" firstAttribute="leading" secondItem="ilh-0f-ZaF" secondAttribute="leadingMargin" id="jdc-38-4O9"/>
                             <constraint firstItem="oVF-H6-ume" firstAttribute="top" secondItem="Pkb-6F-klv" secondAttribute="bottom" constant="179" id="njv-zE-AVk"/>
+                            <constraint firstItem="4ad-SG-qxR" firstAttribute="top" secondItem="oVF-H6-ume" secondAttribute="top" id="ruv-Uu-k4G"/>
+                            <constraint firstItem="4ad-SG-qxR" firstAttribute="leading" secondItem="oVF-H6-ume" secondAttribute="trailing" constant="8" id="xlv-rm-GXv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4ad-SG-qxR" secondAttribute="trailing" id="ypR-jk-FY2"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ww4-vL-EoN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2894" y="869"/>
+            <point key="canvasLocation" x="2893.5999999999999" y="868.51574212893559"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2cD-fo-6Cw">
