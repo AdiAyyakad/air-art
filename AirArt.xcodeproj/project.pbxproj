@@ -29,6 +29,7 @@
 		4084AF831DF66B050039ED61 /* BlockerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4084AF821DF66B050039ED61 /* BlockerView.swift */; };
 		40A0D3191D96F22D001024EF /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A0D3181D96F22D001024EF /* Point.swift */; };
 		40B04AE91DF919A600ED77E0 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B04AE81DF919A600ED77E0 /* UIImageViewExtension.swift */; };
+		40B04AEB1DF9207300ED77E0 /* UIAlertControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B04AEA1DF9207300ED77E0 /* UIAlertControllerExtension.swift */; };
 		40B0C9BB1DF06B3B004A31BA /* Sketch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40B0C9BA1DF06B3B004A31BA /* Sketch.storyboard */; };
 		40B0C9BD1DF06B56004A31BA /* SketchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B0C9BC1DF06B56004A31BA /* SketchViewController.swift */; };
 		40B0C9BF1DF06C77004A31BA /* Paint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B0C9BE1DF06C77004A31BA /* Paint.swift */; };
@@ -86,6 +87,7 @@
 		4084AF821DF66B050039ED61 /* BlockerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockerView.swift; sourceTree = "<group>"; };
 		40A0D3181D96F22D001024EF /* Point.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
 		40B04AE81DF919A600ED77E0 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
+		40B04AEA1DF9207300ED77E0 /* UIAlertControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAlertControllerExtension.swift; sourceTree = "<group>"; };
 		40B0C9BA1DF06B3B004A31BA /* Sketch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Sketch.storyboard; path = Storyboards/Sketch.storyboard; sourceTree = "<group>"; };
 		40B0C9BC1DF06B56004A31BA /* SketchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SketchViewController.swift; sourceTree = "<group>"; };
 		40B0C9BE1DF06C77004A31BA /* Paint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Paint.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				4067FC671DF657EF00745F44 /* UIViewControllerExtension.swift */,
 				4067FC6E1DF65E9B00745F44 /* Macros.swift */,
 				40B04AE81DF919A600ED77E0 /* UIImageViewExtension.swift */,
+				40B04AEA1DF9207300ED77E0 /* UIAlertControllerExtension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -428,6 +431,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4067FC681DF657EF00745F44 /* UIViewControllerExtension.swift in Sources */,
+				40B04AEB1DF9207300ED77E0 /* UIAlertControllerExtension.swift in Sources */,
 				86A358D81DF49D8500715247 /* BrushPreview.swift in Sources */,
 				4011AFA61D96BA7300F7BE5B /* AppDelegate.swift in Sources */,
 				40B0C9BF1DF06C77004A31BA /* Paint.swift in Sources */,

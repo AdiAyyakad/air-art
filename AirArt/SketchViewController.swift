@@ -124,16 +124,22 @@ extension SketchViewController {
 extension SketchViewController {
 
     @IBAction func didPressDone(_ sender: Any) {
-        let alert = UIAlertController(title: "Confirmation", message: "Are you sure you want to save your image?", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { [unowned self] action in
-            guard let image = UIImage(view: self.sketchView) else {
-                DLog("Could not convert image to view")
-                return
-            }
+        let alert = UIAlertController(title: "Confirmation",
+                                      message: "Are you sure you want to save your image?",
+                                      preferredStyle: .alert)
 
-            UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+        alert.addAction(UIAlertAction(title: "Ok",
+                                      style: .default,
+                                      handler: { [unowned self] action in
+                                        guard let image = UIImage(view: self.sketchView) else {
+                                            DLog("Could not convert image to view")
+                                            return
+                                        }
+
+                                        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
         }))
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+
+        alert.addCancelAction()
 
         present(alert, animated: true, completion: nil)
     }
@@ -147,11 +153,17 @@ extension SketchViewController {
     }
 
     @IBAction func didPressClose(_ sender: Any) {
-        let alert = UIAlertController(title: "Confirmation", message: "Are you sure you want to save your image?", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { [unowned self] action in
-            self.sketchView.clear()
+        let alert = UIAlertController(title: "Confirmation",
+                                      message: "Are you sure you want to save your image?",
+                                      preferredStyle: .alert)
+
+        alert.addAction(UIAlertAction(title: "Ok",
+                                      style: .default,
+                                      handler: { [unowned self] action in
+                                        self.sketchView.clear()
         }))
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+
+        alert.addCancelAction()
 
         present(alert, animated: true, completion: nil)
     }

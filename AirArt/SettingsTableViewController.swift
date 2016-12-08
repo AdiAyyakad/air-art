@@ -60,13 +60,19 @@ class SettingsTableViewController: UITableViewController {
     }
 
     @IBAction func cancelButtonPressed(_ sender: AnyObject) {
-        let alert = UIAlertController(title: "Are you sure you want to cancel?", message: "If you would like to keep your current paint settings, click Go. If not, click Yes", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { [unowned self] action in
-            self.dismiss(animated: true) { [unowned self] in
-                Paint.currentPaint = self.previousColor
-            }
+        let alert = UIAlertController(title: "Are you sure you want to cancel?",
+                                      message: "If you would like to keep your current paint settings, click Go. If not, click Yes",
+                                      preferredStyle: .alert)
+
+        alert.addAction(UIAlertAction(title: "Yes",
+                                      style: .default,
+                                      handler: { [unowned self] action in
+                                        self.dismiss(animated: true) { [unowned self] in
+                                            Paint.currentPaint = self.previousColor
+                                        }
         }))
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+
+        alert.addCancelAction()
 
         present(alert, animated: true, completion: nil)
     }
