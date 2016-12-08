@@ -8,5 +8,4 @@
 
 enum UserDefaultsKeys: String {
     case PresentedTutorial = "Presented Tutorial"
-
 }
