@@ -17,7 +17,11 @@ class SketchViewController: UIViewController {
     let scale = 10.0
     var path = UIBezierPath()
     var touch: CGPoint = .zero
+
+    #if DEBUG
     var presentedTutorial = false
+    #endif
+
     let motionManager = CMMotionManager()
 
     var initialXAccel: Double!
@@ -32,17 +36,17 @@ class SketchViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        /*
-        if !UserDefaults.standard.bool(forKey: UserDefaultsKeys.PresentedTutorial.rawValue) {
-            presentTutorial()
-            UserDefaults.standard.set(true, forKey: UserDefaultsKeys.PresentedTutorial.rawValue)
-        }
-         */
-
-        if !presentedTutorial {
-            presentTutorial()
-            presentedTutorial = true
-        }
+        #if DEBUG
+            if !presentedTutorial {
+                presentedTutorial = true
+                presentTutorial()
+            }
+        #else
+            if !UserDefaults.standard.bool(forKey: UserDefaultsKeys.PresentedTutorial.rawValue) {
+                presentTutorial()
+                UserDefaults.standard.set(true, forKey: UserDefaultsKeys.PresentedTutorial.rawValue)
+            }
+        #endif
     }
 
 }

@@ -10,6 +10,50 @@
 		40041D521DFC6AC100664FAB /* Tutorial1.png in Resources */ = {isa = PBXBuildFile; fileRef = 40041D4F1DFC6AC100664FAB /* Tutorial1.png */; };
 		40041D531DFC6AC100664FAB /* Tutorial2.png in Resources */ = {isa = PBXBuildFile; fileRef = 40041D501DFC6AC100664FAB /* Tutorial2.png */; };
 		40041D541DFC6AC100664FAB /* Tutorial3.png in Resources */ = {isa = PBXBuildFile; fileRef = 40041D511DFC6AC100664FAB /* Tutorial3.png */; };
+		40041D571DFC909A00664FAB /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4067FC671DF657EF00745F44 /* UIViewControllerExtension.swift */; };
+		40041D581DFC909A00664FAB /* UIAlertControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B04AEA1DF9207300ED77E0 /* UIAlertControllerExtension.swift */; };
+		40041D591DFC909A00664FAB /* BrushPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A358D71DF49D8500715247 /* BrushPreview.swift */; };
+		40041D5A1DFC909A00664FAB /* HSBColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406626C81DF9559D00CAB38B /* HSBColorPickerView.swift */; };
+		40041D5B1DFC909A00664FAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011AFA51D96BA7300F7BE5B /* AppDelegate.swift */; };
+		40041D5C1DFC909A00664FAB /* Paint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B0C9BE1DF06C77004A31BA /* Paint.swift */; };
+		40041D5D1DFC909A00664FAB /* SketchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F1ECA41DF686D8005C5E19 /* SketchView.swift */; };
+		40041D5E1DFC909A00664FAB /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400574021DF96DF300F961CF /* UIColorExtension.swift */; };
+		40041D5F1DFC909A00664FAB /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B04AE81DF919A600ED77E0 /* UIImageViewExtension.swift */; };
+		40041D601DFC909A00664FAB /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4045ED671DEF606500778376 /* TutorialViewController.swift */; };
+		40041D611DFC909A00664FAB /* HSColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406626C21DF9241300CAB38B /* HSColorView.swift */; };
+		40041D621DFC909A00664FAB /* SketchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B0C9BC1DF06B56004A31BA /* SketchViewController.swift */; };
+		40041D631DFC909A00664FAB /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40682BCE1DF76C1800F8E448 /* UserDefaultsKeys.swift */; };
+		40041D641DFC909A00664FAB /* Macros.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4067FC6E1DF65E9B00745F44 /* Macros.swift */; };
+		40041D651DFC909A00664FAB /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400574041DF9749500F961CF /* Utility.swift */; };
+		40041D661DFC909A00664FAB /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3A5951DF739EE00B3C4CB /* UIImageExtension.swift */; };
+		40041D671DFC909A00664FAB /* HSBView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406626CA1DF95DB700CAB38B /* HSBView.swift */; };
+		40041D681DFC909A00664FAB /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3903E81DF75AC500644E8D /* SettingsTableViewController.swift */; };
+		40041D691DFC909A00664FAB /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F1ECA61DF69415005C5E19 /* Path.swift */; };
+		40041D6A1DFC909A00664FAB /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A0D3181D96F22D001024EF /* Point.swift */; };
+		40041D6B1DFC909A00664FAB /* BrightnessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406626C61DF9485E00CAB38B /* BrightnessView.swift */; };
+		40041D6E1DFC909A00664FAB /* undoButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3903DA1DF7329500644E8D /* undoButton@2x.png */; };
+		40041D6F1DFC909A00664FAB /* redoButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3903D31DF7329500644E8D /* redoButton.png */; };
+		40041D701DFC909A00664FAB /* settingsButton@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3903D81DF7329500644E8D /* settingsButton@3x.png */; };
+		40041D711DFC909A00664FAB /* closeButton@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4063C1191DF7788700CFA262 /* closeButton@3x.png */; };
+		40041D721DFC909A00664FAB /* Tutorial1.png in Resources */ = {isa = PBXBuildFile; fileRef = 40041D4F1DFC6AC100664FAB /* Tutorial1.png */; };
+		40041D731DFC909A00664FAB /* redoButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3903D41DF7329500644E8D /* redoButton@2x.png */; };
+		40041D741DFC909A00664FAB /* doneButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3903D11DF7329500644E8D /* doneButton@2x.png */; };
+		40041D751DFC909A00664FAB /* settingsButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3903D61DF7329500644E8D /* settingsButton.png */; };
+		40041D761DFC909A00664FAB /* doneButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3903D01DF7329500644E8D /* doneButton.png */; };
+		40041D771DFC909A00664FAB /* undoButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3903D91DF7329500644E8D /* undoButton.png */; };
+		40041D781DFC909A00664FAB /* Sketch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40B0C9BA1DF06B3B004A31BA /* Sketch.storyboard */; };
+		40041D791DFC909A00664FAB /* Tutorial3.png in Resources */ = {isa = PBXBuildFile; fileRef = 40041D511DFC6AC100664FAB /* Tutorial3.png */; };
+		40041D7A1DFC909A00664FAB /* closeButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 4063C1171DF7788700CFA262 /* closeButton.png */; };
+		40041D7B1DFC909A00664FAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4011AFAE1D96BA7300F7BE5B /* LaunchScreen.storyboard */; };
+		40041D7C1DFC909A00664FAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4011AFAC1D96BA7300F7BE5B /* Assets.xcassets */; };
+		40041D7D1DFC909A00664FAB /* SplashScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 4045ED571DEF4FF000778376 /* SplashScreen.png */; };
+		40041D7E1DFC909A00664FAB /* settingsButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3903D71DF7329500644E8D /* settingsButton@2x.png */; };
+		40041D7F1DFC909A00664FAB /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4045ED551DEF4DEA00778376 /* Tutorial.storyboard */; };
+		40041D801DFC909A00664FAB /* closeButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4063C1181DF7788700CFA262 /* closeButton@2x.png */; };
+		40041D811DFC909A00664FAB /* redoButton@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3903D51DF7329500644E8D /* redoButton@3x.png */; };
+		40041D821DFC909A00664FAB /* doneButton@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3903D21DF7329500644E8D /* doneButton@3x.png */; };
+		40041D831DFC909A00664FAB /* Tutorial2.png in Resources */ = {isa = PBXBuildFile; fileRef = 40041D501DFC6AC100664FAB /* Tutorial2.png */; };
+		40041D841DFC909A00664FAB /* undoButton@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F3903DB1DF7329500644E8D /* undoButton@3x.png */; };
 		400574031DF96DF300F961CF /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400574021DF96DF300F961CF /* UIColorExtension.swift */; };
 		400574051DF9749500F961CF /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400574041DF9749500F961CF /* Utility.swift */; };
 		4011AFA61D96BA7300F7BE5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011AFA51D96BA7300F7BE5B /* AppDelegate.swift */; };
@@ -68,6 +112,8 @@
 		40041D4F1DFC6AC100664FAB /* Tutorial1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Tutorial1.png; path = Images/Tutorial1.png; sourceTree = "<group>"; };
 		40041D501DFC6AC100664FAB /* Tutorial2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Tutorial2.png; path = Images/Tutorial2.png; sourceTree = "<group>"; };
 		40041D511DFC6AC100664FAB /* Tutorial3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Tutorial3.png; path = Images/Tutorial3.png; sourceTree = "<group>"; };
+		40041D891DFC909A00664FAB /* AirArt Debug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AirArt Debug.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		40041D8A1DFC909A00664FAB /* AirArt copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "AirArt copy-Info.plist"; path = "/Users/Adi/Documents/air-art/AirArt copy-Info.plist"; sourceTree = "<absolute>"; };
 		400574021DF96DF300F961CF /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		400574041DF9749500F961CF /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		4011AFA21D96BA7300F7BE5B /* AirArt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirArt.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,6 +163,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		40041D6C1DFC909A00664FAB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4011AF9F1D96BA7300F7BE5B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -148,6 +201,7 @@
 			children = (
 				4011AFA21D96BA7300F7BE5B /* AirArt.app */,
 				4011AFB61D96BA7300F7BE5B /* AirArtTests.xctest */,
+				40041D891DFC909A00664FAB /* AirArt Debug.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -215,6 +269,7 @@
 			isa = PBXGroup;
 			children = (
 				4011AFB11D96BA7300F7BE5B /* Info.plist */,
+				40041D8A1DFC909A00664FAB /* AirArt copy-Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -296,6 +351,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		40041D551DFC909A00664FAB /* AirArt Debug */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 40041D861DFC909A00664FAB /* Build configuration list for PBXNativeTarget "AirArt Debug" */;
+			buildPhases = (
+				40041D561DFC909A00664FAB /* Sources */,
+				40041D6C1DFC909A00664FAB /* Frameworks */,
+				40041D6D1DFC909A00664FAB /* Resources */,
+				40041D851DFC909A00664FAB /* Run Script */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "AirArt Debug";
+			productName = AirArt;
+			productReference = 40041D891DFC909A00664FAB /* AirArt Debug.app */;
+			productType = "com.apple.product-type.application";
+		};
 		4011AFA11D96BA7300F7BE5B /* AirArt */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4011AFBF1D96BA7300F7BE5B /* Build configuration list for PBXNativeTarget "AirArt" */;
@@ -342,6 +415,9 @@
 				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = Adi;
 				TargetAttributes = {
+					40041D551DFC909A00664FAB = {
+						DevelopmentTeam = 7FESQ2J54U;
+					};
 					4011AFA11D96BA7300F7BE5B = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 7FESQ2J54U;
@@ -370,12 +446,43 @@
 			projectRoot = "";
 			targets = (
 				4011AFA11D96BA7300F7BE5B /* AirArt */,
+				40041D551DFC909A00664FAB /* AirArt Debug */,
 				4011AFB51D96BA7300F7BE5B /* AirArtTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		40041D6D1DFC909A00664FAB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40041D6E1DFC909A00664FAB /* undoButton@2x.png in Resources */,
+				40041D6F1DFC909A00664FAB /* redoButton.png in Resources */,
+				40041D701DFC909A00664FAB /* settingsButton@3x.png in Resources */,
+				40041D711DFC909A00664FAB /* closeButton@3x.png in Resources */,
+				40041D721DFC909A00664FAB /* Tutorial1.png in Resources */,
+				40041D731DFC909A00664FAB /* redoButton@2x.png in Resources */,
+				40041D741DFC909A00664FAB /* doneButton@2x.png in Resources */,
+				40041D751DFC909A00664FAB /* settingsButton.png in Resources */,
+				40041D761DFC909A00664FAB /* doneButton.png in Resources */,
+				40041D771DFC909A00664FAB /* undoButton.png in Resources */,
+				40041D781DFC909A00664FAB /* Sketch.storyboard in Resources */,
+				40041D791DFC909A00664FAB /* Tutorial3.png in Resources */,
+				40041D7A1DFC909A00664FAB /* closeButton.png in Resources */,
+				40041D7B1DFC909A00664FAB /* LaunchScreen.storyboard in Resources */,
+				40041D7C1DFC909A00664FAB /* Assets.xcassets in Resources */,
+				40041D7D1DFC909A00664FAB /* SplashScreen.png in Resources */,
+				40041D7E1DFC909A00664FAB /* settingsButton@2x.png in Resources */,
+				40041D7F1DFC909A00664FAB /* Tutorial.storyboard in Resources */,
+				40041D801DFC909A00664FAB /* closeButton@2x.png in Resources */,
+				40041D811DFC909A00664FAB /* redoButton@3x.png in Resources */,
+				40041D821DFC909A00664FAB /* doneButton@3x.png in Resources */,
+				40041D831DFC909A00664FAB /* Tutorial2.png in Resources */,
+				40041D841DFC909A00664FAB /* undoButton@3x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4011AFA01D96BA7300F7BE5B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -416,6 +523,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		40041D851DFC909A00664FAB /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
 		40E6F3AC1D972FCE00E92C6F /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -433,6 +554,34 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		40041D561DFC909A00664FAB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40041D571DFC909A00664FAB /* UIViewControllerExtension.swift in Sources */,
+				40041D581DFC909A00664FAB /* UIAlertControllerExtension.swift in Sources */,
+				40041D591DFC909A00664FAB /* BrushPreview.swift in Sources */,
+				40041D5A1DFC909A00664FAB /* HSBColorPickerView.swift in Sources */,
+				40041D5B1DFC909A00664FAB /* AppDelegate.swift in Sources */,
+				40041D5C1DFC909A00664FAB /* Paint.swift in Sources */,
+				40041D5D1DFC909A00664FAB /* SketchView.swift in Sources */,
+				40041D5E1DFC909A00664FAB /* UIColorExtension.swift in Sources */,
+				40041D5F1DFC909A00664FAB /* UIImageViewExtension.swift in Sources */,
+				40041D601DFC909A00664FAB /* TutorialViewController.swift in Sources */,
+				40041D611DFC909A00664FAB /* HSColorView.swift in Sources */,
+				40041D621DFC909A00664FAB /* SketchViewController.swift in Sources */,
+				40041D631DFC909A00664FAB /* UserDefaultsKeys.swift in Sources */,
+				40041D641DFC909A00664FAB /* Macros.swift in Sources */,
+				40041D651DFC909A00664FAB /* Utility.swift in Sources */,
+				40041D661DFC909A00664FAB /* UIImageExtension.swift in Sources */,
+				40041D671DFC909A00664FAB /* HSBView.swift in Sources */,
+				40041D681DFC909A00664FAB /* SettingsTableViewController.swift in Sources */,
+				40041D691DFC909A00664FAB /* Path.swift in Sources */,
+				40041D6A1DFC909A00664FAB /* Point.swift in Sources */,
+				40041D6B1DFC909A00664FAB /* BrightnessView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4011AF9E1D96BA7300F7BE5B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -491,6 +640,36 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		40041D871DFC909A00664FAB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 7FESQ2J54U;
+				INFOPLIST_FILE = "AirArt copy-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.aditya-ayyakad.air-art";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		40041D881DFC909A00664FAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 7FESQ2J54U;
+				INFOPLIST_FILE = "AirArt copy-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.aditya-ayyakad.air-art";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 		4011AFBD1D96BA7300F7BE5B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -595,6 +774,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.aditya-ayyakad.air-art";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -647,6 +827,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		40041D861DFC909A00664FAB /* Build configuration list for PBXNativeTarget "AirArt Debug" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40041D871DFC909A00664FAB /* Debug */,
+				40041D881DFC909A00664FAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4011AF9D1D96BA7300F7BE5B /* Build configuration list for PBXProject "AirArt" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
