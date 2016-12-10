@@ -22,6 +22,19 @@ class HSColorView: HSBView {
 
 }
 
+// MARK: - Action
+
+extension HSColorView {
+
+    func updateCrosshairs() {
+        let colorHue = Utility.clamp(hue * frame.width, min: 0, max: bounds.width)
+        let colorSat = Utility.clamp(sat * frame.height, min: 0, max: bounds.height)
+
+        crosshairView.move(to: CGPoint(x: colorHue, y: colorSat))
+    }
+
+}
+
 // MARK: - Gesture Recognizers
 
 extension HSColorView {
@@ -34,15 +47,21 @@ extension HSColorView {
         let newHue = clampedPoint.x / frame.width
         let newSat = clampedPoint.y / frame.height
 
+        var update = false
+
         if newHue != hue {
             hue = newHue
+            update = true
         }
 
         if newSat != sat {
             sat = newSat
+            update = true
         }
 
-        crosshairView.move(to: clampedPoint)
+        if update {
+            updateCrosshairs()
+        }
     }
 
 }

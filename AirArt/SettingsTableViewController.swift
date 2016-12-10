@@ -150,8 +150,13 @@ extension SettingsTableViewController {
         hsbView.isHidden = rgbHSBSegmentedControl.selectedSegmentIndex == 0
 
         if rgbView.isHidden {
-            hsbView.color = Paint.currentPaint.uiColor
-            hsbView.brightness = Paint.currentPaint.uiColor.getHSBComponents()[2]
+
+            let components = Paint.currentPaint.uiColor.getHSBComponents()
+
+            hsbView.hue = components[0]
+            hsbView.sat = components[1]
+            hsbView.brightness = components[2]
+
         } else {
             redSlider.value = Float(Paint.currentPaint.red)
             greenSlider.value = Float(Paint.currentPaint.green)

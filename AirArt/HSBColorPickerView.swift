@@ -11,9 +11,12 @@ import UIKit
 // @IBDesignable
 class HSBColorPickerView: UIView {
 
-    @IBInspectable var color: UIColor = .purple {
+    @IBInspectable internal var color: UIColor = .purple {
         didSet {
             delegate?.colorDidChange(to: color)
+
+            hsColorView.updateCrosshairs()
+            brightnessView.updatePointer()
         }
     }
 
@@ -38,12 +41,7 @@ class HSBColorPickerView: UIView {
         }
     }
 
-    var colorAlpha: CGFloat = 1.0 {
-        didSet {
-            color = UIColor(hue: hue, saturation: sat, brightness: brightness, alpha: colorAlpha)
-            brightnessView.setNeedsDisplay()
-        }
-    }
+    let colorAlpha: CGFloat = 1.0
 
     var delegate: HSBColorPickerViewDelegate?
     var hsColorView: HSColorView!

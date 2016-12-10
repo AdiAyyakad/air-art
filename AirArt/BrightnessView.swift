@@ -26,6 +26,16 @@ class BrightnessView: HSBView {
 
 }
 
+// MARK: - Action
+
+extension BrightnessView {
+
+    func updatePointer() {
+        pointerView.move(to: (1 - brightness) * bounds.height)
+    }
+
+}
+
 // MARK: - Gesture Recgonizer
 
 extension BrightnessView {
@@ -34,7 +44,7 @@ extension BrightnessView {
         let rowTouched = Utility.clamp(gesture.location(in: self).y, min: 0, max: bounds.height)
         brightness = 1 - (rowTouched / bounds.height)
 
-        pointerView.move(to: rowTouched)
+        updatePointer()
     }
 
 }
