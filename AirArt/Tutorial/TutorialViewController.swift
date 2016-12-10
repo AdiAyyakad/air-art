@@ -16,26 +16,14 @@ class TutorialViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var skipButton: UIButton!
 
-    var isTutorial: Bool!
-    var orderedImages: [UIImage] = []
-
-    private(set) lazy var tutorialImages: [UIImage] = {
-        guard let one = UIImage(named: "Walkthrough1.png"),
-            let two = UIImage(named: "Walkthrough2.png"),
-            let three = UIImage(named: "Walkthrough3.png") else {
+    private(set) lazy var orderedImages: [UIImage] = {
+        guard let one = UIImage(named: "Tutorial1.png"),
+            let two = UIImage(named: "Tutorial2.png"),
+            let three = UIImage(named: "Tutorial3.png") else {
                 return []
         }
 
         return [one, two, three]
-    }()
-
-    private(set) lazy var calibrationImages: [UIImage] = {
-        guard let one = UIImage(named: "Calibration1.png"),
-            let two = UIImage(named: "Calibration2.png") else {
-                return []
-        }
-
-        return [one, two]
     }()
 
     override func viewDidLoad() {
@@ -53,12 +41,8 @@ class TutorialViewController: UIViewController {
 extension TutorialViewController {
 
     func setup() {
-        if let bool = isTutorial {
-            orderedImages = bool ? tutorialImages : calibrationImages
-            pageControl.numberOfPages = orderedImages.count
-            skipButton.isHidden = !bool
-            pageControl.isHidden = orderedImages.count <= 1
-        }
+        pageControl.numberOfPages = orderedImages.count
+        pageControl.isHidden = orderedImages.count <= 1
     }
 
     func setupBackground() {

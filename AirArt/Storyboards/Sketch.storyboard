@@ -294,7 +294,7 @@
                                                 <constraint firstItem="hoP-ri-QFa" firstAttribute="height" secondItem="hAu-sF-t84" secondAttribute="height" constant="30" id="W4d-Is-gne"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="bbN-4U-FHF" secondAttribute="trailing" constant="8" id="Yvm-pY-lrn"/>
                                                 <constraint firstItem="hoP-ri-QFa" firstAttribute="centerX" secondItem="d1U-WM-tGa" secondAttribute="centerX" id="YwY-oL-2Lv"/>
-                                                <constraint firstItem="czD-su-oKZ" firstAttribute="top" secondItem="pDO-En-CnS" secondAttribute="bottom" constant="0.5" id="gec-WX-1JP"/>
+                                                <constraint firstItem="czD-su-oKZ" firstAttribute="top" secondItem="pDO-En-CnS" secondAttribute="bottom" id="gec-WX-1JP"/>
                                                 <constraint firstItem="55D-VS-R6d" firstAttribute="centerY" secondItem="hoP-ri-QFa" secondAttribute="centerY" id="gqg-1T-Grv"/>
                                                 <constraint firstItem="czD-su-oKZ" firstAttribute="leading" secondItem="UMv-du-XC7" secondAttribute="leadingMargin" constant="8" id="jFQ-o7-hpy"/>
                                                 <constraint firstItem="hoP-ri-QFa" firstAttribute="leading" secondItem="55D-VS-R6d" secondAttribute="trailing" constant="24" id="lkR-ha-76y"/>
@@ -317,23 +317,6 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Help" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e4a-4o-1OV">
                                                     <rect key="frame" x="16" y="12" width="42" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Calibrate" id="pqg-wC-Quz">
-                                        <rect key="frame" x="0.0" y="942.5" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pqg-wC-Quz" id="qNV-Ky-ZKE">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Calibrate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ka-VH-RQS">
-                                                    <rect key="frame" x="16" y="12" width="80" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>

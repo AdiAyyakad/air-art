@@ -121,22 +121,13 @@ extension SettingsTableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
-        guard let cell = tableView.cellForRow(at: indexPath),
-            let id = cell.reuseIdentifier else {
-            return
-        }
-
-        switch id {
-        case ResuseIdentifier.Calibration.rawValue:
-            presentCalibration()
-
-        case ResuseIdentifier.Tutorial.rawValue:
+        if let cell = tableView.cellForRow(at: indexPath),
+            let id = cell.reuseIdentifier,
+            id == ResuseIdentifier.Tutorial.rawValue {
             presentTutorial()
-
-        default:
-            return
-
         }
+
+        tableView.deselectRow(at: indexPath, animated: true)
 
     }
 }

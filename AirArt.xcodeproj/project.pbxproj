@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		40041D521DFC6AC100664FAB /* Tutorial1.png in Resources */ = {isa = PBXBuildFile; fileRef = 40041D4F1DFC6AC100664FAB /* Tutorial1.png */; };
+		40041D531DFC6AC100664FAB /* Tutorial2.png in Resources */ = {isa = PBXBuildFile; fileRef = 40041D501DFC6AC100664FAB /* Tutorial2.png */; };
+		40041D541DFC6AC100664FAB /* Tutorial3.png in Resources */ = {isa = PBXBuildFile; fileRef = 40041D511DFC6AC100664FAB /* Tutorial3.png */; };
 		400574031DF96DF300F961CF /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400574021DF96DF300F961CF /* UIColorExtension.swift */; };
 		400574051DF9749500F961CF /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400574041DF9749500F961CF /* Utility.swift */; };
 		4011AFA61D96BA7300F7BE5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011AFA51D96BA7300F7BE5B /* AppDelegate.swift */; };
@@ -15,9 +18,6 @@
 		4011AFBB1D96BA7300F7BE5B /* AirArtTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011AFBA1D96BA7300F7BE5B /* AirArtTests.swift */; };
 		4045ED561DEF4DEA00778376 /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4045ED551DEF4DEA00778376 /* Tutorial.storyboard */; };
 		4045ED5B1DEF4FF000778376 /* SplashScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 4045ED571DEF4FF000778376 /* SplashScreen.png */; };
-		4045ED5C1DEF4FF000778376 /* Walkthrough1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4045ED581DEF4FF000778376 /* Walkthrough1.png */; };
-		4045ED5D1DEF4FF000778376 /* Walkthrough2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4045ED591DEF4FF000778376 /* Walkthrough2.png */; };
-		4045ED5E1DEF4FF000778376 /* Walkthrough3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4045ED5A1DEF4FF000778376 /* Walkthrough3.png */; };
 		4045ED681DEF606500778376 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4045ED671DEF606500778376 /* TutorialViewController.swift */; };
 		4063C11A1DF7788700CFA262 /* closeButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 4063C1171DF7788700CFA262 /* closeButton.png */; };
 		4063C11B1DF7788700CFA262 /* closeButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4063C1181DF7788700CFA262 /* closeButton@2x.png */; };
@@ -29,8 +29,6 @@
 		4067FC681DF657EF00745F44 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4067FC671DF657EF00745F44 /* UIViewControllerExtension.swift */; };
 		4067FC6F1DF65E9B00745F44 /* Macros.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4067FC6E1DF65E9B00745F44 /* Macros.swift */; };
 		40682BCF1DF76C1800F8E448 /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40682BCE1DF76C1800F8E448 /* UserDefaultsKeys.swift */; };
-		406FCAB01DEFD7FA00FCCF8F /* Calibration1.png in Resources */ = {isa = PBXBuildFile; fileRef = 406FCAAE1DEFD7FA00FCCF8F /* Calibration1.png */; };
-		406FCAB11DEFD7FA00FCCF8F /* Calibration2.png in Resources */ = {isa = PBXBuildFile; fileRef = 406FCAAF1DEFD7FA00FCCF8F /* Calibration2.png */; };
 		40822DEC1DF77F7800C1118E /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3A5951DF739EE00B3C4CB /* UIImageExtension.swift */; };
 		40A0D3191D96F22D001024EF /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A0D3181D96F22D001024EF /* Point.swift */; };
 		40B04AE91DF919A600ED77E0 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B04AE81DF919A600ED77E0 /* UIImageViewExtension.swift */; };
@@ -67,6 +65,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		40041D4F1DFC6AC100664FAB /* Tutorial1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Tutorial1.png; path = Images/Tutorial1.png; sourceTree = "<group>"; };
+		40041D501DFC6AC100664FAB /* Tutorial2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Tutorial2.png; path = Images/Tutorial2.png; sourceTree = "<group>"; };
+		40041D511DFC6AC100664FAB /* Tutorial3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Tutorial3.png; path = Images/Tutorial3.png; sourceTree = "<group>"; };
 		400574021DF96DF300F961CF /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		400574041DF9749500F961CF /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		4011AFA21D96BA7300F7BE5B /* AirArt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirArt.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,9 +80,6 @@
 		4011AFBC1D96BA7300F7BE5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4045ED551DEF4DEA00778376 /* Tutorial.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Tutorial.storyboard; path = Storyboards/Tutorial.storyboard; sourceTree = "<group>"; };
 		4045ED571DEF4FF000778376 /* SplashScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SplashScreen.png; path = Images/SplashScreen.png; sourceTree = "<group>"; };
-		4045ED581DEF4FF000778376 /* Walkthrough1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Walkthrough1.png; path = Images/Walkthrough1.png; sourceTree = "<group>"; };
-		4045ED591DEF4FF000778376 /* Walkthrough2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Walkthrough2.png; path = Images/Walkthrough2.png; sourceTree = "<group>"; };
-		4045ED5A1DEF4FF000778376 /* Walkthrough3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Walkthrough3.png; path = Images/Walkthrough3.png; sourceTree = "<group>"; };
 		4045ED671DEF606500778376 /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TutorialViewController.swift; path = Tutorial/TutorialViewController.swift; sourceTree = "<group>"; };
 		4063C1171DF7788700CFA262 /* closeButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = closeButton.png; sourceTree = "<group>"; };
 		4063C1181DF7788700CFA262 /* closeButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "closeButton@2x.png"; sourceTree = "<group>"; };
@@ -93,8 +91,6 @@
 		4067FC671DF657EF00745F44 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		4067FC6E1DF65E9B00745F44 /* Macros.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Macros.swift; sourceTree = "<group>"; };
 		40682BCE1DF76C1800F8E448 /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
-		406FCAAE1DEFD7FA00FCCF8F /* Calibration1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Calibration1.png; path = Images/Calibration1.png; sourceTree = "<group>"; };
-		406FCAAF1DEFD7FA00FCCF8F /* Calibration2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Calibration2.png; path = Images/Calibration2.png; sourceTree = "<group>"; };
 		40A0D3181D96F22D001024EF /* Point.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
 		40B04AE81DF919A600ED77E0 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		40B04AEA1DF9207300ED77E0 /* UIAlertControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAlertControllerExtension.swift; sourceTree = "<group>"; };
@@ -208,20 +204,11 @@
 		406FCAB21DEFD80000FCCF8F /* Tutorial */ = {
 			isa = PBXGroup;
 			children = (
-				4045ED581DEF4FF000778376 /* Walkthrough1.png */,
-				4045ED591DEF4FF000778376 /* Walkthrough2.png */,
-				4045ED5A1DEF4FF000778376 /* Walkthrough3.png */,
+				40041D4F1DFC6AC100664FAB /* Tutorial1.png */,
+				40041D501DFC6AC100664FAB /* Tutorial2.png */,
+				40041D511DFC6AC100664FAB /* Tutorial3.png */,
 			);
 			name = Tutorial;
-			sourceTree = "<group>";
-		};
-		406FCAB31DEFD80700FCCF8F /* Calibration */ = {
-			isa = PBXGroup;
-			children = (
-				406FCAAE1DEFD7FA00FCCF8F /* Calibration1.png */,
-				406FCAAF1DEFD7FA00FCCF8F /* Calibration2.png */,
-			);
-			name = Calibration;
 			sourceTree = "<group>";
 		};
 		4084ADFE1D96C52600B812DE /* Supporting Files */ = {
@@ -238,7 +225,6 @@
 				4045ED571DEF4FF000778376 /* SplashScreen.png */,
 				7F3903CF1DF7329500644E8D /* AirArtButtons */,
 				406FCAB21DEFD80000FCCF8F /* Tutorial */,
-				406FCAB31DEFD80700FCCF8F /* Calibration */,
 				4011AFAC1D96BA7300F7BE5B /* Assets.xcassets */,
 			);
 			name = Resources;
@@ -395,29 +381,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F3903E61DF7329500644E8D /* undoButton@2x.png in Resources */,
-				406FCAB01DEFD7FA00FCCF8F /* Calibration1.png in Resources */,
-				4045ED5C1DEF4FF000778376 /* Walkthrough1.png in Resources */,
 				7F3903DF1DF7329500644E8D /* redoButton.png in Resources */,
-				4045ED5D1DEF4FF000778376 /* Walkthrough2.png in Resources */,
 				7F3903E41DF7329500644E8D /* settingsButton@3x.png in Resources */,
 				4063C11C1DF7788700CFA262 /* closeButton@3x.png in Resources */,
+				40041D521DFC6AC100664FAB /* Tutorial1.png in Resources */,
 				7F3903E01DF7329500644E8D /* redoButton@2x.png in Resources */,
 				7F3903DD1DF7329500644E8D /* doneButton@2x.png in Resources */,
 				7F3903E21DF7329500644E8D /* settingsButton.png in Resources */,
 				7F3903DC1DF7329500644E8D /* doneButton.png in Resources */,
 				7F3903E51DF7329500644E8D /* undoButton.png in Resources */,
 				40B0C9BB1DF06B3B004A31BA /* Sketch.storyboard in Resources */,
-				406FCAB11DEFD7FA00FCCF8F /* Calibration2.png in Resources */,
+				40041D541DFC6AC100664FAB /* Tutorial3.png in Resources */,
 				4063C11A1DF7788700CFA262 /* closeButton.png in Resources */,
 				4011AFB01D96BA7300F7BE5B /* LaunchScreen.storyboard in Resources */,
 				4011AFAD1D96BA7300F7BE5B /* Assets.xcassets in Resources */,
 				4045ED5B1DEF4FF000778376 /* SplashScreen.png in Resources */,
 				7F3903E31DF7329500644E8D /* settingsButton@2x.png in Resources */,
 				4045ED561DEF4DEA00778376 /* Tutorial.storyboard in Resources */,
-				4045ED5E1DEF4FF000778376 /* Walkthrough3.png in Resources */,
 				4063C11B1DF7788700CFA262 /* closeButton@2x.png in Resources */,
 				7F3903E11DF7329500644E8D /* redoButton@3x.png in Resources */,
 				7F3903DE1DF7329500644E8D /* doneButton@3x.png in Resources */,
+				40041D531DFC6AC100664FAB /* Tutorial2.png in Resources */,
 				7F3903E71DF7329500644E8D /* undoButton@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
