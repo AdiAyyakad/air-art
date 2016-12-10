@@ -344,7 +344,7 @@
 				TargetAttributes = {
 					4011AFA11D96BA7300F7BE5B = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 7FESQ2J54U;
+						DevelopmentTeam = JCX9GA4QV7;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
@@ -590,10 +590,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 7FESQ2J54U;
+				DEVELOPMENT_TEAM = JCX9GA4QV7;
 				INFOPLIST_FILE = AirArt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.aditya-ayyakad.air-art";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.selengut.air-art";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -605,10 +605,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 7FESQ2J54U;
+				DEVELOPMENT_TEAM = JCX9GA4QV7;
 				INFOPLIST_FILE = AirArt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.aditya-ayyakad.air-art";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.selengut.air-art";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

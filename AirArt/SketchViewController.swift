@@ -152,7 +152,7 @@ extension SketchViewController {
 
     @IBAction func didPressClose(_ sender: Any) {
         let alert = UIAlertController(title: "Confirmation",
-                                      message: "Are you sure you want to save your image?",
+                                      message: "Are you sure you want to clear your image?",
                                       preferredStyle: .alert)
 
         alert.addAction(UIAlertAction(title: "Ok",
