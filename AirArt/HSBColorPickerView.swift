@@ -11,40 +11,44 @@ import UIKit
 // @IBDesignable
 class HSBColorPickerView: UIView {
 
-    @IBInspectable var color: UIColor = .purple {
+    @IBInspectable internal var color: UIColor = .purple {
         didSet {
             delegate?.colorDidChange(to: color)
-            setNeedsDisplay()
+
+            hsColorView.updateCrosshairs()
+            brightnessView.updatePointer()
+        }
+    }
+
+    var hue: CGFloat = 1.0 {
+        didSet {
+            color = UIColor(hue: hue, saturation: sat, brightness: brightness, alpha: colorAlpha)
+            brightnessView.setNeedsDisplay()
+        }
+    }
+
+    var sat: CGFloat = 1.0 {
+        didSet {
+            color = UIColor(hue: hue, saturation: sat, brightness: brightness, alpha: colorAlpha)
+            brightnessView.setNeedsDisplay()
         }
     }
 
     var brightness: CGFloat = 1.0 {
         didSet {
-            var hue: CGFloat = -1.0
-            var sat: CGFloat = -1.0
-            var alpha: CGFloat = -1.0
-
-            color.getHue(&hue, saturation: &sat, brightness: nil, alpha: &alpha)
-
-            color = UIColor(hue: hue, saturation: sat, brightness: brightness, alpha: alpha)
+            color = UIColor(hue: hue, saturation: sat, brightness: brightness, alpha: colorAlpha)
+            hsColorView.setNeedsDisplay()
         }
     }
 
-    var colorAlpha: CGFloat = 1.0 {
-        didSet {
-            var hue: CGFloat = -1.0
-            var sat: CGFloat = -1.0
-            var bright: CGFloat = -1.0
-
-            color.getHue(&hue, saturation: &sat, brightness: &bright, alpha: nil)
-
-            color = UIColor(hue: hue, saturation: sat, brightness: bright, alpha: colorAlpha)
-        }
-    }
+    let colorAlpha: CGFloat = 1.0
 
     var delegate: HSBColorPickerViewDelegate?
+    var hsColorView: HSColorView!
+    var brightnessView: BrightnessView!
+
     let brightnessScale: CGFloat = 0.2
-    let padding: CGFloat = 8
+    let padding: CGFloat = 16
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -82,28 +86,14 @@ class HSBColorPickerView: UIView {
                                          width: (bounds.width * brightnessScale) - (padding / 2),
                                          height: bounds.height)
 
-        let hsColorView = HSColorView(frame: hsColorViewFrame)
-        let brightnessView = BrightnessView(frame: brightnessViewFrame)
+        hsColorView = HSColorView(frame: hsColorViewFrame, superview: self)
+        brightnessView = BrightnessView(frame: brightnessViewFrame, superview: self)
 
         hsColorView.superHSBColorPickerView = self
         brightnessView.superHSBColorPickerView = self
 
         insertSubview(hsColorView, belowSubview: self)
         insertSubview(brightnessView, belowSubview: hsColorView)
-    }
-
-}
-
-// MARK: - SetNeedsDisplay
-
-extension HSBColorPickerView {
-
-    override func setNeedsDisplay() {
-        super.setNeedsDisplay()
-
-        for sbv in subviews {
-            sbv.setNeedsDisplay()
-        }
     }
 
 }

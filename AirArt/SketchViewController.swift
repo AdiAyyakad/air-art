@@ -74,7 +74,14 @@ extension SketchViewController {
 
         sketchView.add(path: path, paint: Paint.currentPaint)
 
-        motionManager.startAccelerometerUpdates(to: queue, withHandler: handler)
+        motionManager.startAccelerometerUpdates(to: queue) { [unowned self] data, error in
+            guard let accelerationData = data else {
+                DLog("Error receiving accelerometer data: \(error!)")
+                return
+            }
+
+            self.handleData(accelerationData.acceleration)
+        }
     }
 
     func endGettingData() {
@@ -83,15 +90,6 @@ extension SketchViewController {
         initialYAccel = nil
 
         motionManager.stopAccelerometerUpdates()
-    }
-
-    private func handler(data: CMAccelerometerData?, error: Error?) {
-        guard let accelerationData = data else {
-            DLog("Error receiving accelerometer data: \(error!)")
-            return
-        }
-
-        handleData(accelerationData.acceleration)
     }
 
     private func handleData(_ acceleration: CMAcceleration) {
@@ -103,7 +101,7 @@ extension SketchViewController {
         let deltaX = (acceleration.x - initialXAccel) * scale
         let deltaY = (acceleration.y - initialYAccel) * scale
 
-        let nextPoint = CGPoint(x: touch.x+CGFloat(deltaX), y: touch.y+CGFloat(deltaY))
+        let nextPoint = CGPoint(x: touch.x+CGFloat(deltaX), y: touch.y-CGFloat(deltaY))
 
         path.addLine(to: nextPoint)
         touch = nextPoint

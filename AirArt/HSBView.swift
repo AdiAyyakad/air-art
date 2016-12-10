@@ -11,6 +11,24 @@ import UIKit
 class HSBView: UIView {
 
     weak var superHSBColorPickerView: HSBColorPickerView!
+    var hue: CGFloat {
+        get {
+            return superHSBColorPickerView.hue
+        }
+
+        set {
+            superHSBColorPickerView.hue = newValue
+        }
+    }
+    var sat: CGFloat {
+        get {
+            return superHSBColorPickerView.sat
+        }
+
+        set {
+            superHSBColorPickerView.sat = newValue
+        }
+    }
     var brightness: CGFloat {
         get {
             return superHSBColorPickerView.brightness
@@ -20,6 +38,7 @@ class HSBView: UIView {
             superHSBColorPickerView.brightness = newValue
         }
     }
+    var colorAlpha: CGFloat { return superHSBColorPickerView.colorAlpha }
 
     var currentColor: UIColor {
         get {
@@ -30,7 +49,23 @@ class HSBView: UIView {
             superHSBColorPickerView.color = newValue
         }
     }
-    var colorAlpha: CGFloat { return superHSBColorPickerView.colorAlpha }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+
+        setup()
+    }
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+
+    convenience init(frame: CGRect, superview superHSBColorPickerView: HSBColorPickerView) {
+        self.init(frame: frame)
+
+        self.superHSBColorPickerView = superHSBColorPickerView
+        setup()
+    }
 
 }
 

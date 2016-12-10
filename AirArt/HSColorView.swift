@@ -11,16 +11,26 @@ import UIKit
 @IBDesignable
 class HSColorView: HSBView {
 
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+    let crosshairView = CrosshairView(frame: CGRect(origin: .zero, size: CGSize(width: CrosshairView.size,
+                                                                                height: CrosshairView.size)))
 
-        setup()
+    override func setup() {
+        super.setup()
+
+        addSubview(crosshairView)
     }
 
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+}
 
-        setup()
+// MARK: - Action
+
+extension HSColorView {
+
+    func updateCrosshairs() {
+        let colorHue = Utility.clamp(hue * frame.width, min: 0, max: bounds.width)
+        let colorSat = Utility.clamp(sat * frame.height, min: 0, max: bounds.height)
+
+        crosshairView.move(to: CGPoint(x: colorHue, y: colorSat))
     }
 
 }
@@ -31,37 +41,27 @@ extension HSColorView {
 
     override func recognize(_ gesture: UIGestureRecognizer) {
         let point = gesture.location(in: self)
-        currentColor = getColor(at: CGPoint(x: Utility.clamp(point.x, min: 0, max: bounds.width),
-                                            y: Utility.clamp(point.y, min: 0, max: bounds.height)))
-    }
+        let clampedPoint = CGPoint(x: Utility.clamp(point.x, min: 0, max: bounds.width),
+                                   y: Utility.clamp(point.y, min: 0, max: bounds.height))
 
-}
+        let newHue = clampedPoint.x / frame.width
+        let newSat = clampedPoint.y / frame.height
 
-// MARK: - Helpers
+        var update = false
 
-extension HSColorView {
+        if newHue != hue {
+            hue = newHue
+            update = true
+        }
 
-    func getPoint(from color: UIColor) -> CGPoint? {
+        if newSat != sat {
+            sat = newSat
+            update = true
+        }
 
-        var hue: CGFloat = -1.0
-        var sat: CGFloat = -1.0
-
-        color.getHue(&hue,
-                     saturation: &sat,
-                     brightness: nil,
-                     alpha: nil)
-
-
-        return hue == -1.0 || sat == -1.0 ? nil : CGPoint(x: hue * frame.maxX, y: sat * frame.maxY)
-    }
-
-    func getColor(at point: CGPoint) -> UIColor {
-
-        return UIColor(hue: point.x/frame.maxX,
-                       saturation: point.y/frame.maxY,
-                       brightness: brightness,
-                       alpha: alpha)
-
+        if update {
+            updateCrosshairs()
+        }
     }
 
 }
@@ -71,8 +71,8 @@ extension HSColorView {
 extension HSColorView {
 
     override func draw(_ rect: CGRect) {
+        DLog("Drawing HSColorView")
         createHSL()
-        createCrosshairs()?.stroke()
     }
 
     /**
@@ -96,50 +96,58 @@ extension HSColorView {
         }
     }
 
-    /**
-     Creates a crosshairs as follows:
+}
 
-                   |
-                   |
-             ______|______
-            /      |      \
-           /       |       \
-          |        |        |
-          |        |        |
-     -----------------------------
-          |        |        |
-          |        |        |
-           \       |       /
-            \______|______/
-                   |
-                   |
-                   |
+class CrosshairView: UIView {
 
-    More or less
-     */
-    private func createCrosshairs() -> UIBezierPath? {
-        guard let currentColorPoint = getPoint(from: currentColor) else {
-            DLog("Could not get point from current color")
-            return nil
-        }
+    public static let size: CGFloat = 10.0
 
-        let size = frame.width/20
-        let crosshairsFrame = CGRect(x: currentColorPoint.x - size/2,
-                                     y: currentColorPoint.y - size/2,
-                                     width: size,
-                                     height: size)
+    // MARK: - Inits
 
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setup()
+    }
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setup()
+    }
+
+    // MARK: - Setup
+
+    func setup() {
+        center = CGPoint(x: CrosshairView.size / 2, y: CrosshairView.size / 2)
+
+        let shapeLayer = CAShapeLayer()
+
+        shapeLayer.path = createCrosshairs().cgPath
+        shapeLayer.strokeColor = UIColor.black.cgColor
+        shapeLayer.lineWidth = 2.0
+        shapeLayer.fillColor = UIColor.clear.cgColor
+
+        layer.addSublayer(shapeLayer)
+    }
+
+    // MARK: - Action
+
+    func move(to point: CGPoint) {
+        center = point
+    }
+
+    // MARK: - UIBezierPath Creator
+
+    private func createCrosshairs() -> UIBezierPath {
         // circle
-        let crosshairs = UIBezierPath(ovalIn: crosshairsFrame)
-        crosshairs.lineWidth = 2.0
+        let crosshairs = UIBezierPath(ovalIn: bounds)
 
         // top of the cross
-        crosshairs.move(to: CGPoint(x: crosshairsFrame.midX, y: crosshairsFrame.midY-size))
-        crosshairs.addLine(to: CGPoint(x: crosshairsFrame.midX, y: crosshairsFrame.midY + size))
+        crosshairs.move(to: CGPoint(x: center.x, y: center.y - CrosshairView.size))
+        crosshairs.addLine(to: CGPoint(x: center.x, y: center.y + CrosshairView.size))
 
         // bottom of cross
-        crosshairs.move(to: CGPoint(x: crosshairsFrame.midX-size, y: crosshairsFrame.midY))
-        crosshairs.addLine(to: CGPoint(x: crosshairsFrame.midX + size, y: crosshairsFrame.midY))
+        crosshairs.move(to: CGPoint(x: center.x - CrosshairView.size, y: center.y))
+        crosshairs.addLine(to: CGPoint(x: center.x + CrosshairView.size, y: center.y))
 
         return crosshairs
     }
