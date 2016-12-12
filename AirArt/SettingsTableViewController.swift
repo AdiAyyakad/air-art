@@ -89,7 +89,7 @@ extension SettingsTableViewController {
 
     @IBAction func cancelButtonPressed(_ sender: AnyObject) {
         let alert = UIAlertController(title: "Are you sure you want to cancel?",
-                                      message: "If you would like to keep your current paint settings, click Go. If not, click Yes",
+                                      message: "If you would like to keep your current paint settings, click Done. If not, click Yes",
                                       preferredStyle: .alert)
 
         alert.addAction(UIAlertAction(title: "Yes",
