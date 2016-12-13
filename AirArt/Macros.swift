@@ -9,15 +9,19 @@
 import Foundation
 
 func DLog(_ msg: String, _ filePath: String = #file, _ function: String = #function, _ line: Int = #line) {
-    guard let filename = filePath.components(separatedBy: "/").last else {
-        NSLog("[\(filePath):\(line)] \(function) - \(msg)")
-        return
-    }
 
-    guard let file = filename.components(separatedBy: ".").first else {
-        NSLog("[\(filename):\(line)] \(function) - \(msg)")
-        return
-    }
+    #if DEBUG
+        guard let filename = filePath.components(separatedBy: "/").last else {
+            NSLog("[\(filePath):\(line)] \(function) - \(msg)")
+            return
+        }
 
-    NSLog("[\(file):\(line)] \(function) - \(msg)")
+        guard let file = filename.components(separatedBy: ".").first else {
+            NSLog("[\(filename):\(line)] \(function) - \(msg)")
+            return
+        }
+
+        NSLog("[\(file):\(line)] \(function) - \(msg)")
+    #endif
+
 }
