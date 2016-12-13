@@ -11,27 +11,32 @@ import UIKit
 class SketchView: UIView {
     var paths: [Path] = []
     var undonePaths: [Path] = []
-
-    override func draw(_ rect: CGRect) {
-        for pathStruct in paths {
-            let path = pathStruct.uiBezierPath
-            let paint = pathStruct.paint
-
-            paint.uiColor.setStroke()
-            path.lineWidth = paint.brushSize
-            path.stroke()
-        }
-    }
 }
 
 extension SketchView {
 
-    func add(path: UIBezierPath, paint: Paint) {
+    func add(path: UIBezierPath, paint: Paint) -> Path {
         if !undonePaths.isEmpty {
             undonePaths = []
         }
 
-        paths.append(Path(uiBezierPath: path, paint: Paint(paint: paint)))
+        let bezier = CAShapeLayer()
+
+        bezier.path = path.cgPath
+        bezier.lineCap = kCALineCapRound
+        bezier.lineWidth = paint.brushSize
+        bezier.fillColor = UIColor.clear.cgColor
+        bezier.strokeColor = paint.cgColor
+
+        bezier.strokeStart = 0.0
+        bezier.strokeEnd = 1.0
+
+        layer.addSublayer(bezier)
+
+        let pathStruct = Path(uiBezierPath: path, paint: Paint(paint: paint), layer: bezier)
+        paths.append(pathStruct)
+
+        return pathStruct
     }
 
     func undo() {
@@ -40,7 +45,7 @@ extension SketchView {
         }
 
         undonePaths.append(last)
-        setNeedsDisplay()
+        last.layer.removeFromSuperlayer()
     }
 
     func redo() {
@@ -49,12 +54,12 @@ extension SketchView {
         }
 
         paths.append(last)
-        setNeedsDisplay()
+        layer.addSublayer(last.layer)
     }
 
     func clear() {
+        layer.sublayers = []
         paths = []
-        setNeedsDisplay()
     }
 
 }

@@ -11,8 +11,7 @@ import UIKit
 @IBDesignable
 class HSColorView: HSBView {
 
-    let crosshairView = CrosshairView(frame: CGRect(origin: .zero, size: CGSize(width: CrosshairView.size,
-                                                                                height: CrosshairView.size)))
+    let crosshairView = CrosshairView()
 
     override func setup() {
         super.setup()
@@ -100,9 +99,15 @@ extension HSColorView {
 
 class CrosshairView: UIView {
 
-    public static let size: CGFloat = 10.0
+    var size: CGFloat = 13.0
+    private var shapeLayer = CAShapeLayer()
 
     // MARK: - Inits
+
+    convenience init() {
+        self.init(frame: CGRect(origin: .zero, size: CGSize(width: 13.0,
+                                                            height: 13.0)))
+    }
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -117,22 +122,30 @@ class CrosshairView: UIView {
     // MARK: - Setup
 
     func setup() {
-        center = CGPoint(x: CrosshairView.size / 2, y: CrosshairView.size / 2)
+        move(to: CGPoint(x: size / 2, y: size / 2))
+        setupLayer()
+        layer.addSublayer(shapeLayer)
+    }
 
-        let shapeLayer = CAShapeLayer()
-
+    func setupLayer() {
         shapeLayer.path = createCrosshairs().cgPath
         shapeLayer.strokeColor = UIColor.black.cgColor
         shapeLayer.lineWidth = 2.0
         shapeLayer.fillColor = UIColor.clear.cgColor
-
-        layer.addSublayer(shapeLayer)
     }
 
     // MARK: - Action
 
     func move(to point: CGPoint) {
         center = point
+
+        let components = Paint.currentPaint.uiColor.getRGBComponents()
+        let one: CGFloat = 1.0
+
+        shapeLayer.strokeColor = UIColor(red: one-components[0],
+                                         green: one-components[1],
+                                         blue: one-components[2],
+                                         alpha: 1.0).cgColor
     }
 
     // MARK: - UIBezierPath Creator
@@ -142,12 +155,12 @@ class CrosshairView: UIView {
         let crosshairs = UIBezierPath(ovalIn: bounds)
 
         // top of the cross
-        crosshairs.move(to: CGPoint(x: center.x, y: center.y - CrosshairView.size))
-        crosshairs.addLine(to: CGPoint(x: center.x, y: center.y + CrosshairView.size))
+        crosshairs.move(to: CGPoint(x: center.x, y: center.y - size))
+        crosshairs.addLine(to: CGPoint(x: center.x, y: center.y + size))
 
         // bottom of cross
-        crosshairs.move(to: CGPoint(x: center.x - CrosshairView.size, y: center.y))
-        crosshairs.addLine(to: CGPoint(x: center.x + CrosshairView.size, y: center.y))
+        crosshairs.move(to: CGPoint(x: center.x - size, y: center.y))
+        crosshairs.addLine(to: CGPoint(x: center.x + size, y: center.y))
 
         return crosshairs
     }

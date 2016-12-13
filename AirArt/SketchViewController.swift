@@ -15,8 +15,9 @@ class SketchViewController: UIViewController {
     @IBOutlet weak var sketchView: SketchView!
 
     let scale = 20.0
-    var path = UIBezierPath()
+    var path: Path!
     var touch: CGPoint = .zero
+    var crosshair = CrosshairView()
 
     #if DEBUG
     var presentedTutorial = false
@@ -30,7 +31,7 @@ class SketchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupMotion()
+        setup()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -55,6 +56,15 @@ class SketchViewController: UIViewController {
 
 extension SketchViewController {
 
+    func setup() {
+        setupCrosshair()
+        setupMotion()
+    }
+
+    func setupCrosshair() {
+        view.addSubview(crosshair)
+    }
+
     func setupMotion() {
         motionManager.accelerometerUpdateInterval = 0.1
     }
@@ -72,11 +82,12 @@ extension SketchViewController {
         }
 
         DLog("Begin getting data")
-        path = UIBezierPath()
-        path.move(to: touch)
-        path.lineCapStyle = .round
 
-        sketchView.add(path: path, paint: Paint.currentPaint)
+        let bezierPath = UIBezierPath()
+        bezierPath.move(to: touch)
+        bezierPath.lineCapStyle = .round
+
+        path = sketchView.add(path: bezierPath, paint: Paint.currentPaint)
 
         motionManager.startAccelerometerUpdates(to: queue) { [unowned self] data, error in
             guard let accelerationData = data else {
@@ -108,10 +119,10 @@ extension SketchViewController {
         let nextPoint = CGPoint(x: Utility.clamp(touch.x+CGFloat(deltaX), min: 0, max: view.bounds.width),
                                 y: Utility.clamp(touch.y-CGFloat(deltaY), min: 0, max: view.bounds.height))
 
+        crosshair.move(to: nextPoint)
+
         path.addLine(to: nextPoint)
         touch = nextPoint
-
-        sketchView.setNeedsDisplay()
     }
 
     @IBAction func didPressEdit(_ sender: AnyObject) {
