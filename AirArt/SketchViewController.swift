@@ -105,7 +105,8 @@ extension SketchViewController {
         let deltaX = (acceleration.x - initialXAccel) * scale
         let deltaY = (acceleration.y - initialYAccel) * scale
 
-        let nextPoint = CGPoint(x: touch.x+CGFloat(deltaX), y: touch.y-CGFloat(deltaY))
+        let nextPoint = CGPoint(x: Utility.clamp(touch.x+CGFloat(deltaX), min: 0, max: view.bounds.width),
+                                y: Utility.clamp(touch.y-CGFloat(deltaY), min: 0, max: view.bounds.height))
 
         path.addLine(to: nextPoint)
         touch = nextPoint
