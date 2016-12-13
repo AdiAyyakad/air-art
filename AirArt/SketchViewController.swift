@@ -14,7 +14,7 @@ class SketchViewController: UIViewController {
 
     @IBOutlet weak var sketchView: SketchView!
 
-    let scale = 10.0
+    let scale = 20.0
     var path = UIBezierPath()
     var touch: CGPoint = .zero
 
