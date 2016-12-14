@@ -136,8 +136,19 @@ class CrosshairView: UIView {
 
     // MARK: - Action
 
-    func move(to point: CGPoint) {
-        center = point
+    func move(to point: CGPoint, animated: Bool = false) {
+        if animated {
+            UIView.animate(withDuration: 0.1,
+                           delay: 0.0,
+                           options: .curveEaseInOut,
+                           animations: { [unowned self] in
+                            self.center = point
+            }, completion: nil)
+
+            UIView.commitAnimations()
+        } else {
+            center = point
+        }
 
         let components = Paint.currentPaint.uiColor.getRGBComponents()
         let one: CGFloat = 1.0

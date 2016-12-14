@@ -119,8 +119,7 @@ extension SketchViewController {
         let nextPoint = CGPoint(x: Utility.clamp(touch.x+CGFloat(deltaX), min: 0, max: view.bounds.width),
                                 y: Utility.clamp(touch.y-CGFloat(deltaY), min: 0, max: view.bounds.height))
 
-        crosshair.move(to: nextPoint)
-
+        crosshair.move(to: nextPoint, animated: true)
         path.addLine(to: nextPoint)
         touch = nextPoint
     }
