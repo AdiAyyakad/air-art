@@ -83,11 +83,10 @@ extension SketchViewController {
 
         DLog("Begin getting data")
 
-        let bezierPath = UIBezierPath()
-        bezierPath.move(to: touch)
-        bezierPath.lineCapStyle = .round
+        let cgPath = CGMutablePath()
+        cgPath.move(to: touch)
 
-        path = sketchView.add(path: bezierPath, paint: Paint.currentPaint)
+        path = sketchView.add(path: cgPath, paint: Paint.currentPaint)
 
         motionManager.startAccelerometerUpdates(to: queue) { [unowned self] data, error in
             guard let accelerationData = data else {
@@ -119,7 +118,7 @@ extension SketchViewController {
         let nextPoint = CGPoint(x: Utility.clamp(touch.x+CGFloat(deltaX), min: 0, max: view.bounds.width),
                                 y: Utility.clamp(touch.y-CGFloat(deltaY), min: 0, max: view.bounds.height))
 
-        crosshair.move(to: nextPoint, animated: true)
+        crosshair.move(to: nextPoint)
         path.addLine(to: nextPoint)
         touch = nextPoint
     }

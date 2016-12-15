@@ -15,14 +15,13 @@ class SketchView: UIView {
 
 extension SketchView {
 
-    func add(path: UIBezierPath, paint: Paint) -> Path {
+    func add(path: CGMutablePath, paint: Paint) -> Path {
         if !undonePaths.isEmpty {
             undonePaths = []
         }
 
         let bezier = CAShapeLayer()
 
-        bezier.path = path.cgPath
         bezier.lineCap = kCALineCapRound
         bezier.lineWidth = paint.brushSize
         bezier.fillColor = UIColor.clear.cgColor
@@ -33,7 +32,7 @@ extension SketchView {
 
         layer.addSublayer(bezier)
 
-        let pathStruct = Path(uiBezierPath: path, paint: Paint(paint: paint), layer: bezier)
+        let pathStruct = Path(cgPath: path, paint: Paint(paint: paint), layer: bezier)
         paths.append(pathStruct)
 
         return pathStruct
